@@ -1,0 +1,235 @@
+[
+  {
+    "name": "Atos",
+    "location": "France",
+    "employees": "63 000",
+    "logo": "/logos/entreprises/atos.svg",
+    "shortDescription": "Leader européen du cloud, de la cybersécurité et du supercalcul.",
+    "actions": "Définition d'une raison d'être dans les statuts pour contribuer à façonner l'espace d'information, soutenir le développement des connaissances et permettre de progresser durablement et en toute confiance dans l'espace d'information.",
+    "missionUrl": "https://atos.net/fr/qui-nous-sommes#raison-etre"
+  },
+  {
+    "name": "Veolia Environnement",
+    "location": "France",
+    "employees": "215 000",
+    "logo": "/logos/entreprises/veolia.svg",
+    "shortDescription": "Leader mondial des services de gestion de l'eau, des déchets et de l'énergie.",
+    "actions": "Sa raison d'être est de contribuer au progrès humain et de « ressourcer le monde » en fournissant des services environnementaux, en adhérant fermement aux Objectifs de Développement Durable des Nations Unies.",
+    "missionUrl": "https://www.veolia.com/fr/notre-raison-detre"
+  },
+  {
+    "name": "Carrefour",
+    "location": "France",
+    "employees": "500 000",
+    "logo": "/logos/entreprises/carrefour.svg",
+    "shortDescription": "Deuxième groupe mondial de grande distribution avec 14 000 magasins.",
+    "actions": "Inclusion d'une raison d'être dans le préambule des statuts visant à proposer des services et produits alimentaires de qualité accessibles à tous et à être le leader de la transition alimentaire pour tous.",
+    "missionUrl": "https://www.carrefour.com/fr/groupe/transition-alimentaire"
+  },
+  {
+    "name": "MAIF",
+    "location": "France",
+    "employees": "8 000",
+    "logo": "/logos/entreprises/maif.svg",
+    "shortDescription": "Société d'assurance mutuelle reconnue pour son engagement sociétal.",
+    "actions": "Pionnière ayant inscrit sa mission « remettre l'humain au cœur de l'économie » pour favoriser l'investissement responsable et la protection des personnes.",
+    "missionUrl": "https://entreprise.maif.fr/entreprise/etre-societe-a-mission"
+  },
+  {
+    "name": "SNCF",
+    "location": "France",
+    "employees": "276 000",
+    "logo": "/logos/entreprises/sncf.svg",
+    "shortDescription": "Entreprise ferroviaire publique qui fait circuler 15 000 trains par jour.",
+    "actions": "Définition d'une raison d'être statutaire consistant à apporter à chacun la liberté de se déplacer facilement en préservant la planète.",
+    "missionUrl": "https://www.groupe-sncf.com/fr/groupe/raison-etre"
+  },
+  {
+    "name": "Danone",
+    "location": "France",
+    "employees": "89 000",
+    "logo": "/logos/entreprises/danone.png",
+    "shortDescription": "Multinationale agroalimentaire spécialisée dans les produits laitiers et la nutrition.",
+    "actions": "Première entreprise cotée du CAC 40 à adopter le statut ; ses statuts incluent quatre objectifs : améliorer la santé, préserver la planète, construire le futur avec ses équipes et promouvoir une croissance inclusive.",
+    "missionUrl": "https://www.danone.com/fr/engagements/notre-approche/societe-a-mission.html"
+  },
+  {
+    "name": "Icade",
+    "location": "France",
+    "employees": "1 100",
+    "logo": "/logos/entreprises/icade.jpg",
+    "shortDescription": "Groupe immobilier spécialisé dans la foncière tertiaire et la promotion.",
+    "actions": "Inclusion de la raison d'être dans les statuts pour concevoir et investir dans des villes et bâtiments innovants, inclusifs et bas carbone.",
+    "missionUrl": "https://www.icade.fr/groupe/raison-d-etre"
+  },
+  {
+    "name": "ENGIE",
+    "location": "France",
+    "employees": "97 000",
+    "logo": "/logos/entreprises/engie.svg",
+    "shortDescription": "Groupe multinational spécialisé dans l'énergie et les services énergétiques.",
+    "actions": "Raison d'être inscrite dans les statuts pour accélérer la transition vers une économie neutre en carbone par des solutions plus économes en énergie et respectueuses de l'environnement.",
+    "missionUrl": "https://www.engie.com/groupe/raison-etre"
+  },
+  {
+    "name": "GI Group",
+    "location": "Italie",
+    "employees": "8 000",
+    "logo": "/logos/entreprises/gi-group.png",
+    "shortDescription": "Agence italienne de travail temporaire et de placement permanent.",
+    "actions": "Société Benefit dont les finalités incluent l'accès au marché du travail, la création de compétences cohérentes, l'équilibre vie pro-perso et le développement d'un monde du travail inclusif et méritocratique.",
+    "missionUrl": "https://www.gigroupholding.com/our-company/"
+  },
+  {
+    "name": "GS Italia",
+    "location": "Italie",
+    "employees": "250",
+    "logo": "/logos/entreprises/gs-italia.svg",
+    "shortDescription": "Entreprise italienne engagée dans la transition alimentaire durable.",
+    "actions": "Société Benefit visant à favoriser la transition du système alimentaire de manière durable, à offrir des produits de qualité et à protéger le pouvoir d'achat des clients."
+  },
+  {
+    "name": "NATIVA",
+    "location": "Italie",
+    "employees": "50",
+    "logo": "/logos/entreprises/nativa.svg",
+    "shortDescription": "Cabinet de conseil pionnier du mouvement B Corp en Europe.",
+    "actions": "Première Société Benefit en Italie, elle vise à accélérer la transition vers des paradigmes économiques régénératifs et à contribuer au bonheur et au bien-être de ses collaborateurs.",
+    "missionUrl": "https://nativalab.com/en/we-are-nativa"
+  },
+  {
+    "name": "Clariane",
+    "location": "France",
+    "employees": "63 000",
+    "logo": "/logos/entreprises/clariane.svg",
+    "shortDescription": "Premier groupe européen de services de santé et de soin.",
+    "actions": "Adoption du statut de société à mission avec une raison d'être : « Prendre soin de l'humanité de chacun dans les moments de fragilité ». Elle poursuit cinq objectifs statutaires : Équité, Considération, Durabilité, Innovation et Proximité.",
+    "missionUrl": "https://www.clariane.com/engagements/notre-mission"
+  },
+  {
+    "name": "Ecosia",
+    "location": "Allemagne",
+    "employees": "150",
+    "logo": "/logos/entreprises/ecosia.svg",
+    "shortDescription": "Moteur de recherche qui finance la plantation d'arbres avec ses revenus.",
+    "actions": "Entreprise utilisant une structure de 'steward ownership' (propriété responsable) pour sécuriser une orientation à long terme et des valeurs au-delà de la maximisation du profit.",
+    "missionUrl": "https://blog.ecosia.org/trees-not-profits/"
+  },
+  {
+    "name": "Alenvi",
+    "location": "France",
+    "employees": "50",
+    "logo": "/logos/entreprises/alenvi.svg",
+    "shortDescription": "Services d'aide à domicile et colocations Alzheimer.",
+    "actions": "Vise à humaniser l'accompagnement des personnes âgées ; la mission a transformé le processus de décision en une direction partagée par tous.",
+    "missionUrl": "https://www.alenvi.io/a-propos"
+  },
+  {
+    "name": "Camif",
+    "location": "France",
+    "employees": "85",
+    "logo": "/logos/entreprises/camif.png",
+    "shortDescription": "Mobilier et décoration fabriqués en France, engagé dans l'éco-conception.",
+    "actions": "Mission orientée vers l'économie circulaire et le « made in France » ; utilise le statut pour structurer sa production locale et durable.",
+    "missionUrl": "https://www.camif.fr/notre-marque/mission-engagements.html"
+  },
+  {
+    "name": "La Poste",
+    "location": "France",
+    "employees": "227 000",
+    "logo": "/logos/entreprises/la-poste.svg",
+    "shortDescription": "Services postaux, bancaires, assurantiels et numériques.",
+    "actions": "Groupe public devenu société à mission en 2021 pour intégrer des objectifs de cohésion sociale, de service universel et de transition écologique.",
+    "missionUrl": "https://www.lapostegroupe.com/fr/etre-une-entreprise-a-mission"
+  },
+  {
+    "name": "Aboca",
+    "location": "Italie",
+    "employees": "1 500",
+    "logo": "/logos/entreprises/aboca.svg",
+    "shortDescription": "Produits de santé 100% naturels issus de plantes médicinales.",
+    "actions": "Società Benefit pionnière dans les dispositifs médicaux naturels et l'agriculture biologique, équilibrant profit et bénéfice public.",
+    "missionUrl": "https://www.aboca.com/sustainability/"
+  },
+  {
+    "name": "Chiesi Farmaceutici",
+    "location": "Italie",
+    "employees": "6 500",
+    "logo": "/logos/entreprises/chiesi.svg",
+    "shortDescription": "Groupe pharmaceutique spécialisé dans les traitements respiratoires.",
+    "actions": "Premier groupe pharmaceutique mondial certifié B Corp et SB, orienté vers la durabilité et la santé respiratoire.",
+    "missionUrl": "https://www.chiesi.com/en/sustainability/our-approach/"
+  },
+  {
+    "name": "Heura Foods",
+    "location": "Espagne",
+    "employees": "150",
+    "logo": "/logos/entreprises/heura.svg",
+    "shortDescription": "Alternatives végétales à la viande d'inspiration méditerranéenne.",
+    "actions": "Première entreprise espagnole de viande végétale certifiée B Corp ; mission d'activisme social pour transformer l'industrie alimentaire et lutter contre la déforestation.",
+    "missionUrl": "https://heurafoods.com/food-activism/"
+  },
+  {
+    "name": "CPAS de Braine-le-Château",
+    "location": "Belgique",
+    "employees": "30",
+    "logo": "/logos/entreprises/cpas-braine.svg",
+    "shortDescription": "Centre Public d'Action Sociale pour l'accompagnement des personnes en difficulté.",
+    "actions": "IDESS offrant des services de proximité (bricolage, jardinage, etc.) à finalité sociale pour les personnes précarisées.",
+    "missionUrl": "https://www.braine-le-chateau.be/cpas"
+  },
+  {
+    "name": "Keminova Italiana",
+    "location": "Italie",
+    "employees": "50",
+    "logo": "/logos/entreprises/keminova.svg",
+    "shortDescription": "Fabricant de cosmétiques skincare et dispositifs médicaux.",
+    "actions": "Società Benefit spécialisée dans les cosmétiques, recherchant un équilibre durable entre les dimensions économique, sociale et environnementale.",
+    "missionUrl": "https://www.keminova.com/societa-benefit/"
+  },
+  {
+    "name": "ZEISS",
+    "location": "Allemagne",
+    "employees": "46 600",
+    "logo": "/logos/entreprises/zeiss.svg",
+    "shortDescription": "Leader international dans l'optique et l'optoélectronique.",
+    "actions": "Entreprise fonctionnant sous le modèle de 'Verantwortungseigentum' (propriété responsable), où le patrimoine reste lié à l'entreprise et le contrôle est exercé par des personnes liées durablement à la structure.",
+    "missionUrl": "https://www.carl-zeiss-stiftung.de/en/foundation"
+  },
+  {
+    "name": "BOSCH",
+    "location": "Allemagne",
+    "employees": "412 000",
+    "logo": "/logos/entreprises/bosch.svg",
+    "shortDescription": "Leader mondial de technologies dans la mobilité, industrie et énergie.",
+    "actions": "Applique les principes de la propriété responsable : l'entreprise n'est pas un objet de spéculation et l'indépendance est maintenue par des gestionnaires engagés sur le long terme.",
+    "missionUrl": "https://www.bosch-stiftung.de/en/bosch-constitution"
+  },
+  {
+    "name": "ALNATURA",
+    "location": "Allemagne",
+    "employees": "3 500",
+    "logo": "/logos/entreprises/alnatura.svg",
+    "shortDescription": "Chaîne de supermarchés biologiques et producteur d'aliments bio.",
+    "actions": "Entreprise pratiquant la propriété responsable ('Verantwortungseigentum') pour garantir sa pérennité et sa finalité sociale/environnementale.",
+    "missionUrl": "https://www.alnatura.de/de-de/ueber-uns/"
+  },
+  {
+    "name": "EINHORN",
+    "location": "Allemagne",
+    "employees": "40",
+    "logo": "/logos/entreprises/einhorn.svg",
+    "shortDescription": "Préservatifs et produits menstruels durables.",
+    "actions": "Startup ayant adopté le modèle de propriété responsable pour ancrer sa mission sociale et environnementale dans sa gouvernance.",
+    "missionUrl": "https://purpose-economy.org/en/companies/einhorn/"
+  },
+  {
+    "name": "STARTNEXT",
+    "location": "Allemagne",
+    "employees": "30",
+    "logo": "/logos/entreprises/startnext.svg",
+    "shortDescription": "Plateforme de crowdfunding leader pour projets créatifs et sociaux.",
+    "actions": "Startup engagée dans le modèle de 'Verantwortungseigentum', protégeant l'entreprise contre la spéculation.",
+    "missionUrl": "https://www.startnext.com/about/manifest.html"
+  }
+]

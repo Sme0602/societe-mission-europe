@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://societe-mission-europe.surge.sh/sitemap.xml
