@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
-  { href: "/entreprise-a-mission", label: "C'est quoi ?" },
+  { href: "/groupes-de-travail", label: "Groupes de travail" },
   { href: "/projet", label: "Le Projet" },
   { href: "/equipe", label: "L'équipe" },
   { href: "/partenaires", label: "Partenaires" },
@@ -57,17 +57,17 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0 relative z-[110]">
             <Image
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Société à Mission Europe"
               width={48}
               height={48}
               className="w-10 h-10 md:w-12 md:h-12"
             />
             <div>
-              <span className="text-orange-600 font-bold text-sm leading-tight block">
+              <span className="text-orange-600 font-bold text-base md:text-lg leading-tight block">
                 Société à Mission
               </span>
-              <span className="text-rose-600 font-bold text-xs">
+              <span className="text-rose-600 font-bold text-sm md:text-base">
                 Europe
               </span>
             </div>
@@ -153,15 +153,15 @@ export default function Header() {
           {/* Menu Header */}
           <div className="h-16 flex items-center gap-3 px-6 border-b border-beige-200 bg-beige-50 shrink-0">
             <Image
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Société à Mission Europe"
               width={36}
               height={36}
               className="w-9 h-9"
             />
             <div>
-              <span className="text-orange-600 font-bold text-sm leading-tight block">Société à Mission</span>
-              <span className="text-rose-600 font-bold text-xs">Europe</span>
+              <span className="text-orange-600 font-bold text-base leading-tight block">Société à Mission</span>
+              <span className="text-rose-600 font-bold text-sm">Europe</span>
             </div>
           </div>
 

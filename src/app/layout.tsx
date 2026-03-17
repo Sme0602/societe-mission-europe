@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://societe-mission-europe.surge.sh'),
+  metadataBase: new URL('https://societe-mission-europe-pi.vercel.app'),
   title: {
     default: 'Société à Mission Europe | Programme de recherche européen',
     template: '%s | Société à Mission Europe'
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://societe-mission-europe.surge.sh',
+    url: 'https://societe-mission-europe-pi.vercel.app',
     siteName: 'Société à Mission Europe',
     title: 'Société à Mission Europe | Bâtir le modèle européen',
     description: 'Programme de recherche fédérant 50 chercheurs et 20+ partenaires pour construire le cadre européen de la société à mission.',
@@ -66,9 +66,9 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://societe-mission-europe.surge.sh',
+    canonical: 'https://societe-mission-europe-pi.vercel.app',
     languages: {
-      'fr-FR': 'https://societe-mission-europe.surge.sh',
+      'fr-FR': 'https://societe-mission-europe-pi.vercel.app',
     },
   },
   verification: {
@@ -76,10 +76,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo.jpg', type: 'image/jpeg' },
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
-      { url: '/logo.jpg' },
+      { url: '/apple-touch-icon.png' },
     ],
   },
   manifest: '/manifest.json',

@@ -15,17 +15,17 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="Société à Mission Europe"
                 width={48}
                 height={48}
                 className="w-10 h-10"
               />
               <div>
-                <span className="font-bold text-sm leading-tight block text-orange-500">
+                <span className="font-bold text-base leading-tight block text-orange-500">
                   Société à Mission
                 </span>
-                <span className="text-rose-500 font-bold text-xs">
+                <span className="text-rose-500 font-bold text-sm">
                   Europe
                 </span>
               </div>

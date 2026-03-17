@@ -58,7 +58,7 @@ export default function LinkedInFeed() {
               <div className="p-5 border-b border-beige-200">
                 <div className="flex items-center gap-3">
                   <Image
-                    src="/logo.jpg"
+                    src="/logo.png"
                     alt="Société à Mission Europe"
                     width={48}
                     height={48}

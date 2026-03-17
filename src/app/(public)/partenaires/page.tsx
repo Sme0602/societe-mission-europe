@@ -41,6 +41,9 @@ const partenaires = [
   { name: "ICP", fullName: "Institut Catholique de Paris", category: "Académique", logo: "/logos/icp.png", description: "Université privée catholique parisienne." },
   { name: "Mines Paris", fullName: "Mines Paris – PSL", category: "Académique", logo: "/logos/mines-paris.png", description: "Grande école d'ingénieurs sur l'innovation responsable." },
   { name: "Campus de la Transition", fullName: "Campus de la Transition", category: "Académique", logo: "/logos/campus-transition.svg", description: "Lieu d'expérimentation pour la transition écologique et sociale." },
+  { name: "IÉSEG", fullName: "IÉSEG School of Management", category: "Académique", logo: "/logos/ieseg.png", description: "Grande école de management, membre de l'Université Catholique de Lille." },
+  { name: "Centrale Lille", fullName: "Centrale Lille", category: "Académique", logo: "/logos/centrale-lille.png", description: "École d'ingénieurs de référence dans les Hauts-de-France." },
+  { name: "Chaire ICP-ESSEC", fullName: "Chaire Entreprise et Bien Commun – ICP / ESSEC", category: "Académique", logo: "/logos/icp.png", description: "Chaire de recherche sur l'entreprise et le bien commun, portée par l'ICP et l'ESSEC." },
 
   // === INSTITUTIONNEL (Research, Networks, NGOs, Think Tanks) ===
   { name: "Observatoire Éthique Publique", fullName: "Observatoire de l'Éthique Publique", category: "Institutionnel", logo: "/logos/observatoire.png", description: "Think tank dédié à l'éthique publique, co-porteur du projet." },
@@ -55,6 +58,8 @@ const partenaires = [
   { name: "Management & RSE", fullName: "Management & RSE", category: "Institutionnel", logo: "/logos/management-rse.png", description: "Revue et plateforme dédiée au management responsable." },
   { name: "IEREE", fullName: "Institut Européen pour la Refondation de l'Entreprise et de l'Emploi", category: "Institutionnel", logo: "/logos/ieree.png", description: "Institut européen de recherche sur les entreprises et l'emploi." },
   { name: "Région Hauts-de-France", fullName: "Région Hauts-de-France", category: "Institutionnel", logo: "/logos/region-hdf.svg", description: "Co-financeur du projet via le programme FEDER." },
+  { name: "Impact France", fullName: "Impact France", category: "Institutionnel", logo: "/logos/impact-france.png", description: "Mouvement des entreprises sociales et écologiques en France." },
+  { name: "Vivoices", fullName: "Vivoices", category: "Institutionnel", logo: "/logos/vivoices.png", description: "Plateforme dédiée à l'amplification des voix engagées." },
 
   // === ENTREPRISE ===
   { name: "Carac", fullName: "Carac – Mutuelle d'épargne", category: "Entreprise", logo: "/logos/carac.png", description: "Mutuelle engagée dans une démarche de société à mission." },
@@ -226,7 +231,7 @@ export default function PartenairesPage() {
               </div>
               <div className="hidden lg:flex bg-gradient-to-br from-rose-600 to-rose-700 items-center justify-center p-16">
                 <div className="text-center text-white">
-                  <div className="text-6xl font-bold mb-4">30+</div>
+                  <div className="text-6xl font-bold mb-4">35+</div>
                   <div className="text-xl font-bold mb-2">Partenaires</div>
                   <p className="text-rose-50">
                     Institutions académiques et acteurs engagés
