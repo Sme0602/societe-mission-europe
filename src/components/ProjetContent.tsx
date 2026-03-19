@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
+import { MapHautsDeFrance, MapFrance, MapEurope } from "@/components/MapSilhouettes";
 
 export default function ProjetContent() {
   const { t } = useI18n();
@@ -305,6 +306,19 @@ export default function ProjetContent() {
                 </div>
 
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                  {/* Map silhouette */}
+                  <div className="flex justify-center mb-6">
+                    {groupe.color === "jaune" && (
+                      <MapHautsDeFrance className="w-full max-w-[220px] h-auto" />
+                    )}
+                    {groupe.color === "rose" && (
+                      <MapFrance className="w-full max-w-[220px] h-auto" />
+                    )}
+                    {groupe.color === "navy" && (
+                      <MapEurope className="w-full max-w-[280px] h-auto" />
+                    )}
+                  </div>
+
                   <div
                     className={`rounded-card p-8 ${
                       groupe.color === "jaune"
