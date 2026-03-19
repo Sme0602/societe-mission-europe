@@ -34,35 +34,18 @@ export default function MentionsLegalesContent() {
             <div className="tricolor-separator w-24 mb-4" />
             <div className="bg-beige-50 rounded-card p-6 mb-8">
               <p className="mb-2">
-                <strong>Université Polytechnique Hauts-de-France (UPHF)</strong>
+                <strong>Sarah Vandenbroucke</strong> & <strong>Alix Vanmeervenne</strong>
               </p>
               <p className="text-navy-700 mb-1">
-                Campus Mont Houy
-                <br />
-                59313 Valenciennes cedex 9
-                <br />
-                France
-              </p>
-              <p className="text-navy-700 mb-1">
-                {t("Téléphone", "Phone")} : 03 27 51 12 34
-              </p>
-              <p className="text-navy-700 mb-1">
-                SIRET : 130 025 745 00014
+                {t("Email", "Email")} : <a href="mailto:sarah.vandenbroucke@uphf.fr" className="text-rose-600 hover:underline">sarah.vandenbroucke@uphf.fr</a>
               </p>
               <p className="text-navy-700">
                 {t(
-                  "Forme juridique : Établissement Public à Caractère Scientifique, Culturel et Professionnel (EPSCP)",
-                  "Legal form: Public Scientific, Cultural and Professional Establishment (EPSCP)"
+                  "Dans le cadre du projet de recherche Société à Mission Europe, porté par l'UPHF et l'Observatoire de l'Éthique Publique.",
+                  "As part of the Société à Mission Europe research project, led by UPHF and the Observatoire de l'Éthique Publique."
                 )}
               </p>
             </div>
-
-            <p className="text-navy-700 mb-8">
-              {t(
-                <>En partenariat avec l&apos;<strong>Observatoire de l&apos;Éthique Publique</strong> (Association loi 1901).</>,
-                <>In partnership with the <strong>Observatoire de l&apos;Éthique Publique</strong> (French non-profit association).</>
-              )}
-            </p>
 
             {/* Directeur de publication */}
             <h2 className="text-2xl font-bold text-navy-800 mb-4">
@@ -72,10 +55,10 @@ export default function MentionsLegalesContent() {
             <p className="text-navy-700 mb-8">
               {t(
                 <>
-                  <strong>Abdelhakim ARTIBA</strong>, Président de l&apos;Université Polytechnique Hauts-de-France.
+                  <strong>Sarah Vandenbroucke</strong> & <strong>Alix Vanmeervenne</strong>, co-directrices de la publication.
                 </>,
                 <>
-                  <strong>Abdelhakim ARTIBA</strong>, President of the Université Polytechnique Hauts-de-France.
+                  <strong>Sarah Vandenbroucke</strong> & <strong>Alix Vanmeervenne</strong>, co-publication directors.
                 </>
               )}
             </p>
@@ -87,16 +70,16 @@ export default function MentionsLegalesContent() {
             <div className="tricolor-separator w-24 mb-4" />
             <div className="bg-beige-50 rounded-card p-6 mb-8">
               <p className="mb-2">
-                <strong>Surge.sh</strong>
+                <strong>Vercel Inc.</strong>
               </p>
               <p className="text-navy-700">
-                Sintaxy, Inc.
+                440 N Barranca Ave #4133
                 <br />
-                340 S Lemon Ave #1085
-                <br />
-                Walnut, CA 91789
+                Covina, CA 91723
                 <br />
                 {t("États-Unis", "United States")}
+                <br />
+                <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-rose-600 hover:underline">vercel.com</a>
               </p>
             </div>
 
@@ -151,8 +134,8 @@ export default function MentionsLegalesContent() {
             <div className="tricolor-separator w-24 mb-4" />
             <p className="text-navy-700 mb-8">
               {t(
-                <>Conception et développement : UPHF<br />Photographies : droits réservés</>,
-                <>Design and development: UPHF<br />Photographs: all rights reserved</>
+                <>Conception et développement : Sarah Vandenbroucke & Alix Vanmeervenne<br />Photographies : droits réservés</>,
+                <>Design and development: Sarah Vandenbroucke & Alix Vanmeervenne<br />Photographs: all rights reserved</>
               )}
             </p>
 
