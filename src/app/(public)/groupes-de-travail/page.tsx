@@ -4,6 +4,36 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
 
+function ConseilScientifique({ groupe, color = "bg-blue-50 border-blue-100" }: { groupe: string; color?: string }) {
+  const { t } = useI18n();
+  const [members, setMembers] = useState<{ nom_prenom: string; poste_structure: string | null }[]>([]);
+
+  useEffect(() => {
+    fetch(`/api/contributeurs?groupe=${groupe}`)
+      .then((res) => res.json())
+      .then((data) => setMembers(data))
+      .catch(() => {});
+  }, [groupe]);
+
+  if (members.length === 0) return null;
+
+  return (
+    <div className={`${color} rounded-card p-6 border`}>
+      <h3 className="text-sm font-bold uppercase tracking-wider text-navy-800 mb-3">
+        {t("Conseil scientifique", "Scientific Council")}
+      </h3>
+      <ul className="space-y-2 text-sm text-navy-700">
+        {members.map((m) => (
+          <li key={m.nom_prenom} className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
+            {m.nom_prenom}{m.poste_structure ? ` — ${m.poste_structure}` : ""}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function GroupesDeTravailPage() {
   const [activeTab, setActiveTab] = useState<"territoire" | "france" | "europe">("territoire");
   const { t } = useI18n();
@@ -146,6 +176,8 @@ function TerritoireTab() {
                   </div>
                 </div>
               </div>
+
+              <ConseilScientifique groupe="cs_territoire" color="bg-yellow-50 border-yellow-100" />
             </div>
 
             <div className="space-y-6">
@@ -350,6 +382,8 @@ function FranceTab() {
                 </div>
               </div>
 
+              <ConseilScientifique groupe="cs_national" color="bg-rose-50 border-rose-100" />
+
               {/* Events highlight */}
               <div className="bg-rose-600 rounded-card p-6 text-white">
                 <div className="flex items-center gap-3 mb-2">
@@ -511,30 +545,7 @@ function EuropeTab() {
                 </div>
               </div>
 
-              {/* Scientific Council */}
-              <div className="bg-blue-50 rounded-card p-6 border border-blue-100">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-navy-800 mb-3">
-                  {t("Conseil scientifique de l'axe", "Scientific Council")}
-                </h3>
-                <ul className="space-y-2 text-sm text-navy-700">
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
-                    Alessio Bartolacelli — Università di Modena e Reggio Emilia
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
-                    Blanche Ségrestin — Mines Paris – PSL
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
-                    Kevin Levillain — Mines Paris – PSL
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
-                    Florian Möslein — Philipps-Universität Marburg
-                  </li>
-                </ul>
-              </div>
+              <ConseilScientifique groupe="cs_europe" color="bg-blue-50 border-blue-100" />
             </div>
 
             <div className="space-y-6">
