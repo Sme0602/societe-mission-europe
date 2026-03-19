@@ -7,6 +7,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 15px;
   }
   body {
     @apply font-sans antialiased;
@@ -29,11 +30,11 @@
     hover:bg-rose-600 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:ring-offset-2;
   }
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-4;
+    @apply text-2xl md:text-3xl font-bold mb-4;
     color: #E33766;
   }
   .section-subtitle {
-    @apply text-lg max-w-2xl mx-auto;
+    @apply text-base max-w-2xl mx-auto;
     color: #243267;
   }
   .tricolor-separator {

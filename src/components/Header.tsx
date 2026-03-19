@@ -4,21 +4,23 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useI18n } from "@/lib/i18n/context";
 
 const navLinks = [
-  { href: "/", label: "Accueil" },
-  { href: "/groupes-de-travail", label: "Groupes de travail" },
-  { href: "/projet", label: "Le Projet" },
-  { href: "/equipe", label: "L'équipe" },
-  { href: "/partenaires", label: "Partenaires" },
-  { href: "/actualites", label: "Actualités" },
-  { href: "/newsletter", label: "Newsletter" },
+  { href: "/", fr: "Accueil", en: "Home" },
+  { href: "/projet", fr: "Le projet", en: "The Project" },
+  { href: "/equipe", fr: "L'équipe", en: "The Team" },
+  { href: "/partenaires", fr: "Partenaires", en: "Partners" },
+  { href: "/groupes-de-travail", fr: "Groupes de Travail", en: "Working Groups" },
+  { href: "/evenements", fr: "Événements", en: "Events" },
+  { href: "/presse-news", fr: "Presse & News", en: "Press & News" },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { lang } = useI18n();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -43,7 +45,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-8 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-md"
           : "bg-white shadow-sm"
@@ -64,10 +66,10 @@ export default function Header() {
               className="w-10 h-10 md:w-12 md:h-12"
             />
             <div>
-              <span className="text-orange-600 font-bold text-base md:text-lg leading-tight block">
+              <span className="text-orange-600 font-bold text-lg md:text-xl leading-tight block">
                 Société à Mission
               </span>
-              <span className="text-rose-600 font-bold text-sm md:text-base">
+              <span className="text-rose-600 font-bold text-base md:text-lg">
                 Europe
               </span>
             </div>
@@ -79,13 +81,13 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                   pathname === link.href
                     ? "bg-rose-600 text-white"
                     : "text-navy-800 hover:bg-beige-100 hover:text-rose-600"
                 }`}
               >
-                {link.label}
+                {lang === "en" ? link.en : link.fr}
               </Link>
             ))}
           </nav>
@@ -186,7 +188,7 @@ export default function Header() {
                         : "text-navy-800 hover:bg-beige-100 active:scale-[0.98]"
                     }`}
                   >
-                    <span>{link.label}</span>
+                    <span>{lang === "en" ? link.en : link.fr}</span>
                     {pathname === link.href && (
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

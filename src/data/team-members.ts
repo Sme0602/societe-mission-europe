@@ -6,6 +6,7 @@ export interface TeamMember {
   title: string;
   affiliation: string;
   color: string;
+  photo?: string;
   bio: string[];
   publications?: string[];
 }
@@ -19,6 +20,7 @@ export const teamMembers: TeamMember[] = [
     title: "Maître de conférences HDR en droit",
     affiliation: "UPHF & Sciences Po Lille",
     color: "bg-rose-600",
+    photo: "/images/equipe/matthieu-pupitre.jpg",
     bio: [
       "Ancien élève de l\u2019École Normale Supérieure de Cachan, agrégé d\u2019économie et de gestion, titulaire d\u2019un DEA de droit public approfondi de l\u2019université de Paris 1 et d\u2019un magistère de droit européen ainsi que d\u2019un doctorat en droit public, Matthieu Caron est maître de conférences HDR en droit à l\u2019université polytechnique des Hauts-de-France et Sciences Po Lille. Il est par ailleurs certifié d\u2019HEC Paris en Sustainable Transition Management et de l\u2019ESSEC en RSE et développement durable.",
       "Il dirige actuellement le Master Management responsable des entreprises de Sciences Po Lille, le Cycle supérieur de management public Sciences Po-Edhec ainsi que la préparation aux grands concours administratifs de Sciences Po Lille. Il est par ailleurs Directeur général de L\u2019Observatoire de l\u2019éthique publique et titulaire de la Chaire Société à mission européenne.",
@@ -41,6 +43,7 @@ export const teamMembers: TeamMember[] = [
     title: "Professeur de droit",
     affiliation: "UPJV, Directeur du CEPRISCA-Centre Antoine Loisel",
     color: "bg-navy-800",
+    photo: "/images/equipe/stephane-portrait.jpg",
     bio: [
       "Stéphane Vernac est agrégé de droit privé et professeur de droit à l\u2019université de Picardie Jules-Vernes (UPJV) où il dirige actuellement le Centre de droit privé et de sciences criminelles d\u2019Amiens (CEPRISCA-Centre Antoine Loisel). Il est également co-directeur du Master de droit social de l\u2019UPJV au sein de la faculté de droit d\u2019Amiens. Il assure des responsabilités éditoriales en qualité de directeur scientifique de la revue Lexbase social. Il est aussi responsable de rubrique et membre du comité éditorial de la Revue de droit du travail (Dalloz), et co-responsable des panoramas de droit du travail pour le Recueil général Dalloz.",
       "Ancien élève de l\u2019ENS Cachan et agrégé en économie gestion, il est également chercheur associé au Centre de gestion scientifique de Mines ParisTech et membre de l\u2019Observatoire de l\u2019Éthique Publique. Il est par ailleurs membre du conseil scientifique de la Communauté des entreprises à missions (CEM).",
@@ -69,6 +72,7 @@ export const teamMembers: TeamMember[] = [
     title: "Axe France & Europe",
     affiliation: "UPHF/LARSH",
     color: "bg-jaune-400",
+    photo: "/images/equipe/sarah-micro.jpg",
     bio: [
       "Sarah Vandenbroucke est titulaire d\u2019un doctorat en droit de l\u2019Université de Leiden (Pays-Bas). Elle est également diplômée d\u2019un Bachelor en droit de l\u2019Université de Lille 2, d\u2019un LL.M. en droit européen de Leiden Law School (2017) et d\u2019un double Master en droit du travail et en sociologie des organisations (University of Toulouse 1 Capitole & Graduate School of Social Sciences of Amsterdam, 2018). Elle a précédemment travaillé au sein de l\u2019Assemblée parlementaire du Conseil de l\u2019Europe (Commission Égalité et non-discrimination, Strasbourg), au Bureau régional de l\u2019Organisation Internationale du Travail (OIT) pour l\u2019Asie du Sud-Est (New Delhi), ainsi qu\u2019en tant que consultante pour les institutions européennes sur les politiques sociales et de l\u2019emploi à Bruxelles.",
       "Ses responsabilités et fonctions académiques passées incluent la coordination de l\u2019Empirical Legal Studies Lab de Leiden University pendant 4 ans, un séjour de six mois en tant que Visiting Scholar à l\u2019European University Institute (Florence) ainsi que des activités d\u2019enseignement à Leiden Law School (Advanced Master in European and International Human Rights) et à Sciences Po Lille (Master Management Responsable des Entreprises). Elle est aujourd\u2019hui administratrice de l\u2019Observatoire de l\u2019Éthique Publique (OEP), membre du Netherlands Network for Human Rights Research, et intervient comme consultante pour plusieurs institutions, notamment Expertise France (coopération technique UE\u2013Mexique) et l\u2019Agence des droits fondamentaux de l\u2019Union européenne (FRA).",
@@ -89,6 +93,7 @@ export const teamMembers: TeamMember[] = [
     title: "Axe territorial Hauts-de-France",
     affiliation: "UPHF/LARSH",
     color: "bg-rose-600",
+    photo: "/images/equipe/alix-portrait.jpg",
     bio: [
       "Alix Vanmeervenne est ingénieure d\u2019études à l\u2019Université Polytechnique Hauts-de-France. Rattachée au laboratoire Sociétés et Humanités, elle est associée au projet FEDER Société à mission Europe, consacré à l\u2019analyse et à l\u2019expérimentation des modèles d\u2019entreprise orientés par une mission sociale et environnementale.",
       "Ses travaux portent plus particulièrement sur la société à mission, l\u2019histoire sociale et économique des Hauts-de-France, ainsi que sur l\u2019animation et la structuration de communautés d\u2019acteurs académiques, économiques et institutionnels, dans une logique de recherche-action visant à créer des ponts durables entre monde académique et monde économique.",
@@ -109,6 +114,7 @@ export const teamMembers: TeamMember[] = [
     title: "Recherche européenne",
     affiliation: "UPHF/ESPOL/LARSH",
     color: "bg-navy-800",
+    photo: "/images/equipe/pablo-portrait.jpg",
     bio: [
       "Diplômé du master Management Responsable des Entreprises de Sciences Po Lille, Pablo Maria est doctorant en 1ère année en gestion à l\u2019Université Polytechnique des Hauts de France et l\u2019ESPOL, et rattaché au laboratoire de Recherche Sociétés & Humanités (LARSH).",
       "Ses recherches portent sur une première exploration d\u2019un modèle européen de la Purpose-Driven Company avec comme angle de recherche l\u2019étude du rôle du \u00AB territoire \u00BB dans la diffusion de pratiques de gouvernance dites responsables.",
@@ -124,6 +130,7 @@ export const teamMembers: TeamMember[] = [
     title: "Professeur de chaire supérieure en économie et gestion",
     affiliation: "Observatoire de l\u2019Éthique Publique",
     color: "bg-jaune-400",
+    photo: "/images/equipe/jean-marie-portrait.jpg",
     bio: [
       "Jean-Marie Massonnat est professeur de chaire supérieure en économie et gestion.",
       "Ancien élève de l\u2019École Normale Supérieure de Cachan, il est agrégé d\u2019économie et gestion et titulaire d\u2019un diplôme d\u2019études approfondies en sciences de gestion (Université Paris II Panthéon-Assas) et d\u2019une maîtrise en droit (Université Rennes I).",

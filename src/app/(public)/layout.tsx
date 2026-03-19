@@ -1,6 +1,5 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import PublicShell from "@/components/PublicShell";
 
 export default function PublicLayout({
   children,
@@ -10,9 +9,7 @@ export default function PublicLayout({
   return (
     <>
       <StructuredData />
-      <Header />
-      <main className="pt-16 md:pt-20">{children}</main>
-      <Footer />
+      <PublicShell>{children}</PublicShell>
     </>
   );
 }

@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useI18n } from "@/lib/i18n/context";
 
 export function NewsletterFormInline() {
+  const { t } = useI18n();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -25,11 +27,11 @@ export function NewsletterFormInline() {
         setEmail("");
       } else {
         setStatus("error");
-        setMessage(data.error || "Erreur lors de l'inscription.");
+        setMessage(data.error || t("Erreur lors de l'inscription.", "Subscription error."));
       }
     } catch {
       setStatus("error");
-      setMessage("Erreur de connexion.");
+      setMessage(t("Erreur de connexion.", "Connection error."));
     }
   };
 
@@ -43,7 +45,7 @@ export function NewsletterFormInline() {
     <form className="flex gap-2" onSubmit={handleSubmit}>
       <input
         type="email"
-        placeholder="Votre email"
+        placeholder={t("Votre email", "Your email")}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
@@ -64,6 +66,7 @@ export function NewsletterFormInline() {
 }
 
 export function NewsletterFormFull() {
+  const { t } = useI18n();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
@@ -86,11 +89,11 @@ export function NewsletterFormFull() {
         setEmail("");
       } else {
         setStatus("error");
-        setMessage(data.error || "Erreur lors de l'inscription.");
+        setMessage(data.error || t("Erreur lors de l'inscription.", "Subscription error."));
       }
     } catch {
       setStatus("error");
-      setMessage("Erreur de connexion.");
+      setMessage(t("Erreur de connexion.", "Connection error."));
     }
   };
 
@@ -110,7 +113,7 @@ export function NewsletterFormFull() {
       >
         <input
           type="email"
-          placeholder="Votre adresse email"
+          placeholder={t("Votre adresse email", "Your email address")}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -121,7 +124,7 @@ export function NewsletterFormFull() {
           disabled={status === "loading"}
           className="btn-primary whitespace-nowrap disabled:opacity-50"
         >
-          {status === "loading" ? "Inscription..." : "S'inscrire"}
+          {status === "loading" ? t("Inscription...", "Subscribing...") : t("S'inscrire", "Subscribe")}
         </button>
       </form>
       {status === "error" && (

@@ -1,6 +1,11 @@
+"use client";
+
 import { NewsletterFormFull } from "@/components/NewsletterForm";
+import { useI18n } from "@/lib/i18n/context";
 
 export default function ContactPage() {
+  const { t } = useI18n();
+
   return (
     <>
       {/* Hero */}
@@ -15,8 +20,10 @@ export default function ContactPage() {
             </h1>
             <div className="tricolor-separator w-32 mb-8" />
             <p className="text-xl text-navy-700 leading-relaxed">
-              Des questions ? Devenir partenaire ? Rejoindre un groupe de travail ?
-              Contactez Sarah ou Alix, ingénieures du projet.
+              {t(
+                "Des questions ? Devenir partenaire ? Rejoindre un groupe de travail ? Contactez Sarah ou Alix, ingénieures du projet.",
+                "Questions? Become a partner? Join a working group? Contact Sarah or Alix, project engineers."
+              )}
             </p>
           </div>
         </div>
@@ -35,7 +42,7 @@ export default function ContactPage() {
                 </svg>
               </div>
               <h2 className="text-xl font-bold text-navy-800 mb-1">
-                Groupe Territoire
+                {t("Groupe Territoire", "Territory Group")}
               </h2>
               <p className="text-sm text-navy-600 mb-4">Hauts-de-France</p>
               <div className="flex items-center gap-3">
@@ -69,9 +76,9 @@ export default function ContactPage() {
                 </div>
               </div>
               <h2 className="text-xl font-bold text-navy-800 mb-1">
-                Groupe National &amp; Groupe Europe
+                {t("Groupe National & Groupe Europe", "National Group & Europe Group")}
               </h2>
-              <p className="text-sm text-navy-600 mb-4">France &amp; Union Européenne</p>
+              <p className="text-sm text-navy-600 mb-4">{t("France & Union Européenne", "France & European Union")}</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-jaune-400 text-white flex items-center justify-center font-bold text-sm shrink-0">
                   SV
@@ -97,7 +104,10 @@ export default function ContactPage() {
           <h2 className="section-title">Newsletter</h2>
           <div className="tricolor-separator w-24 mx-auto mb-4" />
           <p className="section-subtitle mb-8">
-            Restez informé des avancées du projet Société à Mission Europe.
+            {t(
+              "Restez informé des avancées du projet Société à Mission Europe.",
+              "Stay informed about the progress of the Société à Mission Europe project."
+            )}
           </p>
           <NewsletterFormFull />
         </div>

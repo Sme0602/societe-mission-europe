@@ -1,18 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-
-const tabs = [
-  { id: "territoire", label: "Territoire (Hauts-de-France)" },
-  { id: "france", label: "France (National)" },
-  { id: "europe", label: "Europe" },
-] as const;
-
-type TabId = (typeof tabs)[number]["id"];
+import { useI18n } from "@/lib/i18n/context";
 
 export default function GroupesDeTravailPage() {
-  const [activeTab, setActiveTab] = useState<TabId>("territoire");
+  const [activeTab, setActiveTab] = useState<"territoire" | "france" | "europe">("territoire");
+  const { t } = useI18n();
+
+  const tabs = [
+    { id: "territoire" as const, label: t("Territoire (Hauts-de-France)", "Territory (Hauts-de-France)") },
+    { id: "france" as const, label: "France (National)" },
+    { id: "europe" as const, label: "Europe" },
+  ];
 
   return (
     <>
@@ -21,18 +21,20 @@ export default function GroupesDeTravailPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-600/20 rounded-full text-rose-600 text-sm font-bold mb-6">
-              Recherche
+              {t("Recherche", "Research")}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Groupes de{" "}
-              <span className="text-rose-600">travail</span>
+              {t(
+                <>Groupes de{" "}<span className="text-rose-600">travail</span></>,
+                <>Working{" "}<span className="text-rose-600">Groups</span></>
+              )}
             </h1>
             <div className="tricolor-separator w-32 mb-8" />
             <p className="text-xl text-navy-700 leading-relaxed">
-              Le programme Société à Mission Europe s&apos;articule autour de trois
-              axes de recherche complémentaires : territorial, national et européen.
-              Chaque groupe produit des ouvrages, des études et organise des événements
-              pour construire le modèle de demain.
+              {t(
+                "Le programme Société à Mission Europe s'articule autour de trois axes de recherche complémentaires : territorial, national et européen. Chaque groupe produit des ouvrages, des études et organise des événements pour construire le modèle de demain.",
+                "The Société à Mission Europe programme is structured around three complementary research axes: territorial, national and European. Each group produces publications, studies and organises events to build the model of tomorrow."
+              )}
             </p>
           </div>
         </div>
@@ -66,158 +68,24 @@ export default function GroupesDeTravailPage() {
         {activeTab === "europe" && <EuropeTab />}
       </div>
 
-      {/* Shared section: Ouvrage 7 */}
-      <section className="py-16 md:py-24 bg-beige-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Ouvrage transversal</h2>
-            <div className="tricolor-separator w-24 mx-auto mb-4" />
-          </div>
-          <div className="max-w-3xl mx-auto bg-white rounded-card p-8 border border-beige-200 shadow-sm">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-rose-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shrink-0">
-                7
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-navy-800 mb-2">
-                  Ouvrage de récit et de synthèse
-                </h3>
-                <p className="text-navy-700 leading-relaxed">
-                  Ouvrage de récit et de synthèse de tous les apports du programme de
-                  recherche, partagé entre les trois groupes de travail. Ce livre
-                  constituera la mémoire collective du projet Société à Mission Europe.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Summer School 2026 */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-navy-800 rounded-3xl overflow-hidden">
-            <div className="tricolor-separator" />
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div className="p-8 md:p-12 lg:p-16">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-600/20 rounded-full text-rose-500 text-sm font-bold mb-6">
-                  Summer School 2026
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  Summer School
-                </h2>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  Deux jours d&apos;échanges intensifs entre chercheurs et praticiens
-                  européens autour de la société à mission et de la purpose-driven
-                  company.
-                </p>
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span className="font-medium">25-26 juin 2026</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span>Lille</span>
-                  </div>
-                </div>
-                <Link href="/contact" className="btn-primary">
-                  En savoir plus
-                </Link>
-              </div>
-              <div className="hidden lg:flex items-center justify-center p-16">
-                <div className="w-full max-w-xs">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-card p-8 text-center border border-white/20">
-                    <div className="text-5xl font-bold text-rose-600 mb-2">25-26</div>
-                    <div className="text-2xl font-bold text-white mb-1">Juin</div>
-                    <div className="text-gray-300">2026</div>
-                    <div className="mt-6 pt-6 border-t border-white/20">
-                      <div className="text-white font-bold">Lille</div>
-                      <div className="text-gray-400 text-sm mt-1">Hauts-de-France</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gouvernance */}
-      <section className="py-16 md:py-24 bg-beige-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Gouvernance du projet</h2>
-            <div className="tricolor-separator w-24 mx-auto mb-4" />
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Comité de partenaires */}
-            <div className="bg-white rounded-card p-8 border border-beige-200 shadow-sm">
-              <div className="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-navy-800 mb-4">
-                Comité de partenaires
-              </h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm font-semibold text-rose-600">Président</p>
-                  <p className="text-navy-800 font-medium">Emery Jacquillat</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-rose-600">Vice-Présidents</p>
-                  <p className="text-navy-800 font-medium">Paolo Di Cesare</p>
-                  <p className="text-navy-800 font-medium">Benoît Quittre</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Conseil scientifique */}
-            <div className="bg-white rounded-card p-8 border border-beige-200 shadow-sm">
-              <div className="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center mb-4">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-navy-800 mb-4">
-                Conseil scientifique
-              </h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm font-semibold text-rose-600">Direction</p>
-                  <p className="text-navy-800 font-medium">Stéphane Vernac</p>
-                  <p className="text-navy-800 font-medium">Matthieu Caron</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-16 md:py-24 bg-rose-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Rejoignez un groupe de travail
+            {t("Rejoignez un groupe de travail", "Join a Working Group")}
           </h2>
           <div className="tricolor-separator w-24 mx-auto mb-6" />
           <p className="text-xl text-rose-50 mb-10 max-w-2xl mx-auto">
-            Chercheurs, entreprises, institutions : votre expertise est essentielle
-            pour construire le modèle européen de la société à mission.
+            {t(
+              "Chercheurs, entreprises, institutions : votre expertise est essentielle pour construire le modèle européen de la société à mission.",
+              "Researchers, companies, institutions: your expertise is essential to build the European model of the purpose-driven company."
+            )}
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-rose-600 font-bold rounded-lg hover:bg-beige-50 transition-colors text-lg"
           >
-            Nous contacter
+            {t("Nous contacter", "Contact Us")}
           </Link>
         </div>
       </section>
@@ -228,6 +96,8 @@ export default function GroupesDeTravailPage() {
 /* ─────────────────────── Territoire Tab ─────────────────────── */
 
 function TerritoireTab() {
+  const { t } = useI18n();
+
   return (
     <>
       <section className="py-16 md:py-24 bg-white">
@@ -241,15 +111,17 @@ function TerritoireTab() {
                 </svg>
               </div>
               <div className="text-sm font-bold uppercase tracking-wider mb-2 text-jaune-400">
-                Axe territorial
+                {t("Axe territorial", "Territorial axis")}
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
-                Axe Territorial — Hauts-de-France
+                {t("Axe Territorial — Hauts-de-France", "Territorial Axis — Hauts-de-France")}
               </h2>
               <div className="tricolor-separator w-24 mb-6" />
               <p className="text-lg text-navy-700 leading-relaxed mb-8">
-                Observer le déploiement du modèle de l&apos;entreprise autrement et de
-                la société à mission en Hauts-de-France, berceau du projet.
+                {t(
+                  "Observer le déploiement du modèle de l'entreprise autrement et de la société à mission en Hauts-de-France, berceau du projet.",
+                  "Observe the deployment of the alternative enterprise model and the société à mission in Hauts-de-France, the birthplace of the project."
+                )}
               </p>
 
               {/* Coordination */}
@@ -262,14 +134,14 @@ function TerritoireTab() {
                     <div className="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center text-xs font-bold">MC</div>
                     <div>
                       <p className="text-navy-800 font-medium text-sm">Matthieu Caron</p>
-                      <p className="text-navy-600 text-xs">Porteur de projet, UPHF</p>
+                      <p className="text-navy-600 text-xs">{t("Porteur de projet, UPHF", "Project Leader, UPHF")}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center text-xs font-bold">AV</div>
                     <div>
                       <p className="text-navy-800 font-medium text-sm">Alix Vanmeervenne</p>
-                      <p className="text-navy-600 text-xs">Ingénieure d&apos;études, UPHF</p>
+                      <p className="text-navy-600 text-xs">{t("Ingénieure d'études, UPHF", "Research Engineer, UPHF")}</p>
                     </div>
                   </div>
                 </div>
@@ -283,19 +155,25 @@ function TerritoireTab() {
                   <svg className="w-5 h-5 text-jaune-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
-                  Ouvrages prévus
+                  {t("Ouvrages prévus", "Planned Publications")}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-7 h-7 bg-jaune-400 text-white rounded-lg flex items-center justify-center text-xs font-bold shrink-0">1</div>
                     <p className="text-navy-700 text-sm leading-relaxed">
-                      Les entreprises du nord, une histoire sociale singulière
+                      {t(
+                        "Les entreprises du nord, une histoire sociale singulière",
+                        "Les entreprises du nord, une histoire sociale singulière (Northern enterprises, a unique social history)"
+                      )}
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-7 h-7 bg-jaune-400 text-white rounded-lg flex items-center justify-center text-xs font-bold shrink-0">2</div>
                     <p className="text-navy-700 text-sm leading-relaxed">
-                      Ces entrepreneurs du nord qui changent le monde
+                      {t(
+                        "Ces entrepreneurs du nord qui changent le monde",
+                        "Ces entrepreneurs du nord qui changent le monde (Northern entrepreneurs changing the world)"
+                      )}
                     </p>
                   </div>
                 </div>
@@ -307,7 +185,7 @@ function TerritoireTab() {
                   <svg className="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                   </svg>
-                  Études
+                  {t("Études", "Studies")}
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -315,7 +193,10 @@ function TerritoireTab() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-navy-700 text-sm">
-                      Cartographie &quot;l&apos;entreprise autrement en HDF&quot;
+                      {t(
+                        'Cartographie "l\'entreprise autrement en HDF"',
+                        'Mapping "the alternative enterprise in HDF"'
+                      )}
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -323,7 +204,10 @@ function TerritoireTab() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-navy-700 text-sm">
-                      La société à mission à l&apos;échelle territoriale : le bilan dans les HDF
+                      {t(
+                        "La société à mission à l'échelle territoriale : le bilan dans les HDF",
+                        "The société à mission at the territorial level: assessment in HDF"
+                      )}
                     </span>
                   </li>
                 </ul>
@@ -337,7 +221,7 @@ function TerritoireTab() {
       <section className="py-16 md:py-24 bg-rose-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="section-title">Calendrier territorial</h2>
+            <h2 className="section-title">{t("Calendrier territorial", "Territorial Calendar")}</h2>
             <div className="tricolor-separator w-24 mx-auto mb-4" />
           </div>
 
@@ -349,15 +233,25 @@ function TerritoireTab() {
                 {[
                   {
                     year: "2026",
-                    items: ["Cartographie HDF", "Journée de partage chercheurs/entrepreneurs"],
+                    items: [
+                      t("Cartographie HDF", "HDF Mapping"),
+                      t("Journée de partage chercheurs/entrepreneurs", "Researchers/entrepreneurs sharing day"),
+                    ],
                   },
                   {
                     year: "2027",
-                    items: ["Ouvrage 1 : Les entreprises du nord", "Summer School 2"],
+                    items: [
+                      t("Ouvrage 1 : Les entreprises du nord", "Publication 1: Les entreprises du nord"),
+                      "Summer School 2",
+                    ],
                   },
                   {
                     year: "2028",
-                    items: ["Ouvrage 2 : Ces entrepreneurs du nord", "Livre blanc", "Restitution au World Forum"],
+                    items: [
+                      t("Ouvrage 2 : Ces entrepreneurs du nord", "Publication 2: Ces entrepreneurs du nord"),
+                      t("Livre blanc", "White Paper"),
+                      t("Restitution au World Forum", "Presentation at World Forum"),
+                    ],
                   },
                 ].map((phase, index) => (
                   <div
@@ -377,8 +271,8 @@ function TerritoireTab() {
                           {phase.year}
                         </div>
                         <ul className={`space-y-1 ${index % 2 === 0 ? "md:text-right" : ""}`}>
-                          {phase.items.map((item) => (
-                            <li key={item} className="text-navy-700 text-sm">
+                          {phase.items.map((item, i) => (
+                            <li key={i} className="text-navy-700 text-sm">
                               {item}
                             </li>
                           ))}
@@ -399,6 +293,8 @@ function TerritoireTab() {
 /* ─────────────────────── France Tab ─────────────────────── */
 
 function FranceTab() {
+  const { t } = useI18n();
+
   return (
     <>
       <section className="py-16 md:py-24 bg-white">
@@ -411,15 +307,17 @@ function FranceTab() {
                 </svg>
               </div>
               <div className="text-sm font-bold uppercase tracking-wider mb-2 text-rose-600">
-                Axe national
+                {t("Axe national", "National axis")}
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
-                Axe National — France
+                {t("Axe National — France", "National Axis — France")}
               </h2>
               <div className="tricolor-separator w-24 mb-6" />
               <p className="text-lg text-navy-700 leading-relaxed mb-8">
-                Analyser en pratique les forces et limites du modèle de société à
-                mission pour le consolider et en assurer la diffusion.
+                {t(
+                  "Analyser en pratique les forces et limites du modèle de société à mission pour le consolider et en assurer la diffusion.",
+                  "Analyse in practice the strengths and limitations of the société à mission model in order to strengthen it and ensure its dissemination."
+                )}
               </p>
 
               {/* Coordination */}
@@ -446,7 +344,7 @@ function FranceTab() {
                     <div className="w-8 h-8 rounded-full bg-jaune-400 text-white flex items-center justify-center text-xs font-bold">SV</div>
                     <div>
                       <p className="text-navy-800 font-medium text-sm">Sarah Vandenbroucke</p>
-                      <p className="text-navy-600 text-xs">Ingénieure de recherche, UPHF</p>
+                      <p className="text-navy-600 text-xs">{t("Ingénieure de recherche, UPHF", "Research Engineer, UPHF")}</p>
                     </div>
                   </div>
                 </div>
@@ -458,11 +356,13 @@ function FranceTab() {
                   <svg className="w-6 h-6 text-rose-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <h3 className="font-bold text-lg">16 événements prévus</h3>
+                  <h3 className="font-bold text-lg">{t("16 événements prévus", "16 planned events")}</h3>
                 </div>
                 <p className="text-rose-100 text-sm">
-                  Summer Schools, Workshops, Colloques — un programme riche pour
-                  fédérer la communauté nationale de recherche.
+                  {t(
+                    "Summer Schools, Workshops, Colloques — un programme riche pour fédérer la communauté nationale de recherche.",
+                    "Summer Schools, Workshops, Conferences — a rich programme to unite the national research community."
+                  )}
                 </p>
               </div>
             </div>
@@ -474,19 +374,25 @@ function FranceTab() {
                   <svg className="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
-                  Ouvrages prévus
+                  {t("Ouvrages prévus", "Planned Publications")}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-7 h-7 bg-rose-600 text-white rounded-lg flex items-center justify-center text-xs font-bold shrink-0">3</div>
                     <p className="text-navy-700 text-sm leading-relaxed">
-                      La société à mission française : Bilan et perspectives
+                      {t(
+                        "La société à mission française : Bilan et perspectives",
+                        "La société à mission française : Bilan et perspectives (The French société à mission: Assessment and outlook)"
+                      )}
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-7 h-7 bg-rose-600 text-white rounded-lg flex items-center justify-center text-xs font-bold shrink-0">4</div>
                     <p className="text-navy-700 text-sm leading-relaxed">
-                      La société à mission, mode(s) d&apos;emploi
+                      {t(
+                        "La société à mission, mode(s) d'emploi",
+                        "La société à mission, mode(s) d'emploi (The société à mission, user guide(s))"
+                      )}
                     </p>
                   </div>
                 </div>
@@ -498,7 +404,7 @@ function FranceTab() {
                   <svg className="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                   </svg>
-                  Études
+                  {t("Études", "Studies")}
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -506,7 +412,10 @@ function FranceTab() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-navy-700 text-sm">
-                      Panorama des modèles de gouvernance de l&apos;entreprise en Europe
+                      {t(
+                        "Panorama des modèles de gouvernance de l'entreprise en Europe",
+                        "Overview of corporate governance models in Europe"
+                      )}
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -514,7 +423,10 @@ function FranceTab() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-navy-700 text-sm">
-                      Les traductions juridiques de la mission
+                      {t(
+                        "Les traductions juridiques de la mission",
+                        "Legal translations of the mission"
+                      )}
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -522,7 +434,10 @@ function FranceTab() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-navy-700 text-sm">
-                      Penser l&apos;éthique des comités de mission et organismes tiers indépendants
+                      {t(
+                        "Penser l'éthique des comités de mission et organismes tiers indépendants",
+                        "Rethinking the ethics of mission committees and independent third-party bodies"
+                      )}
                     </span>
                   </li>
                 </ul>
@@ -538,6 +453,16 @@ function FranceTab() {
 /* ─────────────────────── Europe Tab ─────────────────────── */
 
 function EuropeTab() {
+  const { t } = useI18n();
+  const [contributeurs, setContributeurs] = useState<{ nom_prenom: string; poste_structure: string | null }[]>([]);
+
+  useEffect(() => {
+    fetch("/api/contributeurs?groupe=gt_europe")
+      .then((res) => res.json())
+      .then((data) => setContributeurs(data))
+      .catch(() => {});
+  }, []);
+
   return (
     <>
       <section className="py-16 md:py-24 bg-white">
@@ -550,15 +475,17 @@ function EuropeTab() {
                 </svg>
               </div>
               <div className="text-sm font-bold uppercase tracking-wider mb-2 text-navy-800">
-                Axe européen
+                {t("Axe européen", "European axis")}
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
-                Axe Européen — Europe
+                {t("Axe Européen — Europe", "European Axis — Europe")}
               </h2>
               <div className="tricolor-separator w-24 mb-6" />
               <p className="text-lg text-navy-700 leading-relaxed mb-8">
-                Fédérer un réseau de chercheurs européens pour explorer les conditions
-                d&apos;émergence d&apos;un modèle européen de purpose-driven company.
+                {t(
+                  "Fédérer un réseau de chercheurs européens pour explorer les conditions d'émergence d'un modèle européen de purpose-driven company.",
+                  "Unite a network of European researchers to explore the conditions for the emergence of a European model of purpose-driven company."
+                )}
               </p>
 
               {/* Coordination */}
@@ -587,20 +514,24 @@ function EuropeTab() {
               {/* Scientific Council */}
               <div className="bg-blue-50 rounded-card p-6 border border-blue-100">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-navy-800 mb-3">
-                  Conseil scientifique de l&apos;axe
+                  {t("Conseil scientifique de l'axe", "Scientific Council")}
                 </h3>
                 <ul className="space-y-2 text-sm text-navy-700">
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
-                    Stéphane Vernac
+                    Alessio Bartolacelli — Università di Modena e Reggio Emilia
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
-                    Kevin Levillain &amp; Blanche Segrestin
+                    Blanche Ségrestin — Mines Paris – PSL
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
-                    Alessio Bartolacelli
+                    Kevin Levillain — Mines Paris – PSL
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
+                    Florian Möslein — Philipps-Universität Marburg
                   </li>
                 </ul>
               </div>
@@ -613,7 +544,7 @@ function EuropeTab() {
                   <svg className="w-5 h-5 text-navy-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
-                  Ouvrages prévus
+                  {t("Ouvrages prévus", "Planned Publications")}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
@@ -630,7 +561,7 @@ function EuropeTab() {
                         Towards a European purpose-driven company
                       </p>
                       <p className="text-navy-500 text-xs italic mt-1">
-                        (Penser la société à mission européenne)
+                        {t("(Penser la société à mission européenne)", "(Thinking the European société à mission)")}
                       </p>
                     </div>
                   </div>
@@ -645,10 +576,13 @@ function EuropeTab() {
       <section className="py-16 md:py-24 bg-gradient-to-b from-beige-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="section-title">Feuille de route européenne</h2>
+            <h2 className="section-title">{t("Feuille de route européenne", "European Roadmap")}</h2>
             <div className="tricolor-separator w-24 mx-auto mb-4" />
             <p className="section-subtitle">
-              Trois phases pour construire le modèle européen de la purpose-driven company.
+              {t(
+                "Trois phases pour construire le modèle européen de la purpose-driven company.",
+                "Three phases to build the European model of the purpose-driven company."
+              )}
             </p>
           </div>
 
@@ -669,12 +603,14 @@ function EuropeTab() {
                         2026
                       </span>
                       <span className="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full uppercase tracking-wider">
-                        Phase exploratoire
+                        {t("Phase exploratoire", "Exploratory Phase")}
                       </span>
                     </div>
                     <p className="text-navy-700 leading-relaxed mb-4">
-                      Cartographie et analyse comparative des modèles nationaux de purpose-driven
-                      companies en Europe.
+                      {t(
+                        "Cartographie et analyse comparative des modèles nationaux de purpose-driven companies en Europe.",
+                        "Mapping and comparative analysis of national models of purpose-driven companies in Europe."
+                      )}
                     </p>
                     <div className="grid sm:grid-cols-2 gap-3">
                       <div className="flex items-start gap-2 text-sm">
@@ -682,7 +618,10 @@ function EuropeTab() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                         <span className="text-navy-700">
-                          <strong>Juin :</strong> Deadline call for contributions (ouvrage 1)
+                          {t(
+                            <><strong>Juin :</strong> Deadline call for contributions (ouvrage 1)</>,
+                            <><strong>June:</strong> Deadline call for contributions (publication 1)</>
+                          )}
                         </span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
@@ -690,7 +629,10 @@ function EuropeTab() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                         <span className="text-navy-700">
-                          <strong>Septembre :</strong> Rencontre en présentiel des contributeurs
+                          {t(
+                            <><strong>Septembre :</strong> Rencontre en présentiel des contributeurs</>,
+                            <><strong>September:</strong> In-person contributors meeting</>
+                          )}
                         </span>
                       </div>
                       <div className="flex items-start gap-2 text-sm sm:col-span-2">
@@ -698,7 +640,10 @@ function EuropeTab() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
                         <span className="text-navy-700">
-                          <strong>25-26 juin :</strong> Summer School (Lille)
+                          {t(
+                            <><strong>25-26 juin :</strong> Summer School (Lille)</>,
+                            <><strong>25-26 June:</strong> Summer School (Lille)</>
+                          )}
                         </span>
                       </div>
                     </div>
@@ -716,11 +661,14 @@ function EuropeTab() {
                         2027
                       </span>
                       <span className="px-3 py-1 bg-rose-100 text-rose-700 text-xs font-bold rounded-full uppercase tracking-wider">
-                        Comparaison approfondie
+                        {t("Comparaison approfondie", "In-depth Comparison")}
                       </span>
                     </div>
                     <p className="text-navy-700 leading-relaxed mb-4">
-                      Approfondissement de l&apos;analyse comparative et premières publications.
+                      {t(
+                        "Approfondissement de l'analyse comparative et premières publications.",
+                        "Deepening of the comparative analysis and first publications."
+                      )}
                     </p>
                     <div className="space-y-3">
                       <div className="flex items-start gap-2 text-sm">
@@ -728,7 +676,10 @@ function EuropeTab() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                         <span className="text-navy-700">
-                          Publication ouvrage 1 (<em>Convergences and Divergences</em>)
+                          {t(
+                            <>Publication ouvrage 1 (<em>Convergences and Divergences</em>)</>,
+                            <>Publication 1 (<em>Convergences and Divergences</em>)</>
+                          )}
                         </span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
@@ -742,7 +693,10 @@ function EuropeTab() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
                         <span className="text-navy-700">
-                          Validation des contributeurs &amp; sommaire ouvrage 2
+                          {t(
+                            "Validation des contributeurs & sommaire ouvrage 2",
+                            "Contributors validation & publication 2 table of contents"
+                          )}
                         </span>
                       </div>
                     </div>
@@ -760,12 +714,14 @@ function EuropeTab() {
                         2028
                       </span>
                       <span className="px-3 py-1 bg-rose-100 text-rose-700 text-xs font-bold rounded-full uppercase tracking-wider">
-                        Phase prospective
+                        {t("Phase prospective", "Prospective Phase")}
                       </span>
                     </div>
                     <p className="text-navy-700 leading-relaxed mb-4">
-                      Aboutissement du programme : publications finales, dialogue
-                      institutionnel et conférence au Parlement européen.
+                      {t(
+                        "Aboutissement du programme : publications finales, dialogue institutionnel et conférence au Parlement européen.",
+                        "Programme culmination: final publications, institutional dialogue and conference at the European Parliament."
+                      )}
                     </p>
                     <div className="space-y-3">
                       <div className="flex items-start gap-2 text-sm">
@@ -773,7 +729,10 @@ function EuropeTab() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
                         <span className="text-navy-700">
-                          Summer School, discussion des résultats ouvrage 2
+                          {t(
+                            "Summer School, discussion des résultats ouvrage 2",
+                            "Summer School, discussion of publication 2 results"
+                          )}
                         </span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
@@ -781,7 +740,10 @@ function EuropeTab() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                         <span className="text-navy-700">
-                          Publication ouvrage 2 (<em>Towards a European purpose-driven company</em>)
+                          {t(
+                            <>Publication ouvrage 2 (<em>Towards a European purpose-driven company</em>)</>,
+                            <>Publication 2 (<em>Towards a European purpose-driven company</em>)</>
+                          )}
                         </span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
@@ -789,7 +751,10 @@ function EuropeTab() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
                         <span className="text-navy-700">
-                          Dialogue institutionnel avec Bruxelles
+                          {t(
+                            "Dialogue institutionnel avec Bruxelles",
+                            "Institutional dialogue with Brussels"
+                          )}
                         </span>
                       </div>
                       <div className="flex items-start gap-2 text-sm">
@@ -797,7 +762,10 @@ function EuropeTab() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                         </svg>
                         <span className="text-navy-700 font-medium">
-                          <strong>Décembre :</strong> Conférence finale au Parlement européen
+                          {t(
+                            <><strong>Décembre :</strong> Conférence finale au Parlement européen</>,
+                            <><strong>December:</strong> Final conference at the European Parliament</>
+                          )}
                         </span>
                       </div>
                     </div>
@@ -808,6 +776,46 @@ function EuropeTab() {
           </div>
         </div>
       </section>
+
+      {/* Contributeurs */}
+      {contributeurs.length > 0 && (() => {
+        const excludedNames = [
+          "Matthieu Caron", "Alix Vanmeervenne", "Stéphane Vernac",
+          "Alessio Bartolacelli", "Blanche Segrestin", "Kevin Levillain", "Florian Möslein",
+        ];
+        const filtered = contributeurs.filter(
+          (c) => !excludedNames.includes(c.nom_prenom)
+        );
+        return filtered.length > 0 ? (
+          <section className="py-16 md:py-24 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="section-title">{t("Participants du groupe Europe", "Europe Group Participants")}</h2>
+                <div className="tricolor-separator w-24 mx-auto mb-4" />
+                <p className="section-subtitle">
+                  {t(
+                    `${filtered.length} chercheurs et praticiens européens participent à ce groupe de travail.`,
+                    `${filtered.length} European researchers and practitioners participate in this working group.`
+                  )}
+                </p>
+              </div>
+              <ul className="max-w-3xl mx-auto columns-1 sm:columns-2 gap-x-8 space-y-1.5">
+                {filtered.map((c) => (
+                  <li key={c.nom_prenom} className="flex items-start gap-2 text-sm break-inside-avoid">
+                    <span className="w-1.5 h-1.5 bg-rose-600 rounded-full shrink-0 mt-1.5" />
+                    <span>
+                      <span className="font-medium text-navy-800">{c.nom_prenom}</span>
+                      {c.poste_structure && (
+                        <span className="text-navy-600"> — {c.poste_structure}</span>
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ) : null;
+      })()}
     </>
   );
 }

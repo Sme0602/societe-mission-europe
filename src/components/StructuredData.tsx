@@ -77,7 +77,7 @@ export default function StructuredData() {
       {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://societe-mission-europe-pi.vercel.app"},
       {"@type": "ListItem", "position": 2, "name": "Le Projet", "item": "https://societe-mission-europe-pi.vercel.app/projet"},
       {"@type": "ListItem", "position": 3, "name": "Partenaires", "item": "https://societe-mission-europe-pi.vercel.app/partenaires"},
-      {"@type": "ListItem", "position": 4, "name": "Actualités", "item": "https://societe-mission-europe-pi.vercel.app/actualites"},
+      {"@type": "ListItem", "position": 4, "name": "Événements", "item": "https://societe-mission-europe-pi.vercel.app/evenements"},
       {"@type": "ListItem", "position": 5, "name": "Contact", "item": "https://societe-mission-europe-pi.vercel.app/contact"}
     ]
   };
