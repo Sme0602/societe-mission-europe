@@ -9,7 +9,7 @@ export default function PolitiqueConfidentialiteContent() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-main text-navy-800 py-12 md:py-16">
+      <section className="relative bg-gradient-main text-navy-800 py-12 md:py-16 pb-24 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
             {t("Politique de confidentialité", "Privacy Policy")}
@@ -20,6 +20,11 @@ export default function PolitiqueConfidentialiteContent() {
               "In accordance with the General Data Protection Regulation (GDPR - EU Regulation 2016/679)."
             )}
           </p>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 translate-y-px">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="block w-full h-auto">
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white" />
+          </svg>
         </div>
       </section>
 
