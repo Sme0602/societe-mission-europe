@@ -102,8 +102,8 @@ export const teamMembers: TeamMember[] = [
       "À l\u2019issue de son diplôme, elle a rédigé une étude intitulée \u00AB Les différents modèles de gouvernance d\u2019entreprises en Europe \u00BB, avant de rejoindre le projet Société à mission Europe, au sein duquel elle coordonne notamment deux ouvrages collectifs :",
     ],
     publications: [
-      "Les entreprises du Nord, une histoire sociale singulière.",
-      "Ces entrepreneurs du Nord qui changent le monde.",
+      "Une histoire des entreprises du Nord. Des entreprises en mission.",
+      "Ces entrepreneurs du Nord qui changent le monde. Des entrepreneurs en mission.",
     ],
   },
   {

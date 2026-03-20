@@ -206,8 +206,8 @@ function TerritoireTab() {
                     <div className="w-7 h-7 bg-jaune-400 text-white rounded-lg flex items-center justify-center text-xs font-bold shrink-0">1</div>
                     <p className="text-navy-700 text-sm leading-relaxed">
                       {t(
-                        "Les entreprises du nord, une histoire sociale singulière",
-                        "Les entreprises du nord, une histoire sociale singulière (Northern enterprises, a unique social history)"
+                        "Une histoire des entreprises du Nord. Des entreprises en mission",
+                        "A history of Northern enterprises. Enterprises with a mission"
                       )}
                     </p>
                   </div>
@@ -215,8 +215,8 @@ function TerritoireTab() {
                     <div className="w-7 h-7 bg-jaune-400 text-white rounded-lg flex items-center justify-center text-xs font-bold shrink-0">2</div>
                     <p className="text-navy-700 text-sm leading-relaxed">
                       {t(
-                        "Ces entrepreneurs du nord qui changent le monde",
-                        "Ces entrepreneurs du nord qui changent le monde (Northern entrepreneurs changing the world)"
+                        "Ces entrepreneurs du Nord qui changent le monde. Des entrepreneurs en mission",
+                        "Northern entrepreneurs changing the world. Entrepreneurs with a mission"
                       )}
                     </p>
                   </div>
