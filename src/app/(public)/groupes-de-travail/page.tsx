@@ -187,6 +187,12 @@ function TerritoireTab() {
             </div>
 
             <div className="space-y-6">
+              {/* Map silhouette */}
+              <div className="flex justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/map-hauts-de-france.png" alt="Hauts-de-France" className="w-full max-w-[200px] h-auto opacity-80" />
+              </div>
+
               {/* Ouvrages */}
               <div className="bg-yellow-50 rounded-card p-8 border border-yellow-100">
                 <h3 className="font-bold text-navy-800 mb-4 text-lg flex items-center gap-2">
@@ -408,6 +414,12 @@ function FranceTab() {
             </div>
 
             <div className="space-y-6">
+              {/* Map silhouette */}
+              <div className="flex justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/map-france.png" alt="France" className="w-full max-w-[200px] h-auto opacity-80" />
+              </div>
+
               {/* Ouvrages */}
               <div className="bg-rose-50 rounded-card p-8 border border-rose-100">
                 <h3 className="font-bold text-navy-800 mb-4 text-lg flex items-center gap-2">
@@ -555,6 +567,12 @@ function EuropeTab() {
             </div>
 
             <div className="space-y-6">
+              {/* Map silhouette */}
+              <div className="flex justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/map-europe.png" alt="Europe" className="w-full max-w-[220px] h-auto opacity-80" />
+              </div>
+
               {/* Ouvrages */}
               <div className="bg-blue-50 rounded-card p-8 border border-blue-100">
                 <h3 className="font-bold text-navy-800 mb-4 text-lg flex items-center gap-2">

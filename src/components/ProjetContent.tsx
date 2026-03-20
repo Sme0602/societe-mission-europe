@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
-import { MapHautsDeFrance, MapFrance, MapEurope } from "@/components/MapSilhouettes";
 
 export default function ProjetContent() {
   const { t } = useI18n();
@@ -308,14 +307,15 @@ export default function ProjetContent() {
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
                   {/* Map silhouette */}
                   <div className="flex justify-center mb-6">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     {groupe.color === "jaune" && (
-                      <MapHautsDeFrance className="w-full max-w-[220px] h-auto" />
+                      <img src="/images/map-hauts-de-france.png" alt="Hauts-de-France" className="w-full max-w-[200px] h-auto opacity-80" />
                     )}
                     {groupe.color === "rose" && (
-                      <MapFrance className="w-full max-w-[220px] h-auto" />
+                      <img src="/images/map-france.png" alt="France" className="w-full max-w-[200px] h-auto opacity-80" />
                     )}
                     {groupe.color === "navy" && (
-                      <MapEurope className="w-full max-w-[280px] h-auto" />
+                      <img src="/images/map-europe.png" alt="Europe" className="w-full max-w-[220px] h-auto opacity-80" />
                     )}
                   </div>
 
