@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
-import { MapHautsDeFrance, MapFrance, MapEurope } from "@/components/MapSilhouettes";
+
 
 function ConseilScientifique({ groupe, color = "bg-blue-50 border-blue-100" }: { groupe: string; color?: string }) {
   const { t } = useI18n();
@@ -187,11 +187,6 @@ function TerritoireTab() {
             </div>
 
             <div className="space-y-6">
-              {/* Map silhouette */}
-              <div className="flex justify-center">
-                <MapHautsDeFrance className="w-full max-w-[220px] h-auto" />
-              </div>
-
               {/* Ouvrages */}
               <div className="bg-yellow-50 rounded-card p-8 border border-yellow-100">
                 <h3 className="font-bold text-navy-800 mb-4 text-lg flex items-center gap-2">
@@ -413,11 +408,6 @@ function FranceTab() {
             </div>
 
             <div className="space-y-6">
-              {/* Map silhouette */}
-              <div className="flex justify-center">
-                <MapFrance className="w-full max-w-[220px] h-auto" />
-              </div>
-
               {/* Ouvrages */}
               <div className="bg-rose-50 rounded-card p-8 border border-rose-100">
                 <h3 className="font-bold text-navy-800 mb-4 text-lg flex items-center gap-2">
@@ -565,11 +555,6 @@ function EuropeTab() {
             </div>
 
             <div className="space-y-6">
-              {/* Map silhouette */}
-              <div className="flex justify-center">
-                <MapEurope className="w-full max-w-[280px] h-auto" />
-              </div>
-
               {/* Ouvrages */}
               <div className="bg-blue-50 rounded-card p-8 border border-blue-100">
                 <h3 className="font-bold text-navy-800 mb-4 text-lg flex items-center gap-2">
