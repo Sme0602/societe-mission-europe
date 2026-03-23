@@ -131,6 +131,58 @@ export default function GroupesDeTravailPage() {
 
 /* ─────────────────────── Territoire Tab ─────────────────────── */
 
+function ParticipantsList({ groupe, title, titleEn, color = "bg-rose-600", excludeNames = [] }: {
+  groupe: string;
+  title: string;
+  titleEn: string;
+  color?: string;
+  excludeNames?: string[];
+}) {
+  const { t } = useI18n();
+  const [participants, setParticipants] = useState<{ nom_prenom: string; poste_structure: string | null }[]>([]);
+
+  useEffect(() => {
+    fetch(`/api/contributeurs?groupe=${groupe}`)
+      .then((res) => res.json())
+      .then((data) => setParticipants(data))
+      .catch(() => {});
+  }, [groupe]);
+
+  const filtered = participants.filter((c) => !excludeNames.includes(c.nom_prenom));
+
+  if (filtered.length === 0) return null;
+
+  return (
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="section-title">{t(title, titleEn)}</h2>
+          <div className="tricolor-separator w-24 mx-auto mb-4" />
+          <p className="section-subtitle">
+            {t(
+              `${filtered.length} chercheurs et praticiens participent à ce groupe de travail.`,
+              `${filtered.length} researchers and practitioners participate in this working group.`
+            )}
+          </p>
+        </div>
+        <ul className="max-w-3xl mx-auto columns-1 sm:columns-2 gap-x-8 space-y-1.5">
+          {filtered.map((c) => (
+            <li key={c.nom_prenom} className="flex items-start gap-2 text-sm break-inside-avoid">
+              <span className={`w-1.5 h-1.5 ${color} rounded-full shrink-0 mt-1.5`} />
+              <span>
+                <span className="font-medium text-navy-800">{c.nom_prenom}</span>
+                {c.poste_structure && (
+                  <span className="text-navy-600"> — {c.poste_structure}</span>
+                )}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function TerritoireTab() {
   const { t } = useI18n();
 
@@ -330,6 +382,14 @@ function TerritoireTab() {
           </div>
         </div>
       </section>
+
+      <ParticipantsList
+        groupe="gt_territoire"
+        title="Participants du groupe Territoire"
+        titleEn="Territory Group Participants"
+        color="bg-jaune-400"
+        excludeNames={["Matthieu Caron", "Alix Vanmeervenne", "Sarah Vandenbroucke", "Stéphane Vernac"]}
+      />
     </>
   );
 }
@@ -498,6 +558,14 @@ function FranceTab() {
           </div>
         </div>
       </section>
+
+      <ParticipantsList
+        groupe="gt_national"
+        title="Participants du groupe France"
+        titleEn="France Group Participants"
+        color="bg-orange-600"
+        excludeNames={["Matthieu Caron", "Alix Vanmeervenne", "Sarah Vandenbroucke", "Stéphane Vernac"]}
+      />
     </>
   );
 }
@@ -506,14 +574,6 @@ function FranceTab() {
 
 function EuropeTab() {
   const { t } = useI18n();
-  const [contributeurs, setContributeurs] = useState<{ nom_prenom: string; poste_structure: string | null }[]>([]);
-
-  useEffect(() => {
-    fetch("/api/contributeurs?groupe=gt_europe")
-      .then((res) => res.json())
-      .then((data) => setContributeurs(data))
-      .catch(() => {});
-  }, []);
 
   return (
     <>
@@ -812,45 +872,13 @@ function EuropeTab() {
         </div>
       </section>
 
-      {/* Contributeurs */}
-      {contributeurs.length > 0 && (() => {
-        const excludedNames = [
-          "Matthieu Caron", "Alix Vanmeervenne", "Stéphane Vernac",
-          "Alessio Bartolacelli", "Blanche Segrestin", "Kevin Levillain", "Florian Möslein",
-        ];
-        const filtered = contributeurs.filter(
-          (c) => !excludedNames.includes(c.nom_prenom)
-        );
-        return filtered.length > 0 ? (
-          <section className="py-16 md:py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="section-title">{t("Participants du groupe Europe", "Europe Group Participants")}</h2>
-                <div className="tricolor-separator w-24 mx-auto mb-4" />
-                <p className="section-subtitle">
-                  {t(
-                    `${filtered.length} chercheurs et praticiens européens participent à ce groupe de travail.`,
-                    `${filtered.length} European researchers and practitioners participate in this working group.`
-                  )}
-                </p>
-              </div>
-              <ul className="max-w-3xl mx-auto columns-1 sm:columns-2 gap-x-8 space-y-1.5">
-                {filtered.map((c) => (
-                  <li key={c.nom_prenom} className="flex items-start gap-2 text-sm break-inside-avoid">
-                    <span className="w-1.5 h-1.5 bg-rose-600 rounded-full shrink-0 mt-1.5" />
-                    <span>
-                      <span className="font-medium text-navy-800">{c.nom_prenom}</span>
-                      {c.poste_structure && (
-                        <span className="text-navy-600"> — {c.poste_structure}</span>
-                      )}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        ) : null;
-      })()}
+      <ParticipantsList
+        groupe="gt_europe"
+        title="Participants du groupe Europe"
+        titleEn="Europe Group Participants"
+        color="bg-navy-800"
+        excludeNames={["Matthieu Caron", "Alix Vanmeervenne", "Sarah Vandenbroucke", "Stéphane Vernac", "Alessio Bartolacelli", "Blanche Segrestin", "Kevin Levillain", "Florian Möslein"]}
+      />
     </>
   );
 }
