@@ -547,6 +547,25 @@ export default function ProjetContent() {
                   <p className="text-navy-800 font-medium">Paolo Di Cesare</p>
                   <p className="text-navy-800 font-medium">Benoît Quittre</p>
                 </div>
+                <div>
+                  <p className="text-sm font-semibold text-rose-600 mb-1">{t("Institutions partenaires", "Partner Institutions")}</p>
+                  <ul className="text-navy-700 text-sm space-y-0.5">
+                    {[
+                      "Alliances", "Campus de la transition", "CARAC", "CEM",
+                      "Conseil régional HdF", "EDHEC", "ESSCA", "Excelia",
+                      "GenAct / C3D", "HEC Paris", "IEREE", "Institut Godin",
+                      "Kaya", "La Catho", "LARSH (UPHF)", "Management & RSE",
+                      "Mines Paris – PSL", "NATIVA", "OEP", "OZAKT",
+                      "Parangone", "Sciences Po Lille", "SKEMA",
+                      "UCLouvain", "ULCO",
+                    ].map((inst) => (
+                      <li key={inst} className="flex items-center gap-1.5">
+                        <span className="w-1 h-1 bg-orange-400 rounded-full shrink-0" />
+                        {inst}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
 
