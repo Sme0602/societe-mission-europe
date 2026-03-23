@@ -456,21 +456,6 @@ function FranceTab() {
 
               <ConseilScientifique groupe="cs_national" color="bg-rose-50 border-rose-100" />
 
-              {/* Events highlight */}
-              <div className="bg-rose-600 rounded-card p-6 text-white">
-                <div className="flex items-center gap-3 mb-2">
-                  <svg className="w-6 h-6 text-rose-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <h3 className="font-bold text-lg">{t("16 événements prévus", "16 planned events")}</h3>
-                </div>
-                <p className="text-rose-100 text-sm">
-                  {t(
-                    "Summer Schools, Workshops, Colloques — un programme riche pour fédérer la communauté nationale de recherche.",
-                    "Summer Schools, Workshops, Conferences — a rich programme to unite the national research community."
-                  )}
-                </p>
-              </div>
             </div>
 
             <div className="space-y-6">
@@ -519,17 +504,6 @@ function FranceTab() {
                   {t("Études", "Studies")}
                 </h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-navy-700 text-sm">
-                      {t(
-                        "Panorama des modèles de gouvernance de l'entreprise en Europe",
-                        "Overview of corporate governance models in Europe"
-                      )}
-                    </span>
-                  </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -661,6 +635,29 @@ function EuropeTab() {
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Études */}
+              <div className="bg-beige-50 rounded-card p-8 border border-beige-200">
+                <h3 className="font-bold text-navy-800 mb-4 text-lg flex items-center gap-2">
+                  <svg className="w-5 h-5 text-navy-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  {t("Études", "Studies")}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-navy-800 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-navy-700 text-sm">
+                      {t(
+                        "Panorama des modèles de gouvernance de l'entreprise en Europe",
+                        "Overview of corporate governance models in Europe"
+                      )}
+                    </span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
