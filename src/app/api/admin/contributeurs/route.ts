@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
 
   let query = supabase
     .from("contributeurs")
-    .select("id, nom_prenom, poste_structure, groupes")
+    .select("id, nom_prenom, poste_structure, email, telephone, idees, groupes, created_at")
     .order("nom_prenom");
 
   if (groupe) {
@@ -18,10 +18,6 @@ export async function GET(request: NextRequest) {
 
   if (search) {
     query = query.ilike("nom_prenom", `%${search}%`);
-  }
-
-  if (exclude_groupe) {
-    // We'll filter client-side since Supabase doesn't have a "not contains" for arrays easily
   }
 
   const { data, error } = await query;
@@ -45,13 +41,49 @@ export async function POST(request: NextRequest) {
   const body = await request.json();
   const supabase = createAdminClient();
 
+  // Check if email already exists
+  if (body.email) {
+    const { data: existing } = await supabase
+      .from("contributeurs")
+      .select("id, groupes")
+      .eq("email", body.email)
+      .maybeSingle();
+
+    if (existing) {
+      const groupes = existing.groupes || [];
+      if (body.groupe && !groupes.includes(body.groupe)) {
+        groupes.push(body.groupe);
+      }
+      const { error } = await supabase
+        .from("contributeurs")
+        .update({
+          nom_prenom: body.nom_prenom,
+          poste_structure: body.poste_structure || null,
+          groupes,
+          telephone: body.telephone || null,
+          idees: body.idees || null,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", existing.id);
+
+      if (error) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
+      }
+      return NextResponse.json({ success: true, updated: true });
+    }
+  }
+
+  const groupes = body.groupes || (body.groupe ? [body.groupe] : []);
+
   const { data, error } = await supabase
     .from("contributeurs")
     .insert({
       nom_prenom: body.nom_prenom,
       poste_structure: body.poste_structure || null,
       email: body.email || null,
-      groupes: body.groupes || [],
+      telephone: body.telephone || null,
+      idees: body.idees || null,
+      groupes,
     })
     .select()
     .single();
@@ -70,7 +102,11 @@ export async function PATCH(request: NextRequest) {
   const updates: Record<string, unknown> = {};
   if (body.nom_prenom !== undefined) updates.nom_prenom = body.nom_prenom;
   if (body.poste_structure !== undefined) updates.poste_structure = body.poste_structure;
+  if (body.email !== undefined) updates.email = body.email;
+  if (body.telephone !== undefined) updates.telephone = body.telephone;
+  if (body.idees !== undefined) updates.idees = body.idees;
   if (body.groupes !== undefined) updates.groupes = body.groupes;
+  updates.updated_at = new Date().toISOString();
 
   const { error } = await supabase
     .from("contributeurs")

@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
 
 interface Contact {
   id: string;
@@ -97,7 +96,6 @@ export default function MailingListPage() {
   const listeSlug = params.liste as string;
   const config = LISTES_CONFIG[listeSlug];
 
-  const supabase = createClient();
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -119,14 +117,15 @@ export default function MailingListPage() {
   const fetchContacts = useCallback(async () => {
     if (!config) return;
     setLoading(true);
-    const { data } = await supabase
-      .from("contributeurs")
-      .select("*")
-      .contains("groupes", [config.dbValue])
-      .order("nom_prenom");
-    setContacts(data || []);
+    try {
+      const res = await fetch(`/api/admin/contributeurs?groupe=${config.dbValue}`);
+      const data = await res.json();
+      setContacts(data || []);
+    } catch {
+      setContacts([]);
+    }
     setLoading(false);
-  }, [supabase, config]);
+  }, [config]);
 
   useEffect(() => {
     fetchContacts();
@@ -166,50 +165,31 @@ export default function MailingListPage() {
     e.preventDefault();
 
     if (editingId) {
-      await supabase
-        .from("contributeurs")
-        .update({
+      await fetch("/api/admin/contributeurs", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: editingId,
           nom_prenom: form.nom_prenom,
           poste_structure: form.poste_structure || null,
           email: form.email,
           telephone: form.telephone || null,
           idees: form.idees || null,
-          updated_at: new Date().toISOString(),
-        })
-        .eq("id", editingId);
+        }),
+      });
     } else {
-      const { data: existing } = await supabase
-        .from("contributeurs")
-        .select("id, groupes")
-        .eq("email", form.email)
-        .maybeSingle();
-
-      if (existing) {
-        const groupes = existing.groupes || [];
-        if (!groupes.includes(config.dbValue)) {
-          groupes.push(config.dbValue);
-        }
-        await supabase
-          .from("contributeurs")
-          .update({
-            nom_prenom: form.nom_prenom,
-            poste_structure: form.poste_structure || null,
-            groupes,
-            telephone: form.telephone || null,
-            idees: form.idees || null,
-            updated_at: new Date().toISOString(),
-          })
-          .eq("id", existing.id);
-      } else {
-        await supabase.from("contributeurs").insert({
+      await fetch("/api/admin/contributeurs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           nom_prenom: form.nom_prenom,
           poste_structure: form.poste_structure || null,
-          groupes: [config.dbValue],
           email: form.email,
           telephone: form.telephone || null,
           idees: form.idees || null,
-        });
-      }
+          groupe: config.dbValue,
+        }),
+      });
     }
 
     setForm(emptyForm);
@@ -242,14 +222,14 @@ export default function MailingListPage() {
       (g) => g !== config.dbValue
     );
 
-    if (newGroupes.length === 0) {
-      await supabase.from("contributeurs").delete().eq("id", contact.id);
-    } else {
-      await supabase
-        .from("contributeurs")
-        .update({ groupes: newGroupes })
-        .eq("id", contact.id);
-    }
+    await fetch("/api/admin/contributeurs", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: contact.id,
+        groupes: newGroupes,
+      }),
+    });
 
     fetchContacts();
   };
