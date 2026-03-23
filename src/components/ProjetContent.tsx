@@ -551,10 +551,10 @@ export default function ProjetContent() {
                   <p className="text-sm font-semibold text-rose-600 mb-1">{t("Institutions partenaires", "Partner Institutions")}</p>
                   <ul className="text-navy-700 text-sm space-y-0.5">
                     {[
-                      "Alliances", "Campus de la transition", "CARAC", "CEM",
+                      "Réseau Alliances", "Campus de la transition", "CARAC", "CEM",
                       "Conseil régional HdF", "EDHEC", "ESSCA", "Excelia",
                       "GenAct / C3D", "HEC Paris", "IEREE", "Institut Godin",
-                      "Kaya", "La Catho", "LARSH (UPHF)", "Management & RSE",
+                      "Kaya Ecopreneurs", "La Catho", "LARSH (UPHF)", "Management & RSE",
                       "Mines Paris – PSL", "NATIVA", "OEP", "OZAKT",
                       "Parangone", "Sciences Po Lille", "SKEMA",
                       "UCLouvain", "ULCO",
