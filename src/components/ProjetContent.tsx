@@ -1,7 +1,29 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
+
+function CSSection({ groupe, label }: { groupe: string; label: string }) {
+  const [members, setMembers] = useState<{ nom_prenom: string; poste_structure: string | null }[]>([]);
+  useEffect(() => {
+    fetch(`/api/contributeurs?groupe=${groupe}`)
+      .then((res) => res.json())
+      .then((data) => setMembers(data))
+      .catch(() => {});
+  }, [groupe]);
+  if (members.length === 0) return null;
+  return (
+    <div>
+      <p className="text-sm font-semibold text-rose-600 mb-1">{label}</p>
+      {members.map((m) => (
+        <p key={m.nom_prenom} className="text-navy-800 text-sm">
+          {m.nom_prenom}{m.poste_structure ? <span className="text-navy-500"> — {m.poste_structure}</span> : ""}
+        </p>
+      ))}
+    </div>
+  );
+}
 
 export default function ProjetContent() {
   const { t } = useI18n();
@@ -681,14 +703,17 @@ export default function ProjetContent() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-navy-800 mb-4">
-                {t("Conseil scientifique", "Scientific Council")}
+                {t("Conseils scientifiques", "Scientific Councils")}
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div>
                   <p className="text-sm font-semibold text-rose-600">Direction</p>
                   <p className="text-navy-800 font-medium">Stéphane Vernac</p>
                   <p className="text-navy-800 font-medium">Matthieu Caron</p>
                 </div>
+                <CSSection groupe="cs_territoire" label={t("CS Territoire (Hauts-de-France)", "SC Territory (Hauts-de-France)")} />
+                <CSSection groupe="cs_national" label={t("CS National (France)", "SC National (France)")} />
+                <CSSection groupe="cs_europe" label="CS Europe" />
               </div>
             </div>
           </div>
