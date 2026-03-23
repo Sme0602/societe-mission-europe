@@ -104,6 +104,17 @@ export default function MailingListPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState(emptyForm);
   const [search, setSearch] = useState("");
+  const [sortCol, setSortCol] = useState<"nom_prenom" | "poste_structure">("nom_prenom");
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+
+  const toggleSort = (col: "nom_prenom" | "poste_structure") => {
+    if (sortCol === col) {
+      setSortDir(sortDir === "asc" ? "desc" : "asc");
+    } else {
+      setSortCol(col);
+      setSortDir("asc");
+    }
+  };
 
   const fetchContacts = useCallback(async () => {
     if (!config) return;
@@ -134,15 +145,22 @@ export default function MailingListPage() {
   const showIdees = isGT;
   const showPhone = isGT || isCS;
 
-  const filtered = contacts.filter((c) => {
-    if (!search) return true;
-    const q = search.toLowerCase();
-    return (
-      c.nom_prenom.toLowerCase().includes(q) ||
-      c.email.toLowerCase().includes(q) ||
-      (c.poste_structure || "").toLowerCase().includes(q)
-    );
-  });
+  const filtered = contacts
+    .filter((c) => {
+      if (!search) return true;
+      const q = search.toLowerCase();
+      return (
+        c.nom_prenom.toLowerCase().includes(q) ||
+        c.email.toLowerCase().includes(q) ||
+        (c.poste_structure || "").toLowerCase().includes(q)
+      );
+    })
+    .sort((a, b) => {
+      const valA = (sortCol === "nom_prenom" ? a.nom_prenom : a.poste_structure || "").toLowerCase();
+      const valB = (sortCol === "nom_prenom" ? b.nom_prenom : b.poste_structure || "").toLowerCase();
+      const cmp = valA.localeCompare(valB, "fr");
+      return sortDir === "asc" ? cmp : -cmp;
+    });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -421,11 +439,31 @@ export default function MailingListPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-beige-50 border-b border-beige-200">
-                <th className="text-left px-4 py-3 font-semibold text-navy-800">
-                  Nom et Prénom
+                <th
+                  className="text-left px-4 py-3 font-semibold text-navy-800 cursor-pointer hover:bg-beige-100 select-none transition-colors"
+                  onClick={() => toggleSort("nom_prenom")}
+                >
+                  <span className="inline-flex items-center gap-1">
+                    Nom et Prénom
+                    {sortCol === "nom_prenom" ? (
+                      <span className="text-rose-600">{sortDir === "asc" ? "↑" : "↓"}</span>
+                    ) : (
+                      <span className="text-beige-300">↕</span>
+                    )}
+                  </span>
                 </th>
-                <th className="text-left px-4 py-3 font-semibold text-navy-800">
-                  Poste & Structure
+                <th
+                  className="text-left px-4 py-3 font-semibold text-navy-800 cursor-pointer hover:bg-beige-100 select-none transition-colors"
+                  onClick={() => toggleSort("poste_structure")}
+                >
+                  <span className="inline-flex items-center gap-1">
+                    Poste & Structure
+                    {sortCol === "poste_structure" ? (
+                      <span className="text-rose-600">{sortDir === "asc" ? "↑" : "↓"}</span>
+                    ) : (
+                      <span className="text-beige-300">↕</span>
+                    )}
+                  </span>
                 </th>
                 <th className="text-left px-4 py-3 font-semibold text-navy-800">
                   Email
