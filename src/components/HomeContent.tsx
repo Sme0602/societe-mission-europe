@@ -11,20 +11,30 @@ const heroPhotos = [
   61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,
 ].map((n) => `/images/carousel/photo-${n}.jpg`);
 
+function shuffleArray<T>(arr: T[]): T[] {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 function PhotoBubbles() {
+  const [shuffled] = useState(() => shuffleArray(heroPhotos));
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % (heroPhotos.length - 2));
+      setIndex((prev) => (prev + 1) % (shuffled.length - 2));
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [shuffled.length]);
 
   const photos = [
-    heroPhotos[index % heroPhotos.length],
-    heroPhotos[(index + 1) % heroPhotos.length],
-    heroPhotos[(index + 2) % heroPhotos.length],
+    shuffled[index % shuffled.length],
+    shuffled[(index + 1) % shuffled.length],
+    shuffled[(index + 2) % shuffled.length],
   ];
 
   return (
