@@ -395,8 +395,8 @@ export default function ProjetContent() {
             <div className="tricolor-separator w-24 mx-auto mb-4" />
             <p className="section-subtitle">
               {t(
-                "Une équipe pluridisciplinaire de 7 chercheurs, ingénieurs et doctorants engagés dans le projet.",
-                "A multidisciplinary team of 7 researchers, engineers and PhD candidates committed to the project."
+                "Une équipe pluridisciplinaire de 8 chercheurs, ingénieurs et doctorants engagés dans le projet.",
+                "A multidisciplinary team of 8 researchers, engineers and PhD candidates committed to the project."
               )}
             </p>
           </div>

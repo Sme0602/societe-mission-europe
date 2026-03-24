@@ -359,17 +359,11 @@ export default function HomeContent() {
               "The project is supported by the European Regional Development Fund (ERDF), one of the main instruments of the European Union's cohesion policy. The ERDF's mission is to strengthen economic, social and territorial cohesion by supporting innovation, research, ecological transition and territorial development."
             )}
           </p>
-          <div className="mt-8 flex items-center justify-center gap-8 md:gap-12">
+          <div className="mt-8 flex items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logos/region-hdf.jpg"
-              alt="Région Hauts-de-France"
-              className="h-16 md:h-20 w-auto object-contain"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logos/cofinance-ue.png"
-              alt={t("Cofinancé par l'Union européenne", "Co-funded by the European Union")}
+              src="/logos/feder-double.png"
+              alt={t("Région Hauts-de-France — Cofinancé par l'Union européenne", "Région Hauts-de-France — Co-funded by the European Union")}
               className="h-16 md:h-20 w-auto object-contain"
             />
           </div>
