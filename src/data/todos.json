@@ -1,0 +1,71 @@
+{
+  "lastUpdated": "2026-03-24",
+  "categories": [
+    {
+      "id": "feder",
+      "name": "FEDER",
+      "color": "#F57028",
+      "tasks": [
+        { "id": "f1", "text": "Identifier leaders européens & liste consortium d'acteurs", "done": false },
+        { "id": "f2", "text": "Envoyer invitation Dom Potier", "done": false },
+        { "id": "f3", "text": "Continuer les présentations LinkedIn", "done": false },
+        { "id": "f4", "text": "Programme : contenu avec Matt & Alix", "done": false },
+        { "id": "f5", "text": "Envoyer lien participation EN LIGNE", "done": false },
+        { "id": "f6", "text": "NATIVA : quelle réponse ?", "done": false },
+        { "id": "f7", "text": "Republier Survey Ninon", "done": false },
+        { "id": "f8", "text": "Valider & envoyer Kakémono pour impression", "done": false },
+        { "id": "f9", "text": "Ninon dîner ???", "done": false }
+      ]
+    },
+    {
+      "id": "oep",
+      "name": "OEP",
+      "color": "#EF3869",
+      "tasks": [
+        { "id": "o1", "text": "Note OEP Am Latine due diligence / purpose driven companies", "done": false }
+      ]
+    },
+    {
+      "id": "fra",
+      "name": "FRA",
+      "color": "#243267",
+      "tasks": [
+        { "id": "r1", "text": "PROJET NEXUS", "done": false },
+        { "id": "r2", "text": "Répondre à Annika — article à écrire ensemble", "done": false }
+      ]
+    },
+    {
+      "id": "recherche",
+      "name": "Recherche",
+      "color": "#FDCC01",
+      "tasks": [
+        { "id": "re1", "text": "SUBMIT REVIEW JBE (avant 26 mars) ⚠️", "done": false },
+        { "id": "re2", "text": "LPE SUBMIT ABSTRACT (demander à Matt)", "done": false }
+      ]
+    },
+    {
+      "id": "admin",
+      "name": "Admin / Personnel",
+      "color": "#9CA3AF",
+      "tasks": [
+        { "id": "a1", "text": "Faire les finances", "done": false },
+        { "id": "a2", "text": "Vérifier document papa — adresse fiscale", "done": false },
+        { "id": "a3", "text": "Documents signature promesse de vente (26 mars)", "done": false }
+      ]
+    },
+    {
+      "id": "agenda",
+      "name": "Agenda & Déplacements",
+      "color": "#8B5CF6",
+      "tasks": [
+        { "id": "ag1", "text": "Sarlix Paris (23-25 mars)", "done": false },
+        { "id": "ag2", "text": "9e baromètre sociétés à mission (24 mars, Zoom)", "done": false },
+        { "id": "ag3", "text": "Rencontre Sarah / Rodolphe / Matthieu (25 mars, Teams)", "done": false },
+        { "id": "ag4", "text": "Interview research purpose-driven (26 mars, Teams)", "done": false },
+        { "id": "ag5", "text": "Logistique Chamonix (27-29 mars)", "done": false },
+        { "id": "ag6", "text": "Introduction Béatrice / Sarah (31 mars, Teams)", "done": false },
+        { "id": "ag7", "text": "CARAC Paris (3 avril)", "done": false }
+      ]
+    }
+  ]
+}
