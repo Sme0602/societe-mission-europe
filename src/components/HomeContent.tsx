@@ -1,7 +1,70 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
+
+const heroPhotos = [
+  "/images/carousel/photo-1.jpg",
+  "/images/carousel/photo-5.jpg",
+  "/images/carousel/photo-10.jpg",
+  "/images/carousel/photo-15.jpg",
+  "/images/carousel/photo-20.jpg",
+  "/images/carousel/photo-30.jpg",
+  "/images/carousel/photo-35.jpg",
+  "/images/carousel/photo-40.jpg",
+  "/images/carousel/photo-45.jpg",
+  "/images/carousel/photo-50.jpg",
+  "/images/carousel/photo-55.jpg",
+  "/images/carousel/photo-60.jpg",
+  "/images/carousel/photo-65.jpg",
+  "/images/carousel/photo-70.jpg",
+  "/images/carousel/photo-75.jpg",
+];
+
+function PhotoBubbles() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % (heroPhotos.length - 2));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const photos = [
+    heroPhotos[index % heroPhotos.length],
+    heroPhotos[(index + 1) % heroPhotos.length],
+    heroPhotos[(index + 2) % heroPhotos.length],
+  ];
+
+  return (
+    <div className="hidden lg:flex flex-col items-center gap-4 py-8">
+      {photos.map((src, i) => (
+        <div
+          key={`${index}-${i}`}
+          className={`rounded-full overflow-hidden border-4 border-white/40 shadow-lg transition-all duration-700 ${
+            i === 1 ? "w-36 h-36" : "w-28 h-28"
+          }`}
+          style={{ animation: "fadeIn 0.8s ease-in-out" }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+      ))}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.9); }
+          to { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
+    </div>
+  );
+}
 
 export default function HomeContent() {
   const { t } = useI18n();
@@ -11,32 +74,36 @@ export default function HomeContent() {
       {/* Hero Section */}
       <section className="relative bg-gradient-main text-navy-800 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
-          <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-              <span className="text-orange-600">Société à Mission</span>{" "}
-              <span className="text-rose-600">Europe</span>
-              <span className="block text-xl sm:text-2xl lg:text-3xl font-normal text-navy-700 mt-4">
+          <div className="flex items-center justify-between gap-8">
+            <div className="max-w-3xl">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
+                <span className="text-orange-600">Société à Mission</span>{" "}
+                <span className="text-rose-600">Europe</span>
+                <span className="block text-xl sm:text-2xl lg:text-3xl font-normal text-navy-700 mt-4">
+                  {t(
+                    "Bâtir le modèle européen de l'entreprise de demain",
+                    "Building the European model of the company of tomorrow"
+                  )}
+                </span>
+              </h1>
+
+              <div className="tricolor-separator w-32 mb-8" />
+
+              <p className="text-navy-700 text-base max-w-2xl mb-10 leading-relaxed">
                 {t(
-                  "Bâtir le modèle européen de l'entreprise de demain",
-                  "Building the European model of the company of tomorrow"
+                  "Un programme de recherche-action de 3 ans consacré à l'analyse et à la diffusion du modèle de la société à mission en France et en Europe, porté par l'UPHF et soutenu par le FEDER.",
+                  "A 3-year action-research programme dedicated to analysing and promoting the purpose-driven company model in France and Europe, led by UPHF and supported by ERDF."
                 )}
-              </span>
-            </h1>
+              </p>
 
-            <div className="tricolor-separator w-32 mb-8" />
-
-            <p className="text-navy-700 text-base max-w-2xl mb-10 leading-relaxed">
-              {t(
-                "Un programme de recherche-action de 3 ans consacré à l'analyse et à la diffusion du modèle de la société à mission en France et en Europe, porté par l'UPHF et soutenu par le FEDER.",
-                "A 3-year action-research programme dedicated to analysing and promoting the purpose-driven company model in France and Europe, led by UPHF and supported by ERDF."
-              )}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/projet" className="btn-primary text-base px-6 py-3">
-                {t("Découvrir le projet de recherche", "Discover the research project")}
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/projet" className="btn-primary text-base px-6 py-3">
+                  {t("Découvrir le projet de recherche", "Discover the research project")}
+                </Link>
+              </div>
             </div>
+
+            <PhotoBubbles />
           </div>
         </div>
 
