@@ -341,13 +341,13 @@ function TerritoireTab() {
                       t("Journée de partage d'expérience : rencontre chercheurs & entrepreneurs du nord", "Experience sharing day: meeting between researchers & northern entrepreneurs"),
                       t("Ouvrage 1", "Publication 1"),
                       t("Ouvrage 2", "Publication 2"),
+                      t("Livre blanc", "White Paper"),
                       "European Summer School 2",
                     ],
                   },
                   {
                     year: "2028",
                     items: [
-                      t("Livre blanc", "White Paper"),
                       t("1 ouvrage de synthèse", "1 synthesis publication"),
                       t("Restitution au World Forum", "Presentation at World Forum"),
                       "European Summer School 3",
