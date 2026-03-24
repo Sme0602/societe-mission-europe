@@ -39,7 +39,7 @@ function PhotoBubbles() {
   ];
 
   return (
-    <div className="hidden lg:flex flex-col items-center gap-4 py-8">
+    <div className="hidden md:flex flex-col items-center gap-4 py-8">
       {photos.map((src, i) => (
         <div
           key={`${index}-${i}`}
