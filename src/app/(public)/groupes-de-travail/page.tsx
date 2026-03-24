@@ -330,23 +330,27 @@ function TerritoireTab() {
                   {
                     year: "2026",
                     items: [
-                      t("Cartographie HDF", "HDF Mapping"),
-                      t("Journée de partage chercheurs/entrepreneurs", "Researchers/entrepreneurs sharing day"),
+                      t("Cartographie « l'entreprise autrement » en HdF", "Mapping \"the alternative enterprise\" in HdF"),
+                      t("Journée de rencontre avec les acteurs économiques", "Meeting day with economic actors"),
+                      "European Summer School 1",
                     ],
                   },
                   {
                     year: "2027",
                     items: [
-                      t("Ouvrage 1 : Les entreprises du nord", "Publication 1: Les entreprises du nord"),
-                      "Summer School 2",
+                      t("Journée de partage d'expérience : rencontre chercheurs & entrepreneurs du nord", "Experience sharing day: meeting between researchers & northern entrepreneurs"),
+                      t("Ouvrage 1", "Publication 1"),
+                      t("Ouvrage 2", "Publication 2"),
+                      "European Summer School 2",
                     ],
                   },
                   {
                     year: "2028",
                     items: [
-                      t("Ouvrage 2 : Ces entrepreneurs du nord", "Publication 2: Ces entrepreneurs du nord"),
                       t("Livre blanc", "White Paper"),
+                      t("1 ouvrage de synthèse", "1 synthesis publication"),
                       t("Restitution au World Forum", "Presentation at World Forum"),
+                      "European Summer School 3",
                     ],
                   },
                 ].map((phase, index) => (
