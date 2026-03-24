@@ -66,6 +66,7 @@ export default function PartenairesContent() {
     { name: "Carac", fullName: "Carac – Mutuelle d'épargne", category: t("Entreprise", "Corporate"), logo: "/logos/carac.png", description: t("Mutuelle engagée dans une démarche de société à mission.", "Mutual fund committed to a mission-driven company approach.") },
     { name: "Intersektion", fullName: "Intersektion", category: t("Entreprise", "Corporate"), logo: "/logos/intersektion.svg", description: t("Organisation dédiée à l'intersection des enjeux sociétaux.", "Organisation dedicated to the intersection of societal issues.") },
     { name: "Management & RSE", fullName: "Management & RSE", category: t("Entreprise", "Corporate"), logo: "/logos/management-rse.png", description: t("Revue et plateforme dédiée au management responsable.", "Journal and platform dedicated to responsible management.") },
+    { name: "NATIVA", fullName: "NATIVA", category: t("Entreprise", "Corporate"), logo: "/logos/nativa.png", description: t("Cabinet de conseil italien pionnier des Benefit Corporations en Europe.", "Italian consulting firm pioneering Benefit Corporations in Europe.") },
   ];
 
   const categories = [
