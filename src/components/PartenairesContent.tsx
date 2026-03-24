@@ -46,30 +46,33 @@ export default function PartenairesContent() {
     { name: "Centrale Lille", fullName: "Centrale Lille", category: t("Académique", "Academic"), logo: "/logos/centrale-lille.png", description: t("École d'ingénieurs de référence dans les Hauts-de-France.", "Leading engineering school in the Hauts-de-France region.") },
     { name: "Chaire ICP-ESSEC", fullName: "Chaire Entreprise et Bien Commun – ICP / ESSEC", category: t("Académique", "Academic"), logo: "/logos/icp.png", description: t("Chaire de recherche sur l'entreprise et le bien commun, portée par l'ICP et l'ESSEC.", "Research chair on business and the common good, led by ICP and ESSEC.") },
 
-    // === INSTITUTIONNEL (Research, Networks, NGOs, Think Tanks) ===
-    { name: "Observatoire Éthique Publique", fullName: "Observatoire de l'Éthique Publique", category: t("Institutionnel", "Institutional"), logo: "/logos/observatoire.png", description: t("Think tank dédié à l'éthique publique, co-porteur du projet.", "Think tank dedicated to public ethics, co-lead of the project.") },
-    { name: "Observatoire des Sociétés à Mission", fullName: "Observatoire des Sociétés à Mission", category: t("Institutionnel", "Institutional"), logo: "/logos/observatoire-sam.png", description: t("Observatoire dédié au suivi et à l'analyse des sociétés à mission.", "Observatory dedicated to monitoring and analysing mission-driven companies.") },
-    { name: "Communauté des entreprises à mission", fullName: "Communauté des entreprises à mission", category: t("Institutionnel", "Institutional"), logo: "/logos/communaute-mission.png", description: t("Réseau de référence des sociétés à mission en France.", "Leading network of mission-driven companies in France.") },
-    { name: "Réseau Alliances", fullName: "Réseau Alliances", category: t("Institutionnel", "Institutional"), logo: "/logos/reseau-alliances.png", description: t("Acteur de la transition responsable en Hauts-de-France depuis 30 ans.", "Actor of the responsible transition in Hauts-de-France for 30 years.") },
-    { name: "Entreprises et Cités", fullName: "Entreprises et Cités", category: t("Institutionnel", "Institutional"), logo: "/logos/entreprises-cites.png", description: t("Réseau d'entreprises engagées dans les territoires.", "Network of companies committed to local communities.") },
-    { name: "GenAct", fullName: "GenAct", category: t("Institutionnel", "Institutional"), logo: "/logos/genact.png", description: t("Mouvement de la nouvelle génération d'acteurs engagés.", "Movement of the new generation of committed actors.") },
-    { name: "EBEN", fullName: "European Business Ethics Network", category: t("Institutionnel", "Institutional"), logo: "/logos/eben.jpg", description: t("Réseau européen d'éthique des affaires.", "European business ethics network.") },
-    { name: "KAYA", fullName: "KAYA - Belgian Coalition of Ecopreneurs", category: t("Institutionnel", "Institutional"), logo: "/logos/kaya.jpg", description: t("Coalition belge des éco-entrepreneurs.", "Belgian coalition of ecopreneurs.") },
-    { name: "Intersektion", fullName: "Intersektion", category: t("Institutionnel", "Institutional"), logo: "/logos/intersektion.svg", description: t("Organisation dédiée à l'intersection des enjeux sociétaux.", "Organisation dedicated to the intersection of societal issues.") },
-    { name: "Management & RSE", fullName: "Management & RSE", category: t("Institutionnel", "Institutional"), logo: "/logos/management-rse.png", description: t("Revue et plateforme dédiée au management responsable.", "Journal and platform dedicated to responsible management.") },
-    { name: "IEREE", fullName: "Institut Européen pour la Refondation de l'Entreprise et de l'Emploi", category: t("Institutionnel", "Institutional"), logo: "/logos/ieree.png", description: t("Institut européen de recherche sur les entreprises et l'emploi.", "European research institute on business and employment.") },
+    // === INSTITUTIONNEL ===
     { name: "Région Hauts-de-France", fullName: "Région Hauts-de-France", category: t("Institutionnel", "Institutional"), logo: "/logos/region-hdf.svg", description: t("Co-financeur du projet via le programme FEDER.", "Project co-funder through the ERDF programme.") },
-    { name: "Impact France", fullName: "Impact France", category: t("Institutionnel", "Institutional"), logo: "/logos/impact-france.png", description: t("Mouvement des entreprises sociales et écologiques en France.", "Movement of social and ecological enterprises in France.") },
-    { name: "Vivoices", fullName: "Vivoices", category: t("Institutionnel", "Institutional"), logo: "/logos/vivoices.png", description: t("Plateforme dédiée à l'amplification des voix engagées.", "Platform dedicated to amplifying committed voices.") },
+
+    // === RÉSEAUX ===
+    { name: "Observatoire Éthique Publique", fullName: "Observatoire de l'Éthique Publique", category: t("Réseaux", "Networks"), logo: "/logos/observatoire.png", description: t("Think tank dédié à l'éthique publique, co-porteur du projet.", "Think tank dedicated to public ethics, co-lead of the project.") },
+    { name: "Observatoire des Sociétés à Mission", fullName: "Observatoire des Sociétés à Mission", category: t("Réseaux", "Networks"), logo: "/logos/observatoire-sam.png", description: t("Observatoire dédié au suivi et à l'analyse des sociétés à mission.", "Observatory dedicated to monitoring and analysing mission-driven companies.") },
+    { name: "Communauté des entreprises à mission", fullName: "Communauté des entreprises à mission", category: t("Réseaux", "Networks"), logo: "/logos/communaute-mission.png", description: t("Réseau de référence des sociétés à mission en France.", "Leading network of mission-driven companies in France.") },
+    { name: "Réseau Alliances", fullName: "Réseau Alliances", category: t("Réseaux", "Networks"), logo: "/logos/reseau-alliances.png", description: t("Acteur de la transition responsable en Hauts-de-France depuis 30 ans.", "Actor of the responsible transition in Hauts-de-France for 30 years.") },
+    { name: "Entreprises et Cités", fullName: "Entreprises et Cités", category: t("Réseaux", "Networks"), logo: "/logos/entreprises-cites.png", description: t("Réseau d'entreprises engagées dans les territoires.", "Network of companies committed to local communities.") },
+    { name: "GenAct", fullName: "GenAct", category: t("Réseaux", "Networks"), logo: "/logos/genact.png", description: t("Mouvement de la nouvelle génération d'acteurs engagés.", "Movement of the new generation of committed actors.") },
+    { name: "EBEN", fullName: "European Business Ethics Network", category: t("Réseaux", "Networks"), logo: "/logos/eben.jpg", description: t("Réseau européen d'éthique des affaires.", "European business ethics network.") },
+    { name: "KAYA", fullName: "KAYA - Belgian Coalition of Ecopreneurs", category: t("Réseaux", "Networks"), logo: "/logos/kaya.jpg", description: t("Coalition belge des éco-entrepreneurs.", "Belgian coalition of ecopreneurs.") },
+    { name: "IEREE", fullName: "Institut Européen pour la Refondation de l'Entreprise et de l'Emploi", category: t("Réseaux", "Networks"), logo: "/logos/ieree.png", description: t("Institut européen de recherche sur les entreprises et l'emploi.", "European research institute on business and employment.") },
+    { name: "Impact France", fullName: "Impact France", category: t("Réseaux", "Networks"), logo: "/logos/impact-france.png", description: t("Mouvement des entreprises sociales et écologiques en France.", "Movement of social and ecological enterprises in France.") },
+    { name: "Vivoices", fullName: "Vivoices", category: t("Réseaux", "Networks"), logo: "/logos/vivoices.png", description: t("Plateforme dédiée à l'amplification des voix engagées.", "Platform dedicated to amplifying committed voices.") },
 
     // === ENTREPRISE ===
     { name: "Carac", fullName: "Carac – Mutuelle d'épargne", category: t("Entreprise", "Corporate"), logo: "/logos/carac.png", description: t("Mutuelle engagée dans une démarche de société à mission.", "Mutual fund committed to a mission-driven company approach.") },
+    { name: "Intersektion", fullName: "Intersektion", category: t("Entreprise", "Corporate"), logo: "/logos/intersektion.svg", description: t("Organisation dédiée à l'intersection des enjeux sociétaux.", "Organisation dedicated to the intersection of societal issues.") },
+    { name: "Management & RSE", fullName: "Management & RSE", category: t("Entreprise", "Corporate"), logo: "/logos/management-rse.png", description: t("Revue et plateforme dédiée au management responsable.", "Journal and platform dedicated to responsible management.") },
   ];
 
   const categories = [
     t("Tous", "All"),
     t("Académique", "Academic"),
     t("Institutionnel", "Institutional"),
+    t("Réseaux", "Networks"),
     t("Entreprise", "Corporate"),
   ];
 
