@@ -147,6 +147,10 @@ export default function HomeContent() {
                   <span className="w-1.5 h-1.5 bg-rose-400 rounded-full shrink-0" />
                   {t("1 rapporteur du projet", "1 project rapporteur")}
                 </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-rose-400 rounded-full shrink-0" />
+                  {t("1 responsable administrative", "1 administrative manager")}
+                </li>
               </ul>
             </div>
           </div>

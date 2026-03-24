@@ -141,6 +141,20 @@ export const teamMembers: TeamMember[] = [
     ],
   },
   {
+    name: "Anaïs Rebuccini",
+    slug: "anais-rebuccini",
+    initials: "AR",
+    role: "Responsable administrative et financière",
+    title: "Gestion administrative et financière",
+    affiliation: "UPHF",
+    color: "bg-orange-600",
+    photo: "/images/equipe/anais-rebuccini.png",
+    bio: [
+      "Responsable administrative et financière, Anaïs Rebuccini est diplômée de la faculté de droit, d\u2019économie et de gestion de Valenciennes.",
+      "Elle a travaillé en qualité de gestionnaire administrative et financière auprès de l\u2019IDP (Institut du Développement et de la Prospective) puis du CRISS (Centre de Recherche Interdisciplinaire en Sciences de la Société) à l\u2019Université Polytechnique Hauts-de-France durant huit ans.",
+    ],
+  },
+  {
     name: "Aïcha Barry",
     slug: "aicha-barry",
     initials: "AB",
