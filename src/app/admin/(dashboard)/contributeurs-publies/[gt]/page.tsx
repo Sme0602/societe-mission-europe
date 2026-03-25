@@ -239,10 +239,10 @@ export default function ContributeursPubliesPage() {
               />
               <div className="flex gap-2">
                 <input
-                  type="email"
+                  type="text"
                   value={newEmail}
                   onChange={(e) => setNewEmail(e.target.value)}
-                  placeholder="Email"
+                  placeholder="Email (optionnel)"
                   className="flex-1 px-3 py-2 border border-beige-200 rounded-lg text-sm focus:outline-none focus:border-rose-600"
                 />
                 <button
