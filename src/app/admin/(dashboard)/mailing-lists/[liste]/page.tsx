@@ -14,7 +14,7 @@ interface Contact {
   created_at: string;
 }
 
-type ListType = "general" | "partenaires" | "gt" | "cs" | "comite_partenaire";
+type ListType = "general" | "partenaires" | "gt" | "cs" | "comite_partenaire" | "presse";
 
 interface ListeConfig {
   dbValue: string;
@@ -88,6 +88,13 @@ const LISTES_CONFIG: Record<string, ListeConfig> = {
     color: "bg-purple-600",
     type: "comite_partenaire",
   },
+  presse: {
+    dbValue: "presse",
+    title: "Presse",
+    description: "Journalistes ayant couvert le projet",
+    color: "bg-amber-600",
+    type: "presse",
+  },
 };
 
 const emptyForm = {
@@ -149,9 +156,11 @@ export default function MailingListPage() {
   const isGT = config.type === "gt";
   const isCS = config.type === "cs";
   const isComite = config.type === "comite_partenaire";
+  const isPresse = config.type === "presse";
   const showIdees = isGT;
-  const showPhone = isGT || isCS;
+  const showPhone = isGT || isCS || isPresse;
   const showEmail = !isComite;
+  const showArticle = isPresse;
 
   const filtered = contacts
     .filter((c) => {
@@ -275,7 +284,7 @@ export default function MailingListPage() {
     URL.revokeObjectURL(url);
   };
 
-  const colSpan = 2 + (showEmail ? 1 : 0) + (showPhone ? 1 : 0) + (showIdees ? 1 : 0) + 1 + 1;
+  const colSpan = 2 + (showEmail ? 1 : 0) + (showPhone ? 1 : 0) + (showIdees ? 1 : 0) + (showArticle ? 1 : 0) + 1 + 1;
 
   return (
     <div>
@@ -323,6 +332,12 @@ export default function MailingListPage() {
           {filtered.length} résultat{filtered.length !== 1 ? "s" : ""}
         </span>
       </div>
+
+      {isPresse && (
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 text-sm text-amber-800">
+          Cet onglet rassemble les journalistes ayant déjà écrit sur le projet, ils ne sont pas présents dans la liste générale.
+        </div>
+      )}
 
       {/* Add/Edit Form */}
       {showForm && (
@@ -388,6 +403,22 @@ export default function MailingListPage() {
                 </div>
               )}
             </div>
+
+            {showArticle && (
+              <div>
+                <label className="block text-sm font-medium text-navy-800 mb-1">
+                  Lien vers l&apos;article
+                </label>
+                <input
+                  value={form.idees}
+                  onChange={(e) =>
+                    setForm({ ...form, idees: e.target.value })
+                  }
+                  placeholder="https://..."
+                  className="w-full px-3 py-2 border border-beige-200 rounded-lg text-sm"
+                />
+              </div>
+            )}
 
             {showIdees && (
               <div>
@@ -466,6 +497,11 @@ export default function MailingListPage() {
                     Téléphone
                   </th>
                 )}
+                {showArticle && (
+                  <th className="text-left px-4 py-3 font-semibold text-navy-800">
+                    Article
+                  </th>
+                )}
                 {showIdees && (
                   <th className="text-left px-4 py-3 font-semibold text-navy-800">
                     Idées
@@ -523,6 +559,23 @@ export default function MailingListPage() {
                     {showPhone && (
                       <td className="px-4 py-3 text-navy-600">
                         {c.telephone || "—"}
+                      </td>
+                    )}
+                    {showArticle && (
+                      <td className="px-4 py-3 text-navy-600 max-w-[250px]">
+                        {c.idees ? (
+                          <a
+                            href={c.idees}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-amber-600 hover:underline block truncate"
+                            title={c.idees}
+                          >
+                            Voir l&apos;article
+                          </a>
+                        ) : (
+                          "—"
+                        )}
                       </td>
                     )}
                     {showIdees && (
