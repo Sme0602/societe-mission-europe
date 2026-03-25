@@ -5,7 +5,7 @@ import { useI18n } from "@/lib/i18n/context";
 import type { TeamMember } from "@/data/team-members";
 
 export default function TeamMemberContent({ member }: { member: TeamMember }) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   return (
     <>
@@ -51,13 +51,13 @@ export default function TeamMemberContent({ member }: { member: TeamMember }) {
             )}
             <div>
               <div className="inline-block px-3 py-1 bg-rose-600/10 text-rose-600 text-xs font-bold rounded-full mb-2">
-                {member.role}
+                {(lang === 'en' && member.roleEn) ? member.roleEn : member.role}
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
                 {member.name}
               </h1>
               <p className="text-lg font-medium text-navy-800">
-                {member.title}
+                {(lang === 'en' && member.titleEn) ? member.titleEn : member.title}
               </p>
               <p className="text-base text-rose-600 font-medium">
                 {member.affiliation}
@@ -78,7 +78,7 @@ export default function TeamMemberContent({ member }: { member: TeamMember }) {
           <div className="bg-white rounded-card border border-beige-200 shadow-sm p-6 md:p-10">
             <div className="tricolor-separator w-16 mb-6" />
             <div className="space-y-4">
-              {member.bio.map((paragraph, i) => (
+              {((lang === 'en' && member.bioEn) ? member.bioEn : member.bio).map((paragraph, i) => (
                 <p
                   key={i}
                   className="text-navy-700 leading-relaxed text-base"

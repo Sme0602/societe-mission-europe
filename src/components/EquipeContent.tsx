@@ -5,7 +5,7 @@ import { teamMembers } from "@/data/team-members";
 import { useI18n } from "@/lib/i18n/context";
 
 export default function EquipeContent() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   return (
     <>
@@ -123,13 +123,13 @@ export default function EquipeContent() {
                     )}
                     <div className="flex-1">
                       <div className="inline-block px-3 py-1 bg-rose-600/10 text-rose-600 text-xs font-bold rounded-full mb-2">
-                        {member.role}
+                        {(lang === 'en' && member.roleEn) ? member.roleEn : member.role}
                       </div>
                       <h3 className="text-2xl font-bold text-navy-800 leading-tight group-hover:text-rose-600 transition-colors">
                         {member.name}
                       </h3>
                       <p className="text-base font-medium text-navy-800 mt-1">
-                        {member.title}
+                        {(lang === 'en' && member.titleEn) ? member.titleEn : member.title}
                       </p>
                       <p className="text-sm text-rose-600 font-medium">
                         {member.affiliation}
@@ -153,7 +153,7 @@ export default function EquipeContent() {
                   </div>
                   <div className="tricolor-separator w-16 mb-4" />
                   <p className="text-navy-700 leading-relaxed text-base line-clamp-3">
-                    {member.bio[0]}
+                    {(lang === 'en' && member.bioEn) ? member.bioEn[0] : member.bio[0]}
                   </p>
                   <span className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-rose-600 group-hover:underline">
                     {t("Voir le profil complet", "View full profile")}
