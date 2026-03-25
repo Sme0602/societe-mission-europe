@@ -42,9 +42,7 @@ function PhotoBubbles() {
       {photos.map((src, i) => (
         <div
           key={`${index}-${i}`}
-          className={`rounded-full overflow-hidden border-4 border-white/40 shadow-lg transition-all duration-700 ${
-            i === 1 ? "w-36 h-36" : "w-28 h-28"
-          }`}
+          className="rounded-full overflow-hidden border-4 border-white/40 shadow-lg transition-all duration-700 w-36 h-36"
           style={{ animation: "fadeIn 0.8s ease-in-out" }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
