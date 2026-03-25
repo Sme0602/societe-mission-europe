@@ -122,6 +122,10 @@ const csLinks = [
   { href: "/admin/mailing-lists/cs-europe", label: "CS Europe", icon: <IconScience /> },
 ];
 
+const comiteLinks = [
+  { href: "/admin/mailing-lists/comite-partenaire", label: "Comité Partenaire", icon: <IconPartners /> },
+];
+
 export default function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
@@ -195,6 +199,13 @@ export default function Sidebar() {
           </p>
         </div>
         {renderLinks(csLinks)}
+
+        <div className="pt-4 pb-2">
+          <p className="px-4 text-xs font-semibold text-white/40 uppercase tracking-wider">
+            Comité Partenaire
+          </p>
+        </div>
+        {renderLinks(comiteLinks)}
       </nav>
 
       <div className="p-4 border-t border-navy-700">

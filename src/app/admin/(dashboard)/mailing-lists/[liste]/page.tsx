@@ -14,7 +14,7 @@ interface Contact {
   created_at: string;
 }
 
-type ListType = "general" | "partenaires" | "gt" | "cs";
+type ListType = "general" | "partenaires" | "gt" | "cs" | "comite_partenaire";
 
 interface ListeConfig {
   dbValue: string;
@@ -80,6 +80,13 @@ const LISTES_CONFIG: Record<string, ListeConfig> = {
     description: "Membres du conseil scientifique européen",
     color: "bg-emerald-600",
     type: "cs",
+  },
+  "comite-partenaire": {
+    dbValue: "comite_partenaire",
+    title: "Comité Partenaire",
+    description: "Membres du comité partenaire",
+    color: "bg-purple-600",
+    type: "comite_partenaire",
   },
 };
 
