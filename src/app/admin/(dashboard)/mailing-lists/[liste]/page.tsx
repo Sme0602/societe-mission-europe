@@ -148,8 +148,10 @@ export default function MailingListPage() {
 
   const isGT = config.type === "gt";
   const isCS = config.type === "cs";
+  const isComite = config.type === "comite_partenaire";
   const showIdees = isGT;
   const showPhone = isGT || isCS;
+  const showEmail = !isComite;
 
   const filtered = contacts
     .filter((c) => {
@@ -273,7 +275,7 @@ export default function MailingListPage() {
     URL.revokeObjectURL(url);
   };
 
-  const colSpan = 3 + (showPhone ? 1 : 0) + (showIdees ? 1 : 0) + 1 + 1;
+  const colSpan = 2 + (showEmail ? 1 : 0) + (showPhone ? 1 : 0) + (showIdees ? 1 : 0) + 1 + 1;
 
   return (
     <div>
@@ -343,12 +345,13 @@ export default function MailingListPage() {
                   className="w-full px-3 py-2 border border-beige-200 rounded-lg text-sm"
                 />
               </div>
+              {showEmail && (
               <div>
                 <label className="block text-sm font-medium text-navy-800 mb-1">
-                  Email *
+                  Email {!isComite && "*"}
                 </label>
                 <input
-                  required
+                  required={!isComite}
                   type="email"
                   value={form.email}
                   onChange={(e) =>
@@ -357,6 +360,7 @@ export default function MailingListPage() {
                   className="w-full px-3 py-2 border border-beige-200 rounded-lg text-sm"
                 />
               </div>
+              )}
               <div>
                 <label className="block text-sm font-medium text-navy-800 mb-1">
                   Intitulé de poste & Structure
@@ -452,9 +456,11 @@ export default function MailingListPage() {
                     )}
                   </span>
                 </th>
+                {showEmail && (
                 <th className="text-left px-4 py-3 font-semibold text-navy-800">
                   Email
                 </th>
+                )}
                 {showPhone && (
                   <th className="text-left px-4 py-3 font-semibold text-navy-800">
                     Téléphone
@@ -504,6 +510,7 @@ export default function MailingListPage() {
                     <td className="px-4 py-3 text-navy-600 max-w-[200px] truncate">
                       {c.poste_structure || "—"}
                     </td>
+                    {showEmail && (
                     <td className="px-4 py-3">
                       <a
                         href={`mailto:${c.email}`}
@@ -512,6 +519,7 @@ export default function MailingListPage() {
                         {c.email}
                       </a>
                     </td>
+                    )}
                     {showPhone && (
                       <td className="px-4 py-3 text-navy-600">
                         {c.telephone || "—"}
@@ -570,7 +578,7 @@ export default function MailingListPage() {
       </div>
 
       {/* Mailing list quick copy */}
-      {filtered.length > 0 && (
+      {filtered.length > 0 && showEmail && (
         <div className="mt-6 bg-white rounded-card p-6 border border-beige-200 shadow-sm">
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-bold text-navy-800 text-sm">
