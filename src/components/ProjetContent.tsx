@@ -210,6 +210,18 @@ export default function ProjetContent() {
       color: "bg-jaune-400",
     },
     {
+      name: "Anaïs Rebuccini",
+      initials: "AR",
+      role: t("Responsable administrative et financière", "Administrative and Financial Manager"),
+      title: t("Gestion de projet", "Project Management"),
+      affiliation: "UPHF",
+      description: t(
+        "Diplômée de la faculté de droit, d'économie et de gestion de Valenciennes, Anaïs Rebuccini a travaillé en qualité de gestionnaire administrative et financière auprès de l'IDP (Institut du Développement et de la Prospective) puis du CRISS (Centre de Recherche Interdisciplinaire en Sciences de la Société) à l'UPHF durant huit ans.",
+        "A graduate of the Faculty of Law, Economics and Management in Valenciennes, Anaïs Rebuccini worked as an administrative and financial manager at the IDP (Institute of Development and Foresight) then at CRISS (Interdisciplinary Research Centre in Social Sciences) at UPHF for eight years."
+      ),
+      color: "bg-orange-600",
+    },
+    {
       name: "Aïcha Barry",
       initials: "AB",
       role: t("Stagiaire", "Intern"),
@@ -395,7 +407,7 @@ export default function ProjetContent() {
             <div className="tricolor-separator w-24 mx-auto mb-4" />
             <p className="section-subtitle">
               {t(
-                "Une équipe pluridisciplinaire de 8 chercheurs, ingénieurs et doctorants engagés dans le projet.",
+                "Une équipe pluridisciplinaire de 9 chercheurs, ingénieurs et doctorants engagés dans le projet.",
                 "A multidisciplinary team of 8 researchers, engineers and PhD candidates committed to the project."
               )}
             </p>

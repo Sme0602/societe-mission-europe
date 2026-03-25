@@ -345,14 +345,6 @@ function TerritoireTab() {
                       "European Summer School 2",
                     ],
                   },
-                  {
-                    year: "2028",
-                    items: [
-                      t("1 ouvrage de synthèse", "1 synthesis publication"),
-                      t("Restitution au World Forum", "Presentation at World Forum"),
-                      "European Summer School 3",
-                    ],
-                  },
                 ].map((phase, index) => (
                   <div
                     key={phase.year}
