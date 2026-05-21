@@ -54,6 +54,10 @@ export async function POST(request: NextRequest) {
       if (body.groupe && !groupes.includes(body.groupe)) {
         groupes.push(body.groupe);
       }
+      // Auto-add to general list (newsletter) when adding to any specific list (except presse)
+      if (body.groupe && body.groupe !== "newsletter" && body.groupe !== "presse" && !groupes.includes("newsletter")) {
+        groupes.push("newsletter");
+      }
       const { error } = await supabase
         .from("contributeurs")
         .update({
@@ -73,7 +77,11 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  const groupes = body.groupes || (body.groupe ? [body.groupe] : []);
+  let groupes = body.groupes || (body.groupe ? [body.groupe] : []);
+  // Auto-add to general list (newsletter) when adding to any specific list (except presse)
+  if (body.groupe && body.groupe !== "newsletter" && body.groupe !== "presse" && !groupes.includes("newsletter")) {
+    groupes = [...groupes, "newsletter"];
+  }
 
   const { data, error } = await supabase
     .from("contributeurs")
