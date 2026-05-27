@@ -7,6 +7,16 @@ import type { Newsletter } from "@/lib/types/database";
 const pressArticles = [
   {
     title:
+      "Société à Mission : Et si les Hauts-de-France devenaient le Laboratoire d'une Révolution Entrepreneuriale Européenne",
+    source: "UPHF / LARSH",
+    date: "2026-03-04",
+    url: "https://www.uphf.fr/larsh/actualites/societe-mission-si-hauts-france-devenaient-laboratoire-dune-revolution-entrepreneuriale-europeenne",
+    image: null,
+    excerpt:
+      "Le projet « Société à Mission Europe », porté par Matthieu Caron, vise à étendre le modèle d'entreprise à mission à l'échelle européenne, en utilisant les Hauts-de-France comme laboratoire d'expérimentation.",
+  },
+  {
+    title:
       "L'Europe peut-elle inventer l'entreprise du XXIe siècle ?",
     source: "Novethic",
     date: "2026-03-04",
@@ -24,6 +34,26 @@ const pressArticles = [
     image: null,
     excerpt:
       "Tribune signée par des acteurs de la Communauté des entreprises à mission, KAYA et Assobenefit, appelant à un statut européen pour les entreprises à mission.",
+  },
+  {
+    title:
+      "Un projet de « société à mission » européenne lancé pour imaginer un modèle d'entreprise alternatif avec Matthieu Caron",
+    source: "Communauté des Entreprises à Mission",
+    date: "2026-03-02",
+    url: "https://entreprisesamission.org/un-projet-de-societe-a-mission-europeenne-lance-pour-imaginer-un-modele-dentreprise-alternatif-avec-matthieu-caron-co-porteur-du-projet/",
+    image: null,
+    excerpt:
+      "La Communauté des Entreprises à Mission relaie le lancement du projet européen porté par Matthieu Caron, co-porteur du projet, visant à imaginer un modèle d'entreprise alternatif à l'échelle du continent.",
+  },
+  {
+    title:
+      "Société à mission : un modèle européen en expérimentation",
+    source: "Euradio",
+    date: "2026-02-27",
+    url: "https://euradio.fr/emission/4zej-euradio-a-lille/dYl6-societe-a-mission-un-modele-europeen-en-experimentation",
+    image: null,
+    excerpt:
+      "Émission radio de 22 minutes consacrée au projet « Société à Mission Europe », explorant comment les Hauts-de-France servent de territoire pilote pour adapter le modèle d'entreprise à mission au niveau européen.",
   },
   {
     title:
