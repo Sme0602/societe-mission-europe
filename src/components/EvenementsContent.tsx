@@ -363,28 +363,41 @@ export default function EvenementsContent() {
 
             {/* Réunion GT Europe — 13 mars 2026 */}
             <div className="bg-white rounded-card border border-beige-200 shadow-sm overflow-hidden">
-              <div className="p-8 md:p-10">
-                <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-medium">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full" />
-                    {t("Groupe de travail", "Working Group")}
-                  </span>
-                  <span className="text-xs text-navy-700">
-                    {t("13 mars 2026", "13 March 2026")}
-                  </span>
+              <div className="grid lg:grid-cols-2">
+                <div className="relative h-64 lg:h-auto">
+                  <Image
+                    src="/images/gt-europe-kickoff.jpg"
+                    alt={t(
+                      "Réunion de lancement du Groupe de Travail Europe — visioconférence avec les chercheurs européens",
+                      "European Working Group kick-off meeting — video conference with European researchers"
+                    )}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-4">
-                  {t(
-                    "Lancement du Groupe de Travail Europe",
-                    "Launch of the European Working Group"
-                  )}
-                </h3>
-                <p className="text-navy-700 leading-relaxed">
-                  {t(
-                    "Première réunion du GT Europe réunissant des chercheurs européens de premier plan pour définir le cadre de recherche, la méthodologie et le calendrier de publication du programme sur l'axe européen.",
-                    "First meeting of the European Working Group, bringing together leading European researchers to define the research framework, methodology and publication timeline for the European axis of the programme."
-                  )}
-                </p>
+                <div className="p-8 md:p-10">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-medium">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full" />
+                      {t("Groupe de travail", "Working Group")}
+                    </span>
+                    <span className="text-xs text-navy-700">
+                      {t("13 mars 2026", "13 March 2026")}
+                    </span>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-4">
+                    {t(
+                      "Lancement du Groupe de Travail Europe",
+                      "Launch of the European Working Group"
+                    )}
+                  </h3>
+                  <p className="text-navy-700 leading-relaxed">
+                    {t(
+                      "Première réunion du GT Europe réunissant des chercheurs européens de premier plan pour définir le cadre de recherche, la méthodologie et le calendrier de publication du programme sur l'axe européen.",
+                      "First meeting of the European Working Group, bringing together leading European researchers to define the research framework, methodology and publication timeline for the European axis of the programme."
+                    )}
+                  </p>
+                </div>
               </div>
             </div>
 

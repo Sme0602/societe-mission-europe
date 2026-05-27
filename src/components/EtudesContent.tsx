@@ -7,8 +7,6 @@ const etudes = [
     numero: 1,
     titleFr: "Une première typologie des modèles alternatifs d'entreprises en Europe",
     titleEn: "A First Typology of Alternative Business Models in Europe",
-    axe: "Europe",
-    axeNum: 3,
     descFr:
       "Une étude comparative inédite des cadres juridiques et des modèles de gouvernance d'entreprise à travers les 27 États membres de l'Union européenne. Ce travail cartographique identifie les dispositifs existants en matière de raison d'être, d'objet social élargi et de gouvernance responsable, et propose une typologie des approches nationales.",
     descEn:
@@ -33,8 +31,6 @@ const etudes = [
       "Révolutionner l'éthique des affaires en créant la Société à Responsabilité Sociale (SARS)",
     titleEn:
       "Revolutionizing Business Ethics by Creating the Socially Responsible Company (SARS)",
-    axe: "Europe",
-    axeNum: 3,
     descFr:
       "Cette étude propose un nouveau modèle institutionnel — la SARS — reposant sur trois piliers : une répartition égalitaire du droit de propriété au sein de l'entreprise, un mécanisme de capitalisation dynamique adossé à une garantie publique, et une qualification spécifique des dirigeants intégrant les dimensions anthropologique, scientifique et économique.",
     descEn:
@@ -59,8 +55,6 @@ const etudes = [
       "La Società Benefit : vers un nouveau paradigme d'entreprise ?",
     titleEn:
       "The Società Benefit: Towards a New Corporate Paradigm?",
-    axe: "Europe",
-    axeNum: 3,
     descFr:
       "Alors que le rôle de l'entreprise dans la société fait l'objet de remises en question croissantes, l'Italie a introduit en 2016 les Società Benefit, permettant aux entreprises d'intégrer des objectifs sociaux et environnementaux dans leurs statuts. Cette étude examine le fonctionnement concret de ce modèle, les raisons qui poussent les entreprises à s'engager, ainsi que les principaux défis rencontrés dans leur mise en oeuvre.",
     descEn:
@@ -156,9 +150,6 @@ export default function EtudesContent() {
                       <div className="flex flex-wrap items-center gap-3 mb-4">
                         <span className={`inline-flex items-center gap-2 px-3 py-1 ${colors.badge} rounded-full text-sm font-bold`}>
                           {t("Étude", "Study")} N°{etude.numero}
-                        </span>
-                        <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 text-xs font-medium rounded-full ${colors.light} ${colors.text}`}>
-                          Axe {etude.axeNum} — {etude.axe}
                         </span>
                         {etude.pages && (
                           <span className="text-xs text-navy-500">
