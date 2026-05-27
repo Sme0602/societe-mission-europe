@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import Mailjet from "node-mailjet";
 
 const INTEREST_LABELS: Record<string, string> = {
   partenaire: "Devenir partenaire du projet",
@@ -31,10 +31,9 @@ export async function POST(request: Request) {
       .map((i) => INTEREST_LABELS[i] || i)
       .join(", ");
 
-    const gtLine = groupeTravail ? `Groupe de travail : ${GT_LABELS[groupeTravail] || groupeTravail}` : "";
+    const gtLine = groupeTravail ? `\nGroupe de travail : ${GT_LABELS[groupeTravail] || groupeTravail}` : "";
 
-    const emailBody = `
-Nouvelle demande de contribution — Société à Mission Europe
+    const emailBody = `Nouvelle demande de contribution — Société à Mission Europe
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -44,28 +43,46 @@ Email : ${email}
 Organisation : ${organisation || "Non renseigné"}
 Domaine d'expertise : ${expertise || "Non renseigné"}
 
-Intérêts : ${interestsList}
-${gtLine}
+Intérêts : ${interestsList}${gtLine}
 
 Message :
 ${message || "(Aucun message)"}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Ce message a été envoyé via le formulaire de contact du site societe-mission-europe.
-`.trim();
+Ce message a été envoyé via le formulaire de contact du site societe-mission-europe.`;
 
-    // Send email via Resend
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error } = await resend.emails.send({
-      from: "Société à Mission Europe <onboarding@resend.dev>",
-      to: ["sarah.vandenbroucke@uphf.fr"],
-      replyTo: email,
-      subject: `[SME] Nouvelle demande : ${prenom} ${nom} — ${interestsList}`,
-      text: emailBody,
+    // Send email via Mailjet
+    const mailjet = Mailjet.apiConnect(
+      process.env.MAILJET_API_KEY!,
+      process.env.MAILJET_SECRET_KEY!
+    );
+
+    const result = await mailjet.post("send", { version: "v3.1" }).request({
+      Messages: [
+        {
+          From: {
+            Email: "sarah.vandenbroucke@uphf.fr",
+            Name: "Société à Mission Europe",
+          },
+          To: [
+            {
+              Email: "sarah.vandenbroucke@uphf.fr",
+              Name: "Sarah Vandenbroucke",
+            },
+          ],
+          ReplyTo: {
+            Email: email,
+            Name: `${prenom} ${nom}`,
+          },
+          Subject: `[SME] Nouvelle demande : ${prenom} ${nom} — ${interestsList}`,
+          TextPart: emailBody,
+        },
+      ],
     });
 
-    if (error) {
-      console.error("Resend error:", error);
+    const response = result.body as { Messages: Array<{ Status: string }> };
+    if (response.Messages[0].Status !== "success") {
+      console.error("Mailjet error:", JSON.stringify(response));
       return NextResponse.json(
         { error: "Erreur lors de l'envoi." },
         { status: 500 }
