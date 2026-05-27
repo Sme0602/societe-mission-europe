@@ -297,11 +297,11 @@ export default function EvenementsContent() {
                   </h3>
                   <p className="text-navy-700 leading-relaxed mb-4">
                     {t(
-                      "Dans le cadre de notre partenariat avec la Carac et l'Observatoire de l'Éthique Publique, l'équipe du projet — Alix Vanmeervenne, Sarah Vandenbroucke et Pablo Maria — est intervenue lors du colloque organisé par la Carac sur le thème du partage de la valeur dans l'entreprise à mission.",
-                      "As part of our partnership with Carac and the Observatoire de l'Éthique Publique, the project team — Alix Vanmeervenne, Sarah Vandenbroucke and Pablo Maria — spoke at the conference organised by Carac on value sharing in mission-driven companies."
+                      "Dans le cadre de notre partenariat avec la Carac et l'Observatoire de l'Éthique Publique, l'équipe du projet — Alix Vanmeervenne, Sarah Vandenbroucke et Pablo Maria — est intervenue lors du colloque organisé par la Carac. Trois tables rondes ont réuni chercheurs, dirigeants et comités de mission pour examiner le partage de la valeur dans l'entreprise à mission.",
+                      "As part of our partnership with Carac and the Observatoire de l'Éthique Publique, the project team — Alix Vanmeervenne, Sarah Vandenbroucke and Pablo Maria — spoke at the conference organised by Carac. Three roundtables brought together researchers, executives and mission committees to examine value sharing in mission-driven companies."
                     )}
                   </p>
-                  <div className="flex flex-wrap gap-4 text-navy-700 text-sm">
+                  <div className="flex flex-wrap gap-4 text-navy-700 text-sm mb-6">
                     <div className="flex items-center gap-2">
                       <svg className="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -309,6 +309,30 @@ export default function EvenementsContent() {
                       </svg>
                       {t("Salons de l'Aéro-Club, Paris", "Salons de l'Aéro-Club, Paris")}
                     </div>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href="/documents/restitution-carac-3-avril-2026.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-700 font-medium text-sm rounded-lg hover:bg-orange-100 transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      {t("Restitution (PDF)", "Summary report (PDF)")}
+                    </a>
+                    <a
+                      href="https://www.observatoireethiquepublique.com/nos-propositions/dans-la-presse/2026/restitution-de-la-journee-du-3-avril-2026.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-beige-100 text-navy-700 font-medium text-sm rounded-lg hover:bg-beige-200 transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      {t("Lire sur le site de l'OEP", "Read on the OEP website")}
+                    </a>
                   </div>
                 </div>
                 <div className="hidden lg:flex bg-gradient-to-br from-orange-50 to-beige-100 items-center justify-center p-8">
