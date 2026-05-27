@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/equipe", fr: "L'équipe", en: "The Team" },
   { href: "/partenaires", fr: "Partenaires", en: "Partners" },
   { href: "/groupes-de-travail", fr: "Groupes de Travail", en: "Working Groups" },
+  { href: "/etudes", fr: "Études", en: "Studies" },
   { href: "/evenements", fr: "Événements", en: "Events" },
   { href: "/presse-news", fr: "Presse & News", en: "Press & News" },
 ];
