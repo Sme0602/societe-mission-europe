@@ -123,6 +123,25 @@ export default function EvenementsContent() {
             </div>
           </div>
 
+          {/* Visuels Summer School — 2 pages */}
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/summer-school/visuel-afternoon.png"
+              alt="Summer School 2026 — Purpose at the Heart of Europe"
+              className="w-full rounded-card border border-beige-200 shadow-sm"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/summer-school/visuel-council.png"
+              alt={t(
+                "European Scientific Council on Purpose — Chercheurs européens",
+                "European Scientific Council on Purpose — European researchers"
+              )}
+              className="w-full rounded-card border border-beige-200 shadow-sm"
+            />
+          </div>
+
           {/* Programme détaillé */}
           <div className="bg-white rounded-card border border-beige-200 shadow-sm overflow-hidden">
             <div className="p-8 md:p-12">
