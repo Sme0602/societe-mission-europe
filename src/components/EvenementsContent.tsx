@@ -278,8 +278,19 @@ export default function EvenementsContent() {
           <div className="space-y-8">
             {/* Colloque Carac — 3 avril 2026 */}
             <div className="bg-white rounded-card border border-beige-200 shadow-sm overflow-hidden">
-              <div className="grid lg:grid-cols-3">
-                <div className="p-8 md:p-10 lg:col-span-2">
+              <div className="grid lg:grid-cols-2">
+                <div className="relative h-64 lg:h-auto">
+                  <Image
+                    src="/images/carac/equipe-colloque.jpg"
+                    alt={t(
+                      "L'équipe Société à Mission Europe au colloque Carac — Pablo Maria, Sarah Vandenbroucke, Alix Vanmeervenne",
+                      "The Société à Mission Europe team at the Carac conference — Pablo Maria, Sarah Vandenbroucke, Alix Vanmeervenne"
+                    )}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-8 md:p-10">
                   <div className="flex flex-wrap items-center gap-3 mb-4">
                     <span className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 text-orange-600 rounded-full text-sm font-medium">
                       <span className="w-2 h-2 bg-orange-500 rounded-full" />
@@ -310,7 +321,7 @@ export default function EvenementsContent() {
                       {t("Salons de l'Aéro-Club, Paris", "Salons de l'Aéro-Club, Paris")}
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3 mb-6">
                     <a
                       href="/documents/restitution-carac-3-avril-2026.pdf"
                       target="_blank"
@@ -334,17 +345,16 @@ export default function EvenementsContent() {
                       {t("Lire sur le site de l'OEP", "Read on the OEP website")}
                     </a>
                   </div>
-                </div>
-                <div className="hidden lg:flex bg-gradient-to-br from-orange-50 to-beige-100 items-center justify-center p-8">
-                  <div className="text-center">
-                    <div className="text-5xl font-bold text-orange-600 mb-2">3</div>
-                    <div className="text-xl font-bold text-navy-800 mb-1">
-                      {t("avril 2026", "April 2026")}
+                  {/* Mini galerie */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="relative h-20 rounded-lg overflow-hidden">
+                      <Image src="/images/carac/salle-conference.jpg" alt={t("Vue de la salle du colloque", "Conference room view")} fill className="object-cover" />
                     </div>
-                    <div className="text-navy-600 text-sm">Paris</div>
-                    <div className="mt-4 flex justify-center gap-3">
-                      <Image src="/logos/carac.png" alt="Carac" width={60} height={60} className="h-10 w-auto object-contain" />
-                      <Image src="/logos/observatoire.png" alt="Observatoire de l'Éthique Publique" width={60} height={60} className="h-10 w-auto object-contain" />
+                    <div className="relative h-20 rounded-lg overflow-hidden">
+                      <Image src="/images/carac/table-ronde.jpg" alt={t("Table ronde sur le partage de la valeur", "Roundtable on value sharing")} fill className="object-cover" />
+                    </div>
+                    <div className="relative h-20 rounded-lg overflow-hidden">
+                      <Image src="/images/carac/presentation-oep.jpg" alt={t("Présentation du projet FEDER", "FEDER project presentation")} fill className="object-cover" />
                     </div>
                   </div>
                 </div>
