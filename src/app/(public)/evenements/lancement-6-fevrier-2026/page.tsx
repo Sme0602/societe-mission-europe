@@ -491,40 +491,16 @@ export default function LancementPage() {
             <div className="tricolor-separator w-24 mx-auto mb-4" />
           </div>
 
-          <div className="bg-white rounded-card border border-beige-200 shadow-sm overflow-hidden">
-            <div className="p-6 border-b border-beige-200">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-[#0A66C2] rounded-lg flex items-center justify-center">
-                  <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-bold text-navy-800 text-sm">
-                    Société à Mission Europe
-                  </p>
-                  <p className="text-navy-600 text-xs">LinkedIn</p>
-                </div>
-              </div>
-            </div>
-            <div className="p-6">
-              <p className="text-navy-700 text-sm leading-relaxed mb-4">
-                Retrouvez notre publication LinkedIn sur la journée de lancement
-                avec les moments forts, les interventions et les réactions des
-                participants.
-              </p>
-              <a
-                href="https://www.linkedin.com/feed/update/urn:li:activity:7426946947648819201"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-sm inline-flex items-center gap-2"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-                Voir la publication LinkedIn
-              </a>
-            </div>
+          <div className="flex justify-center">
+            <iframe
+              src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7426946947648819201"
+              height="600"
+              width="504"
+              frameBorder="0"
+              allowFullScreen
+              title="Publication LinkedIn — Journée de lancement Société à Mission Europe"
+              className="rounded-card border border-beige-200 shadow-sm max-w-full"
+            />
           </div>
         </div>
       </section>

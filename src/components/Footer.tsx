@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { NewsletterFormInline } from "./NewsletterForm";
 import { useI18n } from "@/lib/i18n/context";
 
 export default function Footer() {
@@ -14,6 +13,7 @@ export default function Footer() {
     { href: "/equipe", fr: "L'équipe", en: "The Team" },
     { href: "/partenaires", fr: "Partenaires", en: "Partners" },
     { href: "/groupes-de-travail", fr: "Groupes de Travail", en: "Working Groups" },
+    { href: "/travaux", fr: "Nos travaux", en: "Our Work" },
     { href: "/evenements", fr: "Événements", en: "Events" },
     { href: "/presse-news", fr: "Presse & News", en: "Press & News" },
   ];
@@ -80,15 +80,26 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Contribuer */}
           <div>
             <h3 className="font-bold text-sm uppercase tracking-wider mb-4 text-jaune-400">
-              {t("Restez informé", "Stay informed")}
+              {t("Contribuer", "Get involved")}
             </h3>
             <p className="text-gray-300 text-sm mb-4">
-              {t("Recevez les dernières actualités du projet.", "Receive the latest project news.")}
+              {t(
+                "Vous souhaitez devenir partenaire ou rejoindre un groupe de travail ?",
+                "Want to become a partner or join a working group?"
+              )}
             </p>
-            <NewsletterFormInline />
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-rose-600 text-white text-sm font-semibold rounded-lg hover:bg-rose-700 transition-colors"
+            >
+              {t("Nous contacter", "Contact us")}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
 
