@@ -368,46 +368,68 @@ export default function HomeContent() {
                   <span className="w-2 h-2 bg-rose-400 rounded-full animate-pulse" />
                   {t("Prochain événement", "Upcoming event")}
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                  Summer School
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  Summer School 2026
                 </h2>
-                <p className="text-gray-300 text-base leading-relaxed mb-8">
+                <p className="text-lg font-semibold text-rose-400 italic mb-4">
+                  Purpose at the Heart of Europe
+                </p>
+                <p className="text-gray-300 text-base leading-relaxed mb-6">
                   {t(
-                    "Deux jours d'échanges et de travail collectif réunissant chercheurs, praticiens et étudiants autour de la société à mission en Europe.",
-                    "Two days of exchange and collective work bringing together researchers, practitioners and students around the purpose-driven company in Europe."
+                    "Recherche, dialogue et action pour un nouveau modèle économique. Keynote de Michael Ristaniemi (Commission européenne, DG GROW) et panel de chercheurs européens.",
+                    "Research, dialogue and action for a new economic model. Keynote by Michael Ristaniemi (European Commission, DG GROW) and panel of European researchers."
                   )}
                 </p>
-                <div className="space-y-4 mb-8">
+                <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3 text-gray-200">
                     <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <span className="font-medium">{t("25-26 juin 2026", "25-26 June 2026")}</span>
+                    <span className="font-medium">{t("Vendredi 26 juin 2026", "Friday, June 26, 2026")}</span>
                   </div>
                   <div className="flex items-center gap-3 text-gray-200">
                     <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span>Lille</span>
+                    <span>9 rue Auguste Angellier, Lille</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-200">
+                    <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-sm">{t("Après-midi ouverte au public (en anglais)", "Afternoon open to the public (in English)")}</span>
                   </div>
                 </div>
-                <Link href="/evenements" className="btn-primary">
-                  {t("Voir tous les événements", "View all events")}
-                </Link>
+                <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg p-3 mb-6">
+                  <p className="text-amber-300 text-xs">
+                    {t(
+                      "ℹ️ La matinée est réservée aux membres des groupes de travail.",
+                      "ℹ️ The morning session is reserved for working group members."
+                    )}
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DslKKfWFMkelNenFHomhZkXYfZbtHVFJma-lCb2gVypURTg4N1k1UUxBV1o2WFpPQkhHOVZDQjFZVy4u"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary text-center"
+                  >
+                    {t("S'inscrire", "Register")}
+                  </a>
+                  <Link href="/evenements" className="btn-outline border-white/30 text-white hover:bg-white/10 text-center">
+                    {t("Voir le programme", "View the programme")}
+                  </Link>
+                </div>
               </div>
-              <div className="hidden lg:flex items-center justify-center p-16">
-                <div className="w-full max-w-xs">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-card p-8 text-center border border-white/20">
-                    <div className="text-5xl font-bold text-rose-400 mb-2">25-26</div>
-                    <div className="text-2xl font-bold text-white mb-1">{t("Juin", "June")}</div>
-                    <div className="text-gray-300">2026</div>
-                    <div className="mt-6 pt-6 border-t border-white/20">
-                      <div className="text-white font-bold">Lille</div>
-                      <div className="text-gray-400 text-sm mt-1">Hauts-de-France</div>
-                    </div>
-                  </div>
-                </div>
+              <div className="hidden lg:flex items-center justify-center p-8">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/summer-school/visuel-afternoon.png"
+                  alt="Summer School 2026 — Purpose at the Heart of Europe"
+                  className="w-full max-w-sm rounded-lg shadow-2xl border border-white/10"
+                />
               </div>
             </div>
           </div>
