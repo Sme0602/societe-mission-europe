@@ -13,7 +13,7 @@ const pressArticles = [
     url: "https://www.uphf.fr/larsh/actualites/societe-mission-si-hauts-france-devenaient-laboratoire-dune-revolution-entrepreneuriale-europeenne",
     image: null,
     excerpt:
-      "Le projet « Société à Mission Europe », porté par Matthieu Caron, vise à étendre le modèle d'entreprise à mission à l'échelle européenne, en utilisant les Hauts-de-France comme laboratoire d'expérimentation.",
+      "Dans un article publié sur le site du laboratoire LARSH, Nicole Pertuis recueille les explications de Matthieu Caron sur l'ambition du projet Société à Mission Europe : faire des Hauts-de-France un laboratoire d'innovation pour penser l'avenir des entreprises à mission à l'échelle européenne.",
   },
   {
     title:
@@ -53,7 +53,7 @@ const pressArticles = [
     url: "https://euradio.fr/emission/4zej-euradio-a-lille/dYl6-societe-a-mission-un-modele-europeen-en-experimentation",
     image: null,
     excerpt:
-      "Émission radio de 22 minutes consacrée au projet « Société à Mission Europe », explorant comment les Hauts-de-France servent de territoire pilote pour adapter le modèle d'entreprise à mission au niveau européen.",
+      "Matthieu Caron revient avec clarté sur l'initiative Société à Mission Europe dans une interview sur Euradio : un projet de recherche-action qui explore comment le modèle de société à mission peut être pensé et adapté à l'échelle européenne.",
   },
   {
     title:
