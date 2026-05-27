@@ -265,7 +265,7 @@ export default function ProjetContent() {
             <p className="text-xl text-navy-700 leading-relaxed">
               {t(
                 <>
-                  Programme de recherche-action soutenu par le FEDER, le projet Société à Mission Europe s&apos;organise autour de trois
+                  Programme de recherche-action financé par le Fonds européen de développement régional (FEDER), le projet Société à Mission Europe s&apos;organise autour de trois
                   groupes de travail complémentaires, du territoire local à
                   l&apos;échelle européenne, portés par{" "}
                   <Link href="/partenaires" className="text-rose-600 hover:text-rose-700 underline underline-offset-2">

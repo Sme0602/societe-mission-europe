@@ -88,8 +88,8 @@ export default function HomeContent() {
 
               <p className="text-navy-700 text-base max-w-2xl mb-10 leading-relaxed">
                 {t(
-                  "Un programme de recherche-action de 3 ans consacré à l'analyse et à la diffusion du modèle de la société à mission en France et en Europe, porté par l'UPHF et soutenu par le FEDER.",
-                  "A 3-year action-research programme dedicated to analysing and promoting the purpose-driven company model in France and Europe, led by UPHF and supported by ERDF."
+                  "Un programme de recherche-action de 3 ans consacré à l'analyse et à la diffusion du modèle de la société à mission en France et en Europe, porté par l'UPHF et financé par le Fonds européen de développement régional (FEDER).",
+                  "A 3-year action-research programme dedicated to analysing and promoting the purpose-driven company model in France and Europe, led by UPHF and funded by the European Regional Development Fund (ERDF)."
                 )}
               </p>
 
