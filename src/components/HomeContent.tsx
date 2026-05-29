@@ -98,6 +98,19 @@ export default function HomeContent() {
                   {t("Découvrir le projet de recherche", "Discover the research project")}
                 </Link>
               </div>
+
+              {/* Logo FEDER */}
+              <div className="mt-8">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logos/feder-double.png"
+                  alt={t(
+                    "Cofinancé par l'Union européenne et la Région Hauts-de-France",
+                    "Co-funded by the European Union and the Hauts-de-France Region"
+                  )}
+                  className="h-14 md:h-16 w-auto object-contain"
+                />
+              </div>
             </div>
 
             <PhotoBubbles />

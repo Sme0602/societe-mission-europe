@@ -103,19 +103,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Logo FEDER */}
-        <div className="border-t border-gray-700 py-6 flex items-center justify-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logos/feder-double.png"
-            alt={t(
-              "Cofinancé par l'Union européenne et la Région Hauts-de-France",
-              "Co-funded by the European Union and the Hauts-de-France Region"
-            )}
-            className="h-14 md:h-16 w-auto object-contain"
-          />
-        </div>
-
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           <p>{t("© 2026 Société à Mission Europe. Tous droits réservés.", "© 2026 Société à Mission Europe. All rights reserved.")}</p>
