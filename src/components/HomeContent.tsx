@@ -103,7 +103,7 @@ export default function HomeContent() {
               <div className="mt-8">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/logos/feder-double.png"
+                  src="/logos/feder-double-v2.png"
                   alt={t(
                     "Cofinancé par l'Union européenne et la Région Hauts-de-France",
                     "Co-funded by the European Union and the Hauts-de-France Region"
@@ -461,7 +461,7 @@ export default function HomeContent() {
           <div className="mt-8 flex items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logos/feder-double.png"
+              src="/logos/feder-double-v2.png"
               alt={t("Région Hauts-de-France — Cofinancé par l'Union européenne", "Région Hauts-de-France — Co-funded by the European Union")}
               className="h-16 md:h-20 w-auto object-contain"
             />
