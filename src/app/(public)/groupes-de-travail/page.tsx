@@ -460,7 +460,7 @@ function FranceTab() {
                 </div>
               </div>
 
-              <ConseilScientifique groupe="cs_national" color="bg-rose-50 border-rose-100" />
+              {/* CS National masqué — en attente de validation des membres */}
 
             </div>
 
@@ -541,7 +541,6 @@ function FranceTab() {
 
       <ParticipantsList
         groupe="gt_national"
-        csGroupe="cs_national"
         title="Participants du groupe France"
         titleEn="France Group Participants"
         color="bg-orange-600"
