@@ -39,7 +39,7 @@ export const teamMembers: TeamMember[] = [
       "Throughout his career, he has taught political economy (history of economic thought, economic and social history, economic, social and environmental affairs, law and economics, public finance economics), public law (constitutional law, public finance law and European Union law) as well as management (leadership, public influence, business ethics, corporate governance reform and introduction to management sciences).",
     ],
     publications: [
-      "\u00c9thique publique des affaires, ouvrage collectif en codirection avec Mathieu Disant et Mathias Amilhet, \u00e0 para\u00eetre d\u00e9but 2026 \u00e0 la LGDJ.",
+      "\u00c9thique publique des affaires, ouvrage collectif en codirection avec Mathieu Disant et Mathias Amilhat, \u00e0 para\u00eetre d\u00e9but 2026 \u00e0 la LGDJ.",
       "L\u2019\u00e9thique des affaires, Que sais-je, PUF, octobre 2025.",
       "\u00ab L\u2019Union europ\u00e9enne doit d\u00e9fendre le mod\u00e8le de l\u2019entreprise responsable \u00bb, (en collaboration avec St\u00e9phane Vernac, PP n\u00b016 OEP, mars 2025.",
       "\u00ab L\u2019\u00e9thique publique des affaires, Essai de d\u00e9finition et d\u00e9clinaison de nouveaux champs de recherches \u00bb, note n\u00b041 OEP, 11 mars 2025.",

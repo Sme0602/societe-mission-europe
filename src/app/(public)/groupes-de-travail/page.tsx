@@ -131,8 +131,9 @@ export default function GroupesDeTravailPage() {
 
 /* ─────────────────────── Territoire Tab ─────────────────────── */
 
-function ParticipantsList({ groupe, title, titleEn, color = "bg-rose-600", excludeNames = [] }: {
+function ParticipantsList({ groupe, csGroupe, title, titleEn, color = "bg-rose-600", excludeNames = [] }: {
   groupe: string;
+  csGroupe?: string;
   title: string;
   titleEn: string;
   color?: string;
@@ -140,15 +141,28 @@ function ParticipantsList({ groupe, title, titleEn, color = "bg-rose-600", exclu
 }) {
   const { t } = useI18n();
   const [participants, setParticipants] = useState<{ nom_prenom: string; poste_structure: string | null }[]>([]);
+  const [csMembers, setCsMembers] = useState<string[]>([]);
 
   useEffect(() => {
     fetch(`/api/contributeurs?groupe=${groupe}`)
       .then((res) => res.json())
       .then((data) => setParticipants(data))
       .catch(() => {});
-  }, [groupe]);
+    if (csGroupe) {
+      fetch(`/api/contributeurs?groupe=${csGroupe}`)
+        .then((res) => res.json())
+        .then((data: { nom_prenom: string }[]) => setCsMembers(data.map((m) => m.nom_prenom)))
+        .catch(() => {});
+    }
+  }, [groupe, csGroupe]);
 
-  const filtered = participants.filter((c) => !excludeNames.includes(c.nom_prenom));
+  const filtered = participants
+    .filter((c) => !excludeNames.includes(c.nom_prenom) && !csMembers.includes(c.nom_prenom))
+    .sort((a, b) => {
+      const lastA = a.nom_prenom.split(" ").slice(-1)[0];
+      const lastB = b.nom_prenom.split(" ").slice(-1)[0];
+      return lastA.localeCompare(lastB, "fr");
+    });
 
   if (filtered.length === 0) return null;
 
@@ -169,12 +183,7 @@ function ParticipantsList({ groupe, title, titleEn, color = "bg-rose-600", exclu
           {filtered.map((c) => (
             <li key={c.nom_prenom} className="flex items-start gap-2 text-sm break-inside-avoid">
               <span className={`w-1.5 h-1.5 ${color} rounded-full shrink-0 mt-1.5`} />
-              <span>
-                <span className="font-medium text-navy-800">{c.nom_prenom}</span>
-                {c.poste_structure && (
-                  <span className="text-navy-600"> — {c.poste_structure}</span>
-                )}
-              </span>
+              <span className="font-medium text-navy-800">{c.nom_prenom}</span>
             </li>
           ))}
         </ul>
@@ -381,6 +390,7 @@ function TerritoireTab() {
 
       <ParticipantsList
         groupe="gt_territoire"
+        csGroupe="cs_territoire"
         title="Participants du groupe Territoire"
         titleEn="Territory Group Participants"
         color="bg-jaune-400"
@@ -531,6 +541,7 @@ function FranceTab() {
 
       <ParticipantsList
         groupe="gt_national"
+        csGroupe="cs_national"
         title="Participants du groupe France"
         titleEn="France Group Participants"
         color="bg-orange-600"
@@ -614,10 +625,14 @@ function EuropeTab() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-7 h-7 bg-navy-800 text-white rounded-lg flex items-center justify-center text-xs font-bold shrink-0">5</div>
-                    <p className="text-navy-700 text-sm leading-relaxed">
-                      Convergences and Divergences of National Models of Purpose-Driven
-                      Companies in Europe
-                    </p>
+                    <div>
+                      <p className="text-navy-700 text-sm leading-relaxed">
+                        {t(
+                          "Convergences et divergences des modèles nationaux de sociétés à mission en Europe",
+                          "Convergences and Divergences of National Models of Purpose-Driven Companies in Europe"
+                        )}
+                      </p>
+                    </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-7 h-7 bg-navy-800 text-white rounded-lg flex items-center justify-center text-xs font-bold shrink-0">6</div>
@@ -867,10 +882,11 @@ function EuropeTab() {
 
       <ParticipantsList
         groupe="gt_europe"
+        csGroupe="cs_europe"
         title="Participants du groupe Europe"
         titleEn="Europe Group Participants"
         color="bg-navy-800"
-        excludeNames={["Matthieu Caron", "Alix Vanmeervenne", "Sarah Vandenbroucke", "Stéphane Vernac", "Alessio Bartolacelli", "Blanche Segrestin", "Kevin Levillain", "Florian Möslein"]}
+        excludeNames={["Matthieu Caron", "Alix Vanmeervenne", "Sarah Vandenbroucke", "Stéphane Vernac"]}
       />
     </>
   );

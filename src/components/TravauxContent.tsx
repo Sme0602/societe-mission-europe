@@ -23,9 +23,9 @@ const travaux = [
       </svg>
     ),
     oepUrl: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/une-premiere-typologie-des-modeles-alternatifs-dentreprises-en-europe.html",
-    linkUrl: "/carte",
-    linkLabelFr: "Voir la cartographie interactive",
-    linkLabelEn: "View the interactive map",
+    linkUrl: null,
+    linkLabelFr: null,
+    linkLabelEn: null,
   },
   {
     numero: 2,

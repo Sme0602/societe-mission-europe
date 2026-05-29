@@ -1,7 +1,6 @@
 "use client";
 
 import { useI18n } from "@/lib/i18n/context";
-import { NewsletterFormFull } from "@/components/NewsletterForm";
 import type { Newsletter } from "@/lib/types/database";
 
 const pressArticles = [
@@ -342,7 +341,7 @@ export default function PresseNewsContent({
               </p>
             </div>
             <a
-              href="mailto:contact@observatoire-ethique-publique.com?subject=Contact%20Presse%20-%20Soci%C3%A9t%C3%A9%20%C3%A0%20Mission%20Europe"
+              href="mailto:sarah.vandenbroucke@uphf.fr?subject=Contact%20Presse%20-%20Soci%C3%A9t%C3%A9%20%C3%A0%20Mission%20Europe"
               className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-rose-600 text-white font-bold rounded-lg hover:bg-rose-700 transition-colors text-sm"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -399,22 +398,6 @@ export default function PresseNewsContent({
         </div>
       </section>
 
-      {/* Newsletter subscription */}
-      <section className="py-16 md:py-24 bg-beige-50">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="section-title">
-            {t("Restez informé", "Stay Informed")}
-          </h2>
-          <div className="tricolor-separator w-24 mx-auto mb-4" />
-          <p className="section-subtitle mb-8">
-            {t(
-              "Inscrivez-vous pour recevoir les prochaines newsletters et actualités du projet.",
-              "Subscribe to receive upcoming newsletters and project updates."
-            )}
-          </p>
-          <NewsletterFormFull />
-        </div>
-      </section>
     </>
   );
 }

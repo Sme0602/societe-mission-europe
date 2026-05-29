@@ -186,9 +186,9 @@ export default function EvenementsContent() {
                     <p className="text-sm font-bold text-navy-800">10h00 – 12h00</p>
                     <p className="text-navy-700 text-sm font-medium">{t("Ateliers thématiques — Discussion par groupe de travail", "Thematic workshops — Working group discussions")}</p>
                     <div className="flex flex-wrap gap-2 mt-2">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">Europe — {t("Salle", "Room")} 244</span>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-rose-50 text-rose-700 text-xs font-medium rounded-full">National — {t("Salle", "Room")} 318</span>
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-full">Territorial — Amphi B</span>
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">Europe</span>
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-rose-50 text-rose-700 text-xs font-medium rounded-full">National</span>
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-full">Territorial</span>
                     </div>
                   </div>
                   <div className="relative">

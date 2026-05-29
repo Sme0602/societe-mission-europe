@@ -42,7 +42,7 @@ function PhotoBubbles() {
       {photos.map((src, i) => (
         <div
           key={`${index}-${i}`}
-          className="rounded-full overflow-hidden border-4 border-white/40 shadow-lg transition-all duration-700 w-36 h-36"
+          className="rounded-full overflow-hidden border-4 border-white/40 shadow-lg transition-all duration-700 w-48 h-48 lg:w-56 lg:h-56"
           style={{ animation: "fadeIn 0.8s ease-in-out" }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -88,8 +88,8 @@ export default function HomeContent() {
 
               <p className="text-navy-700 text-base max-w-2xl mb-10 leading-relaxed">
                 {t(
-                  "Un programme de recherche-action de 3 ans consacré à l'analyse et à la diffusion du modèle de la société à mission en France et en Europe, porté par l'UPHF et financé par le Fonds européen de développement régional (FEDER).",
-                  "A 3-year action-research programme dedicated to analysing and promoting the purpose-driven company model in France and Europe, led by UPHF and funded by the European Regional Development Fund (ERDF)."
+                  "Un programme de recherche-action de 3 ans consacré à l'analyse et à la diffusion du modèle de la société à mission en France et en Europe, porté par l'UPHF et cofinancé par l'Union européenne et la Région Hauts-de-France.",
+                  "A 3-year action-research programme dedicated to analysing and promoting the purpose-driven company model in France and Europe, led by UPHF and co-funded by the European Union and the Hauts-de-France Region."
                 )}
               </p>
 
