@@ -93,10 +93,11 @@ Ce message a été envoyé via le formulaire de contact du site societe-mission-
       { message: "Message envoyé avec succès." },
       { status: 201 }
     );
-  } catch (err) {
-    console.error("Contact API error:", err);
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    console.error("Contact API error:", errorMessage, err);
     return NextResponse.json(
-      { error: "Erreur serveur." },
+      { error: `Erreur serveur: ${errorMessage}` },
       { status: 500 }
     );
   }
