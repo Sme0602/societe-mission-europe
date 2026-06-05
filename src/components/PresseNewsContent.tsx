@@ -164,6 +164,34 @@ export default function PresseNewsContent({
         </div>
       </section>
 
+      {/* Contact Presse */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-navy-800 rounded-card p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="text-xl font-bold text-white mb-2">
+                {t("Contact Presse", "Press Contact")}
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {t(
+                  "Vous êtes journaliste et souhaitez en savoir plus sur le projet, réaliser une interview ou obtenir des informations ? N'hésitez pas à nous contacter.",
+                  "Are you a journalist and would like to learn more about the project, conduct an interview or obtain information? Don't hesitate to get in touch."
+                )}
+              </p>
+            </div>
+            <a
+              href="mailto:sarah.vandenbroucke@uphf.fr,alix.vanmeervenne@uphf.fr?subject=Contact%20Presse%20%E2%80%94%20Soci%C3%A9t%C3%A9%20%C3%A0%20Mission%20Europe"
+              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-rose-600 text-white font-bold rounded-lg hover:bg-rose-700 transition-colors text-sm"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              {t("Nous écrire", "Contact Us")}
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Newsletters */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -322,34 +350,6 @@ export default function PresseNewsContent({
                 </div>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Presse */}
-      <section className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-navy-800 rounded-card p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="text-xl font-bold text-white mb-2">
-                {t("Contact Presse", "Press Contact")}
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {t(
-                  "Vous êtes journaliste et souhaitez en savoir plus sur le projet, réaliser une interview ou obtenir des informations ? N'hésitez pas à nous contacter.",
-                  "Are you a journalist and would like to learn more about the project, conduct an interview or obtain information? Don't hesitate to get in touch."
-                )}
-              </p>
-            </div>
-            <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-rose-600 text-white font-bold rounded-lg hover:bg-rose-700 transition-colors text-sm"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              {t("Nous écrire", "Contact Us")}
-            </Link>
           </div>
         </div>
       </section>

@@ -74,6 +74,35 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Nous écrire directement */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-bold text-navy-800 mb-2">
+              {t("Nous écrire directement", "Write to us directly")}
+            </h2>
+            <div className="tricolor-separator w-24 mx-auto mb-4" />
+            <p className="text-navy-600 text-sm">
+              {t(
+                "Vous pouvez aussi nous envoyer un email directement.",
+                "You can also send us an email directly."
+              )}
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <a
+              href="mailto:sarah.vandenbroucke@uphf.fr,alix.vanmeervenne@uphf.fr?subject=Contact%20%E2%80%94%20Soci%C3%A9t%C3%A9%20%C3%A0%20Mission%20Europe"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-rose-600 text-white font-bold rounded-lg hover:bg-rose-700 transition-colors text-sm"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              {t("Nous écrire directement", "Write to us directly")}
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Formulaire d'engagement */}
       <section className="py-16 md:py-24 bg-beige-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
