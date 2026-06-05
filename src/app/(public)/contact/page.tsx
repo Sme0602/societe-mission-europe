@@ -100,9 +100,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-navy-800 font-medium text-sm">Alix Vanmeervenne</p>
-                  <a href="mailto:alix.vanmeervenne@uphf.fr" className="text-rose-600 hover:underline text-sm break-all">
-                    alix.vanmeervenne@uphf.fr
-                  </a>
+                  <p className="text-navy-600 text-xs">{t("Ingénieure d'études, UPHF", "Research Engineer, UPHF")}</p>
                 </div>
               </div>
             </div>
@@ -131,9 +129,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-navy-800 font-medium text-sm">Sarah Vandenbroucke</p>
-                  <a href="mailto:sarah.vandenbroucke@uphf.fr" className="text-rose-600 hover:underline text-sm break-all">
-                    sarah.vandenbroucke@uphf.fr
-                  </a>
+                  <p className="text-navy-600 text-xs">{t("Ingénieure de recherche, UPHF", "Research Engineer, UPHF")}</p>
                 </div>
               </div>
             </div>

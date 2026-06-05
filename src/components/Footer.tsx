@@ -23,9 +23,9 @@ export default function Footer() {
       <div className="tricolor-separator" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div>
             <div className="flex items-center gap-3 mb-4">
               <Image src="/logo.png" alt="Société à Mission Europe" width={48} height={48} className="w-10 h-10" />
               <div>
@@ -57,45 +57,20 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-bold text-sm uppercase tracking-wider mb-4 text-jaune-400">Contact</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <div>
-                  <span className="block text-gray-400 text-xs mb-0.5">Sarah Vandenbroucke</span>
-                  <a href="mailto:sarah.vandenbroucke@uphf.fr" className="hover:text-white transition-colors break-all">sarah.vandenbroucke@uphf.fr</a>
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <div>
-                  <span className="block text-gray-400 text-xs mb-0.5">Alix Vanmeervenne</span>
-                  <a href="mailto:alix.vanmeervenne@uphf.fr" className="hover:text-white transition-colors break-all">alix.vanmeervenne@uphf.fr</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contribuer */}
-          <div>
             <h3 className="font-bold text-sm uppercase tracking-wider mb-4 text-jaune-400">
-              {t("Contribuer", "Get involved")}
+              {t("Nous contacter", "Contact us")}
             </h3>
             <p className="text-gray-300 text-sm mb-4">
               {t(
-                "Vous souhaitez devenir partenaire ou rejoindre un groupe de travail ?",
-                "Want to become a partner or join a working group?"
+                "Vous souhaitez devenir partenaire, rejoindre un groupe de travail ou simplement en savoir plus sur le projet ?",
+                "Want to become a partner, join a working group or simply learn more about the project?"
               )}
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-4 py-2 bg-rose-600 text-white text-sm font-semibold rounded-lg hover:bg-rose-700 transition-colors"
             >
-              {t("Nous contacter", "Contact us")}
+              {t("Formulaire de contact", "Contact form")}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

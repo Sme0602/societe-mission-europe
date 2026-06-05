@@ -191,12 +191,12 @@ export default function EquipeContent() {
               "Would you like to contribute to the Société à Mission Europe project? Researchers, doctoral students and professionals are welcome."
             )}
           </p>
-          <a
-            href="mailto:contact@observatoire-ethique-publique.com"
+          <Link
+            href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-white text-rose-600 font-bold rounded-lg hover:bg-beige-50 transition-colors text-lg"
           >
             {t("Nous contacter", "Contact Us")}
-          </a>
+          </Link>
         </div>
       </section>
     </>

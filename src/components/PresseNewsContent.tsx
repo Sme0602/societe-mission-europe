@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
 import type { Newsletter } from "@/lib/types/database";
 
@@ -340,15 +341,15 @@ export default function PresseNewsContent({
                 )}
               </p>
             </div>
-            <a
-              href="mailto:sarah.vandenbroucke@uphf.fr?subject=Contact%20Presse%20-%20Soci%C3%A9t%C3%A9%20%C3%A0%20Mission%20Europe"
+            <Link
+              href="/contact"
               className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-rose-600 text-white font-bold rounded-lg hover:bg-rose-700 transition-colors text-sm"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               {t("Nous écrire", "Contact Us")}
-            </a>
+            </Link>
           </div>
         </div>
       </section>

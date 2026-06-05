@@ -42,7 +42,7 @@ export default function MentionsLegalesContent() {
                 <strong>Sarah Vandenbroucke</strong> & <strong>Alix Vanmeervenne</strong>
               </p>
               <p className="text-navy-700 mb-1">
-                {t("Email", "Email")} : <a href="mailto:sarah.vandenbroucke@uphf.fr" className="text-rose-600 hover:underline">sarah.vandenbroucke@uphf.fr</a>
+                {t("Contact", "Contact")} : <Link href="/contact" className="text-rose-600 hover:underline">{t("Formulaire de contact", "Contact form")}</Link>
               </p>
               <p className="text-navy-700">
                 {t(
