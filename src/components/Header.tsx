@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/travaux", fr: "Nos travaux", en: "Our Work" },
   { href: "/evenements", fr: "Événements", en: "Events" },
   { href: "/presse-news", fr: "Presse & News", en: "Press & News" },
+  { href: "/contact", fr: "Contact", en: "Contact" },
 ];
 
 export default function Header() {

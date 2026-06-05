@@ -53,9 +53,9 @@ export default function ContactPage() {
               Contact
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {t("Contribuer au", "Get involved in the")}{" "}
+              {t("Nous", "Get in")}{" "}
               <span className="text-rose-600">
-                {t("projet", "project")}
+                {t("contacter", "touch")}
               </span>
             </h1>
             <div className="tricolor-separator w-32 mb-8" />
