@@ -9,7 +9,7 @@ export default function PolitiqueConfidentialiteContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-gradient-main text-navy-800 py-12 md:py-16 pb-24 overflow-hidden">
+      <section className="relative bg-gradient-main text-navy-800 py-16 md:py-24 pb-28 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
             {t("Politique de confidentialité", "Privacy Policy")}
