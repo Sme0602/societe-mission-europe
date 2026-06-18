@@ -14,6 +14,8 @@ export default function ContactPage() {
     groupeTravail: "",
     expertise: "",
     message: "",
+    consentDonnees: false,
+    optOutEmails: false,
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -37,7 +39,7 @@ export default function ContactPage() {
       });
       if (!res.ok) throw new Error();
       setStatus("sent");
-      setForm({ nom: "", prenom: "", email: "", organisation: "", interests: [], groupeTravail: "", expertise: "", message: "" });
+      setForm({ nom: "", prenom: "", email: "", organisation: "", interests: [], groupeTravail: "", expertise: "", message: "", consentDonnees: false, optOutEmails: false });
     } catch {
       setStatus("error");
     }
@@ -282,6 +284,47 @@ export default function ContactPage() {
                   )}
                   className="w-full px-4 py-2.5 rounded-lg border border-beige-200 text-navy-800 placeholder:text-navy-400 focus:ring-2 focus:ring-rose-500 focus:border-rose-500 outline-none transition-colors resize-none"
                 />
+              </div>
+
+              {/* Consentements */}
+              <div className="space-y-3 border-t border-beige-200 pt-6">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={form.consentDonnees}
+                    onChange={(e) => setForm({ ...form, consentDonnees: e.target.checked })}
+                    className="w-4 h-4 mt-1 text-rose-600 border-gray-300 rounded focus:ring-rose-500"
+                  />
+                  <span className="text-sm text-navy-700">
+                    {t(
+                      "J'accepte que mes informations nominatives figurent publiquement sur le site Société à Mission Europe *",
+                      "I agree that my personal information may be publicly displayed on the Société à Mission Europe website *"
+                    )}
+                  </span>
+                </label>
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={form.optOutEmails}
+                    onChange={(e) => setForm({ ...form, optOutEmails: e.target.checked })}
+                    className="w-4 h-4 mt-1 text-rose-600 border-gray-300 rounded focus:ring-rose-500"
+                  />
+                  <span className="text-sm text-navy-700">
+                    {t(
+                      "Je ne souhaite pas recevoir d'information sur les actualités du projet Société à Mission Europe",
+                      "I do not wish to receive information about the Société à Mission Europe project news"
+                    )}
+                  </span>
+                </label>
+              </div>
+
+              {/* Mention RGPD */}
+              <div className="bg-beige-50 rounded-lg p-4 border border-beige-200 text-xs text-navy-600 leading-relaxed">
+                {t(
+                  <>Conformément à la Réglementation sur la protection des données, les informations vous concernant renseignées dans le présent formulaire sont destinées à l&apos;Université Polytechnique Hauts-de-France, sur la base de votre consentement, afin de traiter votre demande d&apos;information, de contact ou d&apos;intégration d&apos;un groupe ou d&apos;un projet Société à Mission Europe. Vos données pourront être communiquées aux ingénieurs d&apos;étude et de recherche rattachés au projet, ainsi qu&apos;à nos sous-traitants. Les données sont conservées jusqu&apos;à la fin du projet Société à Mission Europe au 31/12/2029. Vous pouvez exercer vos droits d&apos;accès, de rectification, d&apos;effacement ou de limitation du traitement de vos données par email à <a href="mailto:dpo@uphf.fr" className="text-rose-600 hover:underline">dpo@uphf.fr</a>. Vous pouvez également exercer votre droit à la portabilité de vos données et retirer votre consentement à tout moment. Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-rose-600 hover:underline">CNIL</a>.</>,
+                  <>In accordance with data protection regulations, the information you provide in this form is intended for the Université Polytechnique Hauts-de-France, on the basis of your consent, to process your request for information, contact or integration into a group or the Société à Mission Europe project. Your data may be shared with research engineers attached to the project, as well as our subcontractors. Data is retained until the end of the Société à Mission Europe project on 31/12/2029. You can exercise your rights of access, rectification, erasure or restriction of processing by email at <a href="mailto:dpo@uphf.fr" className="text-rose-600 hover:underline">dpo@uphf.fr</a>. You can also exercise your right to data portability and withdraw your consent at any time. If you believe your rights are not being respected, you can file a complaint with the <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-rose-600 hover:underline">CNIL</a>.</>
+                )}
               </div>
 
               {/* Submit */}

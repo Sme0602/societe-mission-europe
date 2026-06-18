@@ -44,11 +44,14 @@ export default function MentionsLegalesContent() {
               <p className="text-navy-700 mb-1">
                 {t("Contact", "Contact")} : <Link href="/contact" className="text-rose-600 hover:underline">{t("Formulaire de contact", "Contact form")}</Link>
               </p>
-              <p className="text-navy-700">
+              <p className="text-navy-700 mb-1">
                 {t(
                   "Dans le cadre du projet de recherche Société à Mission Europe, porté par l'UPHF et l'Observatoire de l'Éthique Publique.",
                   "As part of the Société à Mission Europe research project, led by UPHF and the Observatoire de l'Éthique Publique."
                 )}
+              </p>
+              <p className="text-navy-700 text-sm">
+                SIRET UPHF : 130 025 745 00014
               </p>
             </div>
 
@@ -94,23 +97,15 @@ export default function MentionsLegalesContent() {
             </h2>
             <div className="tricolor-separator w-24 mb-4" />
             <div className="bg-blue-50 border border-blue-200 rounded-card p-6 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-12 bg-blue-800 rounded flex items-center justify-center">
-                    <span className="text-yellow-400 text-2xl">★</span>
-                  </div>
-                </div>
-                <div>
-                  <p className="font-semibold text-navy-800 mb-2">
-                    {t("Cofinancé par l'Union européenne", "Co-funded by the European Union")}
-                  </p>
-                  <p className="text-navy-700 text-sm">
-                    {t(
-                      "Ce projet est cofinancé par le Fonds Européen de Développement Régional (FEDER) et la Région Hauts-de-France dans le cadre du programme opérationnel 2021-2027.",
-                      "This project is co-funded by the European Regional Development Fund (ERDF) and the Hauts-de-France Region as part of the 2021-2027 operational programme."
-                    )}
-                  </p>
-                </div>
+              <div className="flex flex-col items-center gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logos/feder-double-v2.png" alt="Région Hauts-de-France — Cofinancé par l'Union européenne" className="h-16 w-auto" />
+                <p className="text-navy-700 text-sm text-center">
+                  {t(
+                    "Ce projet est cofinancé par le Fonds Européen de Développement Régional (FEDER) et la Région Hauts-de-France dans le cadre du programme opérationnel 2021-2027.",
+                    "This project is co-funded by the European Regional Development Fund (ERDF) and the Hauts-de-France Region as part of the 2021-2027 operational programme."
+                  )}
+                </p>
               </div>
             </div>
 
@@ -202,7 +197,7 @@ export default function MentionsLegalesContent() {
           {/* Dernière mise à jour */}
           <div className="mt-12 pt-6 border-t border-beige-200">
             <p className="text-sm text-navy-700">
-              {t("Dernière mise à jour : Février 2026", "Last updated: February 2026")}
+              {t("Dernière mise à jour : Juin 2026", "Last updated: June 2026")}
             </p>
           </div>
         </div>
