@@ -244,7 +244,7 @@ export default function EvenementsContent() {
                         { name: "Anne Sanders", inst: "University of Bielefeld & Harvard Business School" },
                         { name: "Blanche Segrestin", inst: "Mines Paris PSL" },
                         { name: "Jeroen Veldman", inst: "Nyenrode Business University" },
-                        { name: "Anne-Marie Weber", inst: "University of Warsaw & Max Planck Institute" },
+                        { name: "Anne-Marie Weber", inst: "University of Warsaw" },
                       ].map((speaker) => (
                         <div key={speaker.name} className="bg-beige-50 rounded-lg p-2 text-xs">
                           <p className="font-bold text-navy-800">{speaker.name}</p>
