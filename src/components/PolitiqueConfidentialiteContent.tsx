@@ -357,21 +357,9 @@ export default function PolitiqueConfidentialiteContent() {
               )}
             </p>
 
-            {/* 6. Communication juridique */}
+            {/* 6. Vos droits */}
             <h2 className="text-2xl font-bold text-navy-800 mb-4">
-              {t("6. Communication pour des raisons d'ordre juridique", "6. Disclosure for Legal Reasons")}
-            </h2>
-            <div className="tricolor-separator w-24 mb-6" />
-            <p className="text-navy-700 mb-8">
-              {t(
-                "Les Données Personnelles pourront être divulguées à un tiers si l'UPHF y est contrainte par la loi, une disposition réglementaire ou une ordonnance judiciaire, ou encore si cette divulgation est rendue nécessaire pour les besoins d'une enquête, injonction ou procédure judiciaire.",
-                "Personal Data may be disclosed to a third party if UPHF is compelled to do so by law, regulation or court order, or if such disclosure is necessary for the purposes of an investigation, injunction or legal proceedings."
-              )}
-            </p>
-
-            {/* 7. Vos droits */}
-            <h2 className="text-2xl font-bold text-navy-800 mb-4">
-              {t("7. Vos droits", "7. Your Rights")}
+              {t("6. Vos droits", "6. Your Rights")}
             </h2>
             <div className="tricolor-separator w-24 mb-6" />
             <p className="text-navy-700 mb-4">
@@ -455,7 +443,7 @@ export default function PolitiqueConfidentialiteContent() {
 
             {/* 8. Réclamation CNIL */}
             <h2 className="text-2xl font-bold text-navy-800 mb-4">
-              {t("8. Réclamation auprès de la CNIL", "8. Complaint to the CNIL")}
+              {t("7. Réclamation auprès de la CNIL", "7. Complaint to the CNIL")}
             </h2>
             <div className="tricolor-separator w-24 mb-6" />
             <p className="text-navy-700 mb-4">
@@ -476,7 +464,7 @@ export default function PolitiqueConfidentialiteContent() {
 
             {/* 9. Sécurité des données */}
             <h2 className="text-2xl font-bold text-navy-800 mb-4">
-              {t("9. Sécurité des données", "9. Data Security")}
+              {t("8. Sécurité des données", "8. Data Security")}
             </h2>
             <div className="tricolor-separator w-24 mb-6" />
             <p className="text-navy-700 mb-8">
@@ -488,7 +476,7 @@ export default function PolitiqueConfidentialiteContent() {
 
             {/* 10. Modification */}
             <h2 className="text-2xl font-bold text-navy-800 mb-4">
-              {t("10. Modification de la politique", "10. Policy Changes")}
+              {t("9. Modification de la politique", "9. Policy Changes")}
             </h2>
             <div className="tricolor-separator w-24 mb-6" />
             <p className="text-navy-700">
