@@ -291,15 +291,14 @@ export default function ContactPage() {
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
                     type="checkbox"
-                    required
                     checked={form.consentDonnees}
                     onChange={(e) => setForm({ ...form, consentDonnees: e.target.checked })}
                     className="w-4 h-4 mt-1 text-rose-600 border-gray-300 rounded focus:ring-rose-500"
                   />
                   <span className="text-sm text-navy-700">
                     {t(
-                      "J'accepte que mes informations nominatives figurent publiquement sur le site Société à Mission Europe *",
-                      "I agree that my personal information may be publicly displayed on the Société à Mission Europe website *"
+                      "J'accepte que mes informations nominatives figurent publiquement sur le site Société à Mission Europe",
+                      "I agree that my personal information may be publicly displayed on the Société à Mission Europe website"
                     )}
                   </span>
                 </label>
