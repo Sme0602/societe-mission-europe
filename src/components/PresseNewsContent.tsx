@@ -12,6 +12,7 @@ const pressArticles = [
     date: "2026-06-22",
     url: "https://www.lavoixdunord.fr/1714514/article/2026-06-22/projet-societe-mission-europe-ne-changera-pas-le-monde-contre-les-entreprises-et",
     image: null,
+    sourceLogo: "/logos/presse/lavoixdunord.png",
     excerpt:
       "Le projet Société à Mission Europe ambitionne d'élargir l'analyse des sociétés à mission à l'échelle des territoires et de l'Europe, afin d'en évaluer les effets concrets, d'en identifier les forces et les limites. Porté par l'UPHF en partenariat avec l'Observatoire de l'éthique publique, il réunit une cinquantaine de chercheurs et une vingtaine de structures autour de trois axes : territorial, national et européen. L'objectif : faire des Hauts-de-France un territoire à mission et proposer un texte européen à la Commission et au Parlement.",
   },
@@ -22,6 +23,7 @@ const pressArticles = [
     date: "2026-03-04",
     url: "https://www.uphf.fr/larsh/actualites/societe-mission-si-hauts-france-devenaient-laboratoire-dune-revolution-entrepreneuriale-europeenne",
     image: null,
+    sourceLogo: "/logos/larsh.png",
     excerpt:
       "Dans un article publié sur le site du laboratoire LARSH, Nicole Pertuis recueille les explications de Matthieu Caron sur l'ambition du projet Société à Mission Europe : faire des Hauts-de-France un laboratoire d'innovation pour penser l'avenir des entreprises à mission à l'échelle européenne.",
   },
@@ -32,6 +34,7 @@ const pressArticles = [
     date: "2026-03-04",
     url: "https://www.novethic.fr/economie-et-social/transformation-de-leconomie/europe-peut-elle-inventer-entreprise-xxi-siecle",
     image: "https://www.novethic.fr/wp-content/uploads/2026/03/Societe-entreprise-a-mission-@Pexels-Tara-Winstead.jpg",
+    sourceLogo: "/logos/presse/novethic.jpg",
     excerpt:
       "Des dirigeants et experts plaident pour que l'Europe reconnaisse officiellement le statut d'entreprise à mission à l'échelle continentale, un modèle qui réconcilie performance économique et résilience à long terme.",
   },
@@ -42,6 +45,7 @@ const pressArticles = [
     date: "2026-03-04",
     url: "https://www.lecho.be/opinions/general/opinion-l-europe-peut-elle-inventer-l-entreprise-du-xxi-siecle/10651704.html",
     image: null,
+    sourceLogo: "/logos/presse/lecho.png",
     excerpt:
       "Tribune signée par des acteurs de la Communauté des entreprises à mission, KAYA et Assobenefit, appelant à un statut européen pour les entreprises à mission.",
   },
@@ -52,6 +56,7 @@ const pressArticles = [
     date: "2026-03-02",
     url: "https://entreprisesamission.org/un-projet-de-societe-a-mission-europeenne-lance-pour-imaginer-un-modele-dentreprise-alternatif-avec-matthieu-caron-co-porteur-du-projet/",
     image: null,
+    sourceLogo: "/logos/communaute-mission.png",
     excerpt:
       "La Communauté des Entreprises à Mission relaie le lancement du projet européen porté par Matthieu Caron, co-porteur du projet, visant à imaginer un modèle d'entreprise alternatif à l'échelle du continent.",
   },
@@ -62,6 +67,7 @@ const pressArticles = [
     date: "2026-02-27",
     url: "https://euradio.fr/emission/4zej-euradio-a-lille/dYl6-societe-a-mission-un-modele-europeen-en-experimentation",
     image: null,
+    sourceLogo: "/logos/presse/euradio.png",
     excerpt:
       "Matthieu Caron revient avec clarté sur l'initiative Société à Mission Europe dans une interview sur Euradio : un projet de recherche-action qui explore comment le modèle de société à mission peut être pensé et adapté à l'échelle européenne.",
   },
@@ -72,6 +78,7 @@ const pressArticles = [
     date: "2026-02-17",
     url: "https://www.thegood.fr/vers-une-societe-a-mission-europeenne-lancement-dun-projet-pour-faire-de-leurope-le-premier-continent-a-mission/",
     image: "https://www.thegood.fr/app/uploads/2026/02/CEM-EmeryJ.jpg",
+    sourceLogo: "/logos/presse/thegood.png",
     excerpt:
       "Le projet « Société à mission Europe » a été lancé dans les Hauts-de-France le 6 février, réunissant près de 300 chercheurs, dirigeants, étudiants et responsables publics européens.",
   },
@@ -82,6 +89,7 @@ const pressArticles = [
     date: "2026-02-12",
     url: "https://www.carenews.com/carenews-info/news/un-projet-de-societe-a-mission-europeenne-lance-pour-imaginer-un-modele-d",
     image: "https://www.carenews.com/sites/default/files/styles/etire_grand/public/2026-02/performance%20%C3%A9conomique%20%281%29.png?itok=Bm9QUs3V",
+    sourceLogo: "/logos/presse/carenews.png",
     excerpt:
       "Matthieu Caron, maître de conférences en droit public et directeur général de L'Observatoire de l'éthique publique, co-porte le projet aux côtés de Stéphane Vernac.",
   },
@@ -92,6 +100,7 @@ const pressArticles = [
     date: "2026-02-08",
     url: "https://www.lagazettefrance.fr/article/wallers-arenberg-berceau-du-projet-societe-a-mission-europeenne",
     image: "https://www.lagazettefrance.fr/media/2026/02/1-c-elias-berrahal-698c9812214a3.jpg",
+    sourceLogo: "/logos/presse/lagazettefrance.png",
     excerpt:
       "C'est dans le cadre du site minier de Wallers-Arenberg que l'Université Polytechnique Hauts-de-France a lancé le projet « Société à mission en Europe ».",
   },
@@ -101,6 +110,7 @@ const pressArticles = [
     date: "2026-02-06",
     url: "https://www.reseau-alliances.org/agenda-rse/3481-lancement-du-projet-feder-societe-a-mission-en-europe",
     image: null,
+    sourceLogo: "/logos/reseau-alliances.png",
     excerpt:
       "L'événement de lancement a eu lieu le jeudi 6 février 2026, de 9h00 à 17h00, sur le site minier de Wallers-Arenberg.",
   },
@@ -110,6 +120,7 @@ const pressArticles = [
     date: "2026-02-06",
     url: "https://www.observatoireethiquepublique.com/agenda/20251/lancement-de-la-chaire-societe-a-mission-europeenne.html",
     image: null,
+    sourceLogo: "/logos/observatoire.png",
     excerpt:
       "L'Observatoire de l'Éthique Publique, co-porteur du projet Société à Mission Europe, annonce le lancement officiel de la chaire de recherche dédiée au modèle européen de la société à mission.",
   },
@@ -120,6 +131,7 @@ const pressArticles = [
     date: "2026-02-05",
     url: "https://mediatico.fr/les-hauts-de-france-tete-de-pont-dune-societe-a-mission-europeenne/",
     image: "https://mediatico.fr/wp-content/uploads/2026/02/Actu-Societe-a-mission-UE.jpeg",
+    sourceLogo: "/logos/presse/mediatico.png",
     excerpt:
       "L'Université Polytechnique Hauts-de-France lance une initiative de recherche ambitieuse pour développer un modèle européen d'entreprise à mission.",
   },
@@ -129,6 +141,7 @@ const pressArticles = [
     date: "2025-12-01",
     url: "https://www.essca.eu/app/uploads/2025/12/societe-a_mission_europeenne_projet_feder_20262029.pdf",
     image: null,
+    sourceLogo: "/logos/essca.png",
     excerpt:
       "Document de présentation du projet FEDER « Société à Mission Européenne » couvrant la période 2026-2029, détaillant la structure, les objectifs et le financement du projet.",
   },
@@ -317,7 +330,15 @@ export default function PresseNewsContent({
                 )}
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="inline-block px-2.5 py-0.5 bg-orange-50 text-orange-600 text-xs font-semibold rounded-full">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-orange-50 text-orange-600 text-xs font-semibold rounded-full">
+                      {article.sourceLogo && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={article.sourceLogo}
+                          alt={article.source}
+                          className="w-4 h-4 object-contain"
+                        />
+                      )}
                       {article.source}
                     </span>
                     <span className="text-xs text-navy-700">
