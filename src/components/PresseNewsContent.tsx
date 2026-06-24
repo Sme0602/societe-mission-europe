@@ -11,7 +11,7 @@ const pressArticles = [
     source: "La Voix du Nord",
     date: "2026-06-22",
     url: "https://www.lavoixdunord.fr/1714514/article/2026-06-22/projet-societe-mission-europe-ne-changera-pas-le-monde-contre-les-entreprises-et",
-    image: null,
+    image: "/images/presse-vdn-juin2026.jpg",
     sourceLogo: "/logos/presse/lavoixdunord.png",
     excerpt:
       "Le projet Société à Mission Europe est couvert par les médias locaux. La journaliste Valérie Sauvage reprend dans son article les propos de Matthieu Caron, qui détaille les trois axes du programme : territorial, national et européen. L'ambition : faire des Hauts-de-France un territoire à mission et proposer un texte à la Commission et au Parlement européen pour faire de l'Europe le premier continent à mission.",
@@ -360,7 +360,7 @@ export default function PresseNewsContent({
                       href={article.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-navy-700 hover:text-rose-600 text-xs font-medium transition-colors"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-rose-600 text-white text-sm font-semibold rounded-lg hover:bg-rose-700 transition-colors"
                     >
                       <svg
                         className="w-3 h-3"
