@@ -7,6 +7,16 @@ import type { Newsletter } from "@/lib/types/database";
 const pressArticles = [
   {
     title:
+      "« On ne changera pas le monde contre les entreprises et sans les entreprises »",
+    source: "La Voix du Nord",
+    date: "2026-06-22",
+    url: "https://www.lavoixdunord.fr/1714514/article/2026-06-22/projet-societe-mission-europe-ne-changera-pas-le-monde-contre-les-entreprises-et",
+    image: null,
+    excerpt:
+      "Le projet Société à Mission Europe ambitionne d'élargir l'analyse des sociétés à mission à l'échelle des territoires et de l'Europe, afin d'en évaluer les effets concrets, d'en identifier les forces et les limites. Porté par l'UPHF en partenariat avec l'Observatoire de l'éthique publique, il réunit une cinquantaine de chercheurs et une vingtaine de structures autour de trois axes : territorial, national et européen. L'objectif : faire des Hauts-de-France un territoire à mission et proposer un texte européen à la Commission et au Parlement.",
+  },
+  {
+    title:
       "Société à Mission : Et si les Hauts-de-France devenaient le Laboratoire d'une Révolution Entrepreneuriale Européenne",
     source: "UPHF / LARSH",
     date: "2026-03-04",
