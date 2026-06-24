@@ -14,7 +14,7 @@ const pressArticles = [
     image: null,
     sourceLogo: "/logos/presse/lavoixdunord.png",
     excerpt:
-      "Le projet Société à Mission Europe ambitionne d'élargir l'analyse des sociétés à mission à l'échelle des territoires et de l'Europe, afin d'en évaluer les effets concrets, d'en identifier les forces et les limites. Porté par l'UPHF en partenariat avec l'Observatoire de l'éthique publique, il réunit une cinquantaine de chercheurs et une vingtaine de structures autour de trois axes : territorial, national et européen. L'objectif : faire des Hauts-de-France un territoire à mission et proposer un texte européen à la Commission et au Parlement.",
+      "Le projet Société à Mission Europe est couvert par les médias locaux. La journaliste Valérie Sauvage reprend dans son article les propos de Matthieu Caron, qui détaille les trois axes du programme : territorial, national et européen. L'ambition : faire des Hauts-de-France un territoire à mission et proposer un texte à la Commission et au Parlement européen pour faire de l'Europe le premier continent à mission.",
   },
   {
     title:
@@ -330,15 +330,15 @@ export default function PresseNewsContent({
                 )}
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-orange-50 text-orange-600 text-xs font-semibold rounded-full">
-                      {article.sourceLogo && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={article.sourceLogo}
-                          alt={article.source}
-                          className="w-4 h-4 object-contain"
-                        />
-                      )}
+                    {article.sourceLogo && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={article.sourceLogo}
+                        alt={article.source}
+                        className="h-8 w-auto object-contain"
+                      />
+                    )}
+                    <span className="inline-block px-2.5 py-0.5 bg-orange-50 text-orange-600 text-xs font-semibold rounded-full">
                       {article.source}
                     </span>
                     <span className="text-xs text-navy-700">
