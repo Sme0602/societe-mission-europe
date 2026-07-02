@@ -55,7 +55,7 @@ const programApresMidi = [
       "Alessio Bartolacelli — Università di Modena e Reggio Emilia",
       "Carolina Cunha — University of Coimbra",
       "Kevin Levillain — Mines Paris PSL",
-      "Florian Möslein — Marburg University",
+      "Florian Möslein — University of Vienna",
       "Anne Sanders — University of Bielefeld & Harvard Business School",
       "Blanche Segrestin — Mines Paris PSL",
       "Jeroen Veldman — Nyenrode Business University",
