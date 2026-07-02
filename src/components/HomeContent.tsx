@@ -9,6 +9,7 @@ const heroPhotos = [
   21,22,23,24,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
   42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,
   61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,
+  77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,
 ].map((n) => `/images/carousel/photo-${n}.jpg`);
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -172,8 +173,22 @@ export default function HomeContent() {
                 <img src="/images/lancement/keynote.jpg" alt={t("Présentation lors de la journée de lancement — Wallers-Arenberg", "Presentation at the launch event — Wallers-Arenberg")} className="w-full h-auto" />
               </div>
               <div className="absolute -bottom-4 -left-4 bg-rose-600 text-white rounded-card px-5 py-3 shadow-lg">
-                <p className="text-sm font-bold">Wallers-Arenberg</p>
-                <p className="text-xs text-rose-100">{t("6 février 2026", "6 February 2026")}</p>
+                <p className="text-sm font-bold">{t("Lancement du projet", "Project launch")}</p>
+                <p className="text-xs text-rose-100">Matthieu Caron & Stéphane Vernac</p>
+                <p className="text-xs text-rose-100">Wallers-Arenberg — {t("6 février 2026", "6 February 2026")}</p>
+              </div>
+            </div>
+
+            {/* Photos Sarah & Alix — Summer School */}
+            <div className="relative mt-10">
+              <div className="rounded-card overflow-hidden shadow-lg border border-beige-200">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/summer-school/alix-sarah-summer-school.jpg" alt={t("Alix Vanmeervenne et Sarah Vandenbroucke à la Summer School — Sciences Po Lille, 26 juin 2026", "Alix Vanmeervenne and Sarah Vandenbroucke at the Summer School — Sciences Po Lille, 26 June 2026")} className="w-full h-auto" />
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-rose-600 text-white rounded-card px-5 py-3 shadow-lg">
+                <p className="text-sm font-bold">Summer School</p>
+                <p className="text-xs text-rose-100">Alix Vanmeervenne & Sarah Vandenbroucke</p>
+                <p className="text-xs text-rose-100">Sciences Po Lille — {t("26 juin 2026", "26 June 2026")}</p>
               </div>
             </div>
           </div>
@@ -336,6 +351,18 @@ export default function HomeContent() {
             )}
           </p>
         </div>
+        <div className="max-w-7xl mx-auto">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/summer-school/photos/photo-groupe.jpg" alt={t("Photo de groupe — Summer School 2026, Sciences Po Lille", "Group photo — Summer School 2026, Sciences Po Lille")} className="w-full h-auto" />
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+          <p className="text-navy-600 text-sm italic">
+            {t(
+              "Summer School « Purpose at the Heart of Europe » — chercheurs, praticiens et institutionnels européens réunis à Sciences Po Lille, 26 juin 2026",
+              "Summer School 'Purpose at the Heart of Europe' — European researchers, practitioners and institutional representatives gathered at Sciences Po Lille, 26 June 2026"
+            )}
+          </p>
+        </div>
       </section>
 
       {/* Vidéo de la journée de lancement */}
@@ -365,85 +392,6 @@ export default function HomeContent() {
                 allowFullScreen
                 className="absolute inset-0 w-full h-full"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Prochain événement — Summer School */}
-      <section className="py-16 md:py-24 bg-beige-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-navy-800 rounded-3xl overflow-hidden">
-            <div className="tricolor-separator" />
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div className="p-8 md:p-12 lg:p-16">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-600/20 rounded-full text-rose-400 text-sm font-bold mb-6">
-                  <span className="w-2 h-2 bg-rose-400 rounded-full animate-pulse" />
-                  {t("Prochain événement", "Upcoming event")}
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Summer School 2026
-                </h2>
-                <p className="text-lg font-semibold text-rose-400 italic mb-4">
-                  Purpose at the Heart of Europe
-                </p>
-                <p className="text-gray-300 text-base leading-relaxed mb-6">
-                  {t(
-                    "Recherche, dialogue et action pour un nouveau modèle économique. Keynote de Michael Ristaniemi (Commission européenne, DG GROW) et panel de chercheurs européens.",
-                    "Research, dialogue and action for a new economic model. Keynote by Michael Ristaniemi (European Commission, DG GROW) and panel of European researchers."
-                  )}
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span className="font-medium">{t("Vendredi 26 juin 2026", "Friday, June 26, 2026")}</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span>9 rue Auguste Angellier, Lille</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-sm">{t("Après-midi ouverte au public (en anglais)", "Afternoon open to the public (in English)")}</span>
-                  </div>
-                </div>
-                <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg p-3 mb-6">
-                  <p className="text-amber-300 text-xs">
-                    {t(
-                      "ℹ️ La matinée est réservée aux membres des groupes de travail.",
-                      "ℹ️ The morning session is reserved for working group members."
-                    )}
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DslKKfWFMkelNenFHomhZkXYfZbtHVFJma-lCb2gVypURTg4N1k1UUxBV1o2WFpPQkhHOVZDQjFZVy4u"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary text-center"
-                  >
-                    {t("S'inscrire", "Register")}
-                  </a>
-                  <Link href="/evenements" className="btn-outline border-white/30 text-white hover:bg-white/10 text-center">
-                    {t("Voir le programme", "View the programme")}
-                  </Link>
-                </div>
-              </div>
-              <div className="hidden lg:flex items-center justify-center p-8">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/summer-school/visuel-afternoon.png"
-                  alt="Summer School 2026 — Purpose at the Heart of Europe"
-                  className="w-full max-w-sm rounded-lg shadow-2xl border border-white/10"
-                />
-              </div>
             </div>
           </div>
         </div>
