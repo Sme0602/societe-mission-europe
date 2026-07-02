@@ -7,6 +7,17 @@ import type { Newsletter } from "@/lib/types/database";
 const pressArticles = [
   {
     title:
+      "Société à mission : la France a montré la voie, et si l'Europe suivait ?",
+    source: "Euradio",
+    date: "2026-06-25",
+    url: "https://euradio.fr/emission/4zej-euradio-a-lille/5dAL-societe-a-mission-la-france-a-montre-la-voie-et-si-leurope-suivait",
+    image: null,
+    sourceLogo: "/logos/presse/euradio.png",
+    excerpt:
+      "À la veille de la Summer School à Sciences Po Lille, Emery Jacquillat et Sarah Vandenbroucke sont au micro d'Euradio pour présenter l'avancée du projet Société à Mission Europe. La France compte désormais 2 500 sociétés à mission employant plus d'1,5 million de salariés — un modèle fondé sur une raison d'être statutaire, une gouvernance élargie et une exigence de transparence. Alors que l'Italie a développé un dispositif comparable et que les discussions progressent à la Commission et au Parlement européens, le projet explore les conditions d'un déploiement à l'échelle du continent.",
+  },
+  {
+    title:
       "« On ne changera pas le monde contre les entreprises et sans les entreprises »",
     source: "La Voix du Nord",
     date: "2026-06-22",
