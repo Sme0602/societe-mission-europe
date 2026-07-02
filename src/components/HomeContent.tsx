@@ -308,7 +308,7 @@ export default function HomeContent() {
             </div>
 
             {/* Photos Sarah & Alix — Summer School */}
-            <div className="relative mt-10">
+            <div className="relative mt-10 lg:order-1">
               <div className="rounded-card overflow-hidden shadow-lg border border-beige-200">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/images/summer-school/alix-sarah-summer-school.jpg" alt={t("Alix Vanmeervenne et Sarah Vandenbroucke à la Summer School — Sciences Po Lille, 26 juin 2026", "Alix Vanmeervenne and Sarah Vandenbroucke at the Summer School — Sciences Po Lille, 26 June 2026")} className="w-full h-auto" />
@@ -319,14 +319,34 @@ export default function HomeContent() {
                 <p className="text-xs text-rose-100">Sciences Po Lille — {t("26 juin 2026", "26 June 2026")}</p>
               </div>
             </div>
-          </div>
-          <div className="flex justify-end mt-10 max-w-7xl">
-            <Link href="/equipe" className="inline-flex items-center gap-2 text-rose-600 hover:text-rose-700 font-semibold transition-colors">
-              {t("En savoir plus sur l'équipe", "Learn more about the team")}
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+
+            {/* Texte Summer School */}
+            <div className="mt-10 lg:order-2 flex flex-col justify-center">
+              <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-3">
+                {t("Summer School 2026", "Summer School 2026")}
+              </h3>
+              <div className="tricolor-separator w-20 mb-4" />
+              <div className="space-y-3 text-navy-700 leading-relaxed">
+                <p>
+                  {t(
+                    "Le 26 juin 2026, Sciences Po Lille a accueilli la première Summer School « Purpose at the Heart of Europe », réunissant chercheurs, praticiens et institutionnels de toute l'Europe.",
+                    "On 26 June 2026, Sciences Po Lille hosted the first Summer School 'Purpose at the Heart of Europe', bringing together researchers, practitioners and institutional representatives from across Europe."
+                  )}
+                </p>
+                <p>
+                  {t(
+                    "Une journée d'échanges et de réflexion pour penser ensemble l'avenir de l'entreprise à mission à l'échelle européenne.",
+                    "A day of exchange and reflection to collectively envision the future of the purpose-driven company at the European scale."
+                  )}
+                </p>
+              </div>
+              <Link href="/evenements/summer-school-juin-2026" className="inline-flex items-center gap-2 mt-4 text-rose-600 hover:text-rose-700 font-semibold transition-colors">
+                {t("Découvrir la Summer School", "Discover the Summer School")}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
