@@ -48,7 +48,10 @@ export default function EvenementsContent() {
 
           <div className="space-y-8">
             {/* Summer School — 25-26 juin 2026 */}
-            <div className="bg-white rounded-card border border-beige-200 shadow-sm overflow-hidden">
+            <Link
+              href="/evenements/summer-school-juin-2026/"
+              className="block bg-white rounded-card border border-beige-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group"
+            >
               <div className="grid lg:grid-cols-2">
                 <div className="relative h-64 lg:h-auto">
                   <Image
@@ -58,10 +61,10 @@ export default function EvenementsContent() {
                       "Group photo — Summer School 2026, Sciences Po Lille"
                     )}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-8 md:p-10">
+                <div className="p-8 md:p-10 flex flex-col justify-center">
                   <div className="flex flex-wrap items-center gap-3 mb-4">
                     <span className="inline-flex items-center gap-2 px-3 py-1 bg-rose-50 text-rose-600 rounded-full text-sm font-medium">
                       <span className="w-2 h-2 bg-rose-500 rounded-full" />
@@ -71,57 +74,27 @@ export default function EvenementsContent() {
                       {t("25–26 juin 2026", "25–26 June 2026")}
                     </span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-1 group-hover:text-rose-600 transition-colors">
                     Summer School 2026
                   </h3>
                   <p className="text-base font-semibold text-rose-600 mb-4 italic">
                     Purpose at the Heart of Europe
                   </p>
-                  <p className="text-navy-700 leading-relaxed mb-4">
+                  <p className="text-navy-700 leading-relaxed mb-6">
                     {t(
-                      "Recherche, dialogue et action pour un nouveau modèle économique. Deux jours à Sciences Po Lille avec un keynote de Michael Ristaniemi (Commission européenne, DG GROW), le premier European Scientific Council on Purpose réunissant huit chercheurs européens de premier plan, et des ateliers thématiques par groupe de travail (Europe, National, Territorial).",
-                      "Research, dialogue and action for a new economic model. Two days at Sciences Po Lille featuring a keynote by Michael Ristaniemi (European Commission, DG GROW), the first European Scientific Council on Purpose bringing together eight leading European researchers, and thematic workshops by working group (Europe, National, Territorial)."
+                      "Recherche, dialogue et action pour un nouveau modèle économique. Deux jours à Sciences Po Lille avec un keynote de Michael Ristaniemi (Commission européenne, DG GROW), le premier European Scientific Council on Purpose réunissant huit chercheurs européens de premier plan, et des ateliers thématiques par groupe de travail.",
+                      "Research, dialogue and action for a new economic model. Two days at Sciences Po Lille featuring a keynote by Michael Ristaniemi (European Commission, DG GROW), the first European Scientific Council on Purpose bringing together eight leading European researchers, and thematic workshops by working group."
                     )}
                   </p>
-                  <div className="flex flex-wrap gap-4 text-navy-700 text-sm mb-6">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      Sciences Po Lille, 9 rue Auguste Angellier, Lille
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    <a
-                      href="/images/summer-school/programme-summer-school-2026.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-rose-50 text-rose-700 font-medium text-sm rounded-lg hover:bg-rose-100 transition-colors"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      {t("Programme (PDF)", "Programme (PDF)")}
-                    </a>
-                  </div>
-                  <div className="grid grid-cols-4 gap-2">
-                    <div className="relative h-20 rounded-lg overflow-hidden">
-                      <Image src="/images/summer-school/photos/amphi-speaker.jpg" alt={t("Intervenant en amphithéâtre", "Speaker in amphitheatre")} fill className="object-cover" />
-                    </div>
-                    <div className="relative h-20 rounded-lg overflow-hidden">
-                      <Image src="/images/summer-school/photos/speakers-banniere.jpg" alt={t("Intervenants devant la bannière Société à Mission Europe", "Speakers in front of the Société à Mission Europe banner")} fill className="object-cover" />
-                    </div>
-                    <div className="relative h-20 rounded-lg overflow-hidden">
-                      <Image src="/images/summer-school/photos/atelier.jpg" alt={t("Atelier de travail", "Workshop session")} fill className="object-cover" />
-                    </div>
-                    <div className="relative h-20 rounded-lg overflow-hidden">
-                      <Image src="/images/summer-school/photos/photo-equipe.jpg" alt={t("L'équipe organisatrice", "The organizing team")} fill className="object-cover" />
-                    </div>
-                  </div>
+                  <span className="inline-flex items-center gap-2 text-rose-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                    {t("Voir le programme et les photos", "See the programme and photos")}
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Colloque Carac — 3 avril 2026 */}
             <div className="bg-white rounded-card border border-beige-200 shadow-sm overflow-hidden">
