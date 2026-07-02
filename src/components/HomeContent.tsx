@@ -138,7 +138,7 @@ function NewsCarousel() {
         </div>
         <div className="flex justify-end mt-6">
           <Link href="/presse-news" className="inline-flex items-center gap-2 text-rose-600 hover:text-rose-700 font-semibold transition-colors">
-            {t("Toutes les actualités", "All news")}
+            {t("Notre projet dans les médias", "Our project in the media")}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
