@@ -457,13 +457,6 @@ function FranceTab() {
                       <p className="text-navy-600 text-xs">UPJV</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-jaune-400 text-white flex items-center justify-center text-xs font-bold">SV</div>
-                    <div>
-                      <p className="text-navy-800 font-medium text-sm">Sarah Vandenbroucke</p>
-                      <p className="text-navy-600 text-xs">{t("Ingénieure de recherche, UPHF", "Research Engineer, UPHF")}</p>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -597,13 +590,6 @@ function EuropeTab() {
                     <div className="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center text-xs font-bold">MC</div>
                     <div>
                       <p className="text-navy-800 font-medium text-sm">Matthieu Caron</p>
-                      <p className="text-navy-600 text-xs">UPHF</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-jaune-400 text-white flex items-center justify-center text-xs font-bold">SV</div>
-                    <div>
-                      <p className="text-navy-800 font-medium text-sm">Sarah Vandenbroucke</p>
                       <p className="text-navy-600 text-xs">UPHF</p>
                     </div>
                   </div>

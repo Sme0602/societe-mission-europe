@@ -1,8 +1,55 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
+
+type NewsItem = {
+  type: "presse" | "podcast" | "linkedin" | "evenement";
+  date: string;
+  title: string;
+  url: string;
+};
+
+const newsItems: NewsItem[] = [
+  {
+    type: "linkedin",
+    date: "2 juillet 2026",
+    title: "Summer School à Sciences Po Lille — académiques et entrepreneurs réunis autour des modèles d'entreprises à mission en Europe",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7478450065611661326",
+  },
+  {
+    type: "evenement",
+    date: "26 juin 2026",
+    title: "Summer School — Purpose at the Heart of Europe, Sciences Po Lille",
+    url: "/evenements/summer-school-juin-2026",
+  },
+  {
+    type: "podcast",
+    date: "25 juin 2026",
+    title: "Euradio — La France a montré la voie, et si l'Europe suivait ? Par Emery Jacquillat et Sarah Vandenbroucke",
+    url: "https://euradio.fr/emission/4zej-euradio-a-lille/5dAL-societe-a-mission-la-france-a-montre-la-voie-et-si-leurope-suivait",
+  },
+  {
+    type: "presse",
+    date: "22 juin 2026",
+    title: "La Voix du Nord — On ne changera pas le monde sans les entreprises",
+    url: "https://www.lavoixdunord.fr/1714514/article/2026-06-22/projet-societe-mission-europe-ne-changera-pas-le-monde-contre-les-entreprises-et",
+  },
+  {
+    type: "linkedin",
+    date: "2 juin 2026",
+    title: "Matinée chez Cofidis Group — société à mission, loi PACTE et gouvernance d'entreprise",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7466114535276408832",
+  },
+];
+
+const badgeConfig = {
+  presse: { label: "Presse", bg: "bg-red-50", text: "text-red-700", icon: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2" },
+  podcast: { label: "Podcast", bg: "bg-purple-50", text: "text-purple-700", icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m-4 0h8M12 3a3 3 0 00-3 3v4a3 3 0 006 0V6a3 3 0 00-3-3z" },
+  linkedin: { label: "LinkedIn", bg: "bg-blue-50", text: "text-blue-700", icon: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" },
+  evenement: { label: "Événement", bg: "bg-amber-50", text: "text-amber-700", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
+};
 
 const heroPhotos = [
   1,77,2,78,3,79,4,80,5,81,6,82,7,83,8,84,9,85,10,86,
@@ -21,6 +68,85 @@ function shuffleArray<T>(arr: T[]): T[] {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   return shuffled;
+}
+
+function NewsCarousel() {
+  const { t } = useI18n();
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+
+  const scroll = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const cardWidth = 240 + 16;
+    if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 10) {
+      track.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      track.scrollBy({ left: cardWidth, behavior: "smooth" });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (paused) return;
+    const interval = setInterval(scroll, 3500);
+    return () => clearInterval(interval);
+  }, [paused, scroll]);
+
+  return (
+    <section className="py-16 md:py-20 bg-beige-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-2">
+            {t("Actualités du projet", "Project news")}
+          </h2>
+          <div className="tricolor-separator w-24 mx-auto" />
+        </div>
+        <div
+          ref={trackRef}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          className="flex gap-4 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory"
+          style={{ scrollbarWidth: "thin" }}
+        >
+          {newsItems.map((item, i) => {
+            const badge = badgeConfig[item.type];
+            return (
+              <a
+                key={i}
+                href={item.url}
+                target={item.url.startsWith("http") ? "_blank" : undefined}
+                rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="flex-none w-[240px] snap-start bg-white rounded-xl border border-beige-200 p-5 flex flex-col gap-2 hover:shadow-md transition-shadow group"
+              >
+                <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full w-fit ${badge.bg} ${badge.text}`}>
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={badge.icon} />
+                  </svg>
+                  {badge.label}
+                </span>
+                <span className="text-xs text-navy-500">{item.date}</span>
+                <p className="text-sm font-medium text-navy-800 leading-snug flex-1">{item.title}</p>
+                <span className="text-xs font-semibold text-rose-600 group-hover:text-rose-700 flex items-center gap-1 mt-1">
+                  {t("Voir", "View")}
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </a>
+            );
+          })}
+        </div>
+        <div className="flex justify-end mt-6">
+          <Link href="/presse-news" className="inline-flex items-center gap-2 text-rose-600 hover:text-rose-700 font-semibold transition-colors">
+            {t("Toutes les actualités", "All news")}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function PhotoBubbles() {
@@ -372,8 +498,19 @@ export default function HomeContent() {
               "Summer School 'Purpose at the Heart of Europe' — European researchers, practitioners and institutional representatives gathered at Sciences Po Lille, 26 June 2026"
             )}
           </p>
+          <div className="mt-6">
+            <Link href="/evenements" className="inline-flex items-center gap-2 text-rose-600 hover:text-rose-700 font-semibold transition-colors">
+              {t("Voir nos événements", "See our events")}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* Actualités du projet */}
+      <NewsCarousel />
 
       {/* Vidéo de la journée de lancement */}
       <section className="py-16 md:py-20 bg-beige-50">
