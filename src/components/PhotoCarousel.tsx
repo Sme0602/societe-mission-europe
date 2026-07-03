@@ -3,15 +3,11 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 
 const photos = [
-  "ss-1", "ss-2", "ss-3", "ss-4", "ss-5", "ss-6", "ss-7", "ss-8",
-  "ss-10", "ss-11", "ss-12", "ss-13", "ss-14", "ss-15", "ss-16", "ss-17",
-  "ss-18", "ss-19", "ss-20", "ss-21", "ss-22", "ss-23", "ss-24", "ss-25",
-  "ss-26", "ss-27", "ss-28", "ss-29", "ss-30", "ss-31", "ss-32", "ss-33",
-  "ss-34", "ss-35", "ss-36", "ss-37", "ss-38", "ss-39", "ss-40", "ss-41",
-  "ss-42", "ss-43", "ss-44", "ss-45", "ss-46", "ss-47", "ss-48", "ss-49",
-  "ss-50", "ss-51", "ss-52", "ss-53", "ss-54", "ss-55", "ss-56", "ss-57",
-  "ss-58", "ss-59", "ss-60", "ss-61", "ss-62", "ss-63", "ss-64",
-  "ss-99", "ss-991", "ss-992", "ss-993", "ss-994", "ss-995",
+  "ss-2", "ss-3", "ss-7", "ss-8", "ss-11", "ss-13", "ss-14", "ss-19",
+  "ss-22", "ss-24", "ss-25", "ss-26", "ss-27", "ss-28", "ss-29", "ss-30",
+  "ss-31", "ss-32", "ss-33", "ss-34", "ss-36", "ss-37", "ss-40", "ss-41",
+  "ss-42", "ss-45", "ss-47", "ss-49", "ss-50", "ss-51", "ss-53", "ss-54",
+  "ss-55", "ss-56", "ss-57", "ss-58", "ss-59", "ss-60", "ss-62", "ss-64",
 ];
 
 export default function PhotoCarousel() {
@@ -20,32 +16,37 @@ export default function PhotoCarousel() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const goTo = useCallback((index: number) => {
-    setCurrent((index + photos.length) % photos.length);
+  const prev = (current - 1 + photos.length) % photos.length;
+  const next = (current + 1) % photos.length;
+
+  const goNext = useCallback(() => {
+    setCurrent((c) => (c + 1) % photos.length);
   }, []);
 
-  const next = useCallback(() => goTo(current + 1), [current, goTo]);
-  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
+  const goPrev = useCallback(() => {
+    setCurrent((c) => (c - 1 + photos.length) % photos.length);
+  }, []);
 
   useEffect(() => {
     if (paused || isFullscreen) {
       if (timerRef.current) clearInterval(timerRef.current);
       return;
     }
-    timerRef.current = setInterval(next, 4000);
+    timerRef.current = setInterval(goNext, 4000);
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [paused, isFullscreen, next]);
+  }, [paused, isFullscreen, goNext]);
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (!isFullscreen) return;
-      if (e.key === "ArrowRight") next();
-      else if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") goNext();
+      else if (e.key === "ArrowLeft") goPrev();
       else if (e.key === "Escape") setIsFullscreen(false);
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [isFullscreen, next, prev]);
+  }, [goNext, goPrev]);
+
+  const src = (id: string) => `/images/summer-school/carousel/${id}.jpg`;
 
   return (
     <>
@@ -54,27 +55,55 @@ export default function PhotoCarousel() {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        {/* Main image */}
-        <div
-          className="relative w-full aspect-[16/10] md:aspect-[16/9] rounded-card overflow-hidden bg-navy-100 cursor-pointer"
-          onClick={() => setIsFullscreen(true)}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`/images/summer-school/carousel/${photos[current]}.jpg`}
-            alt={`Summer School — Photo ${current + 1} sur ${photos.length}`}
-            className="w-full h-full object-cover transition-opacity duration-500"
-            loading="lazy"
-          />
-          <div className="absolute bottom-4 right-4 bg-black/50 text-white text-sm px-3 py-1 rounded-full backdrop-blur-sm">
-            {current + 1} / {photos.length}
+        {/* Three photos layout */}
+        <div className="flex items-center gap-3 md:gap-4">
+          {/* Left (previous) */}
+          <div
+            className="hidden md:block w-1/4 aspect-[4/3] rounded-card overflow-hidden cursor-pointer opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
+            onClick={goPrev}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src(photos[prev])}
+              alt={`Photo ${prev + 1}`}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Center (current) - larger */}
+          <div
+            className="flex-1 aspect-[16/10] rounded-card overflow-hidden cursor-pointer shadow-lg"
+            onClick={() => setIsFullscreen(true)}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src(photos[current])}
+              alt={`Summer School — Photo ${current + 1} sur ${photos.length}`}
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Right (next) */}
+          <div
+            className="hidden md:block w-1/4 aspect-[4/3] rounded-card overflow-hidden cursor-pointer opacity-60 hover:opacity-80 transition-opacity flex-shrink-0"
+            onClick={goNext}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src(photos[next])}
+              alt={`Photo ${next + 1}`}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
 
         {/* Navigation arrows */}
         <button
-          onClick={(e) => { e.stopPropagation(); prev(); }}
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+          onClick={goPrev}
+          className="absolute left-2 md:left-[calc(25%+0.5rem)] top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
           aria-label="Photo précédente"
         >
           <svg className="w-5 h-5 md:w-6 md:h-6 text-navy-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,8 +111,8 @@ export default function PhotoCarousel() {
           </svg>
         </button>
         <button
-          onClick={(e) => { e.stopPropagation(); next(); }}
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+          onClick={goNext}
+          className="absolute right-2 md:right-[calc(25%+0.5rem)] top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
           aria-label="Photo suivante"
         >
           <svg className="w-5 h-5 md:w-6 md:h-6 text-navy-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,20 +120,23 @@ export default function PhotoCarousel() {
           </svg>
         </button>
 
-        {/* Dot indicators - show every 5th photo */}
-        <div className="flex justify-center gap-1.5 mt-4">
-          {photos.filter((_, i) => i % 5 === 0).map((_, dotIndex) => {
-            const photoIndex = dotIndex * 5;
-            const isActive = current >= photoIndex && current < photoIndex + 5;
-            return (
-              <button
-                key={dotIndex}
-                onClick={() => goTo(photoIndex)}
-                className={`w-2 h-2 rounded-full transition-all ${isActive ? "bg-rose-500 w-6" : "bg-navy-300 hover:bg-navy-400"}`}
-                aria-label={`Aller à la photo ${photoIndex + 1}`}
-              />
-            );
-          })}
+        {/* Counter + dots */}
+        <div className="flex items-center justify-center gap-4 mt-4">
+          <span className="text-sm text-navy-500">{current + 1} / {photos.length}</span>
+          <div className="flex gap-1">
+            {photos.filter((_, i) => i % 5 === 0).map((_, dotIndex) => {
+              const photoIndex = dotIndex * 5;
+              const isActive = current >= photoIndex && current < photoIndex + 5;
+              return (
+                <button
+                  key={dotIndex}
+                  onClick={() => setCurrent(photoIndex)}
+                  className={`w-2 h-2 rounded-full transition-all ${isActive ? "bg-rose-500 w-5" : "bg-navy-300 hover:bg-navy-400"}`}
+                  aria-label={`Aller à la photo ${photoIndex + 1}`}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -125,7 +157,7 @@ export default function PhotoCarousel() {
           </button>
 
           <button
-            onClick={(e) => { e.stopPropagation(); prev(); }}
+            onClick={(e) => { e.stopPropagation(); goPrev(); }}
             className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors"
             aria-label="Photo précédente"
           >
@@ -136,14 +168,14 @@ export default function PhotoCarousel() {
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`/images/summer-school/carousel/${photos[current]}.jpg`}
+            src={src(photos[current])}
             alt={`Summer School — Photo ${current + 1} sur ${photos.length}`}
             className="max-h-[90vh] max-w-[90vw] object-contain"
             onClick={(e) => e.stopPropagation()}
           />
 
           <button
-            onClick={(e) => { e.stopPropagation(); next(); }}
+            onClick={(e) => { e.stopPropagation(); goNext(); }}
             className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors"
             aria-label="Photo suivante"
           >
