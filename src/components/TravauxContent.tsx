@@ -315,8 +315,10 @@ export default function TravauxContent() {
                   {t("Chercheuse associée au projet Société à Mission Europe", "Associate researcher, Société à Mission Europe project")}
                 </span>
               </div>
-              <div className="mt-3 text-sm text-navy-600">
-                <span className="font-medium">Revue des Sociétés</span> — {t("Juin 2026", "June 2026")}
+              <div className="mt-3 flex items-center justify-between">
+                <div className="text-sm text-navy-600">
+                  <a href="https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm" target="_blank" rel="noopener noreferrer" className="font-medium text-navy-700 hover:text-rose-600 transition-colors underline underline-offset-2">Revue des Sociétés</a> — {t("Juin 2026", "June 2026")}
+                </div>
               </div>
             </div>
           </div>
