@@ -67,6 +67,7 @@ export default function PartenairesContent() {
     { name: "Intersektion", fullName: "Intersektion", category: t("Entreprise", "Corporate"), logo: "/logos/intersektion.svg", description: t("Organisation dédiée à l'intersection des enjeux sociétaux.", "Organisation dedicated to the intersection of societal issues.") },
     { name: "Management & RSE", fullName: "Management & RSE", category: t("Entreprise", "Corporate"), logo: "/logos/management-rse.png", description: t("Revue et plateforme dédiée au management responsable.", "Journal and platform dedicated to responsible management.") },
     { name: "NATIVA", fullName: "NATIVA", category: t("Entreprise", "Corporate"), logo: "/logos/nativa.png", description: t("Cabinet de conseil italien pionnier des Benefit Corporations en Europe.", "Italian consulting firm pioneering Benefit Corporations in Europe.") },
+    { name: "Syneido", fullName: "Syneido", category: t("Entreprise", "Corporate"), logo: "/logos/syneido.jpg", description: t("Agence de communication et de stratégie digitale, partenaire du projet.", "Communication and digital strategy agency, project partner.") },
   ];
 
   const categories = [
