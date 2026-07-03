@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PhotoCarousel from "@/components/PhotoCarousel";
 
 export const metadata: Metadata = {
   title:
@@ -406,36 +407,7 @@ export default function SummerSchoolPage() {
             <div className="tricolor-separator w-24 mx-auto mb-4" />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[
-              { src: "/images/summer-school/photos/vue-amphi.jpg", alt: "Vue de l'amphithéâtre — présentation en plénière", span: "col-span-2 row-span-2" },
-              { src: "/images/summer-school/photos/amphi-speaker.jpg", alt: "Intervenant à l'amphithéâtre de Sciences Po Lille" },
-              { src: "/images/summer-school/photos/keynote-partenaires.jpg", alt: "Keynote devant la bannière des partenaires" },
-              { src: "/images/summer-school/photos/speakers-banniere.jpg", alt: "Intervenants devant la bannière Société à Mission Europe" },
-              { src: "/images/summer-school/photos/atelier.jpg", alt: "Session de travail en atelier" },
-              { src: "/images/summer-school/photos/atelier-sourires.jpg", alt: "Atelier thématique — échanges entre participants", span: "col-span-2" },
-              { src: "/images/summer-school/photos/speaker-audience.jpg", alt: "Intervenant face à l'audience" },
-              { src: "/images/summer-school/photos/discussion-atelier.jpg", alt: "Discussion en groupe de travail" },
-              { src: "/images/summer-school/photos/prise-parole.jpg", alt: "Prise de parole lors de la Summer School" },
-              { src: "/images/summer-school/photos/networking.jpg", alt: "Networking entre participants" },
-              { src: "/images/summer-school/photos/banniere-axes.jpg", alt: "Devant la bannière des trois axes du projet" },
-              { src: "/images/summer-school/photos/celebration.jpg", alt: "Moment de célébration — bouquet de tournesols" },
-              { src: "/images/summer-school/photos/photo-equipe.jpg", alt: "L'équipe organisatrice de la Summer School", span: "col-span-2" },
-            ].map((photo, i) => (
-              <div
-                key={i}
-                className={`${photo.span || ""} rounded-card overflow-hidden group`}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
+          <PhotoCarousel />
         </div>
       </section>
 
