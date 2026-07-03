@@ -32,7 +32,7 @@ export default function PhotoCarousel() {
       if (timerRef.current) clearInterval(timerRef.current);
       return;
     }
-    timerRef.current = setInterval(goNext, 4000);
+    timerRef.current = setInterval(goNext, 2500);
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [paused, isFullscreen, goNext]);
 
