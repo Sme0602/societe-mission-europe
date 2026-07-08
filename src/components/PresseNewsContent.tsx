@@ -280,9 +280,9 @@ export default function PresseNewsContent({
 
                   {/* Content */}
                   <div className="p-6">
-                    {nl.description && (
+                    {(nl.description || nl.description_fr) && (
                       <p className="text-navy-700 text-sm leading-relaxed mb-4">
-                        {nl.description}
+                        {lang === "fr" && nl.description_fr ? nl.description_fr : nl.description}
                       </p>
                     )}
                     <a

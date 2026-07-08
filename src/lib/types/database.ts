@@ -28,6 +28,7 @@ export interface Newsletter {
   pdf_path: string;
   pdf_url: string;
   pdf_url_fr: string | null;
+  description_fr: string | null;
   published_date: string;
   is_published: boolean;
   created_at: string;
