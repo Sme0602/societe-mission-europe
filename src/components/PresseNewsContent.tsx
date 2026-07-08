@@ -254,7 +254,7 @@ export default function PresseNewsContent({
                   <div className="relative aspect-[3/4] bg-beige-100 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={nl.pdf_url.replace(".pdf", "-cover.png")}
+                      src={(lang === "fr" && nl.pdf_url_fr ? nl.pdf_url_fr : nl.pdf_url).replace(".pdf", "-cover.png")}
                       alt={nl.title}
                       className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
@@ -286,7 +286,7 @@ export default function PresseNewsContent({
                       </p>
                     )}
                     <a
-                      href={nl.pdf_url}
+                      href={lang === "fr" && nl.pdf_url_fr ? nl.pdf_url_fr : nl.pdf_url}
                       download
                       className="btn-primary text-sm w-full inline-flex items-center justify-center gap-2"
                     >

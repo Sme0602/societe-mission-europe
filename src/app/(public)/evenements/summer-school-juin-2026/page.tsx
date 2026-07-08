@@ -413,29 +413,51 @@ export default function SummerSchoolPage() {
 
       {/* Newsletter */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
-            Newsletter N°2
-          </h2>
-          <div className="tricolor-separator w-24 mx-auto mb-4" />
-          <p className="text-navy-700 text-lg mb-8">
-            Retrouvez le compte rendu complet de la Summer School dans notre
-            deuxième newsletter : intervention de la DG GROW (Commission
-            européenne), panels scientifiques sur la steward ownership et la
-            société à mission, et premier cadre de référence européen en 4
-            piliers.
-          </p>
-          <a
-            href="/newsletters/newsletter-2-summer-school-2026.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-rose-600 text-white font-bold rounded-lg hover:bg-rose-700 transition-colors"
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
+              Newsletter N°2
+            </h2>
+            <div className="tricolor-separator w-24 mx-auto mb-4" />
+            <p className="text-navy-700 text-lg">
+              Retrouvez le compte rendu complet de la Summer School dans notre
+              deuxième newsletter : intervention de la DG GROW (Commission
+              européenne), panels scientifiques sur la steward ownership et la
+              société à mission, et premier cadre de référence européen en 4
+              piliers.
+            </p>
+          </div>
+          <Link
+            href="/presse-news"
+            className="block max-w-sm mx-auto bg-white rounded-card border border-beige-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Lire la Newsletter N°2 (PDF)
-          </a>
+            <div className="relative aspect-[3/4] bg-beige-100 overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/newsletters/newsletter-2-summer-school-2026-cover.png"
+                alt="Newsletter N°2 — Summer School 2026"
+                className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-800/80 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <span className="inline-block px-3 py-1 bg-rose-600 text-white text-xs font-bold rounded-full mb-2">
+                  N°2
+                </span>
+                <h3 className="text-white font-bold text-lg leading-tight">
+                  Newsletter N°2 — Summer School 2026
+                </h3>
+                <p className="text-white/80 text-sm mt-1">juillet 2026</p>
+              </div>
+            </div>
+            <div className="p-5 text-center">
+              <span className="inline-flex items-center gap-2 text-rose-600 font-semibold text-sm group-hover:text-rose-700 transition-colors">
+                Lire la newsletter
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 
