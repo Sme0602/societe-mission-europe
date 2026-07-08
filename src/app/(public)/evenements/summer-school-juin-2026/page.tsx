@@ -427,8 +427,10 @@ export default function SummerSchoolPage() {
               piliers.
             </p>
           </div>
-          <Link
-            href="/presse-news"
+          <a
+            href="/newsletters/newsletter-2-summer-school-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block max-w-sm mx-auto bg-white rounded-card border border-beige-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group"
           >
             <div className="relative aspect-[3/4] bg-beige-100 overflow-hidden">
@@ -451,13 +453,13 @@ export default function SummerSchoolPage() {
             </div>
             <div className="p-5 text-center">
               <span className="inline-flex items-center gap-2 text-rose-600 font-semibold text-sm group-hover:text-rose-700 transition-colors">
-                Lire la newsletter
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
+                Télécharger la newsletter (PDF)
               </span>
             </div>
-          </Link>
+          </a>
         </div>
       </section>
 
