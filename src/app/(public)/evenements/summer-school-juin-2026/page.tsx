@@ -411,6 +411,34 @@ export default function SummerSchoolPage() {
         </div>
       </section>
 
+      {/* Newsletter */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
+            Newsletter N°2
+          </h2>
+          <div className="tricolor-separator w-24 mx-auto mb-4" />
+          <p className="text-navy-700 text-lg mb-8">
+            Retrouvez le compte rendu complet de la Summer School dans notre
+            deuxième newsletter : intervention de la DG GROW (Commission
+            européenne), panels scientifiques sur la steward ownership et la
+            société à mission, et premier cadre de référence européen en 4
+            piliers.
+          </p>
+          <a
+            href="/newsletters/newsletter-2-summer-school-2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-rose-600 text-white font-bold rounded-lg hover:bg-rose-700 transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Lire la Newsletter N°2 (PDF)
+          </a>
+        </div>
+      </section>
+
       {/* CTA retour */}
       <section className="py-16 bg-rose-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

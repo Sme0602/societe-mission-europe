@@ -14,6 +14,12 @@ type NewsItem = {
 const newsItems: NewsItem[] = [
   {
     type: "publication",
+    date: "Juillet 2026",
+    title: "Newsletter N°2 — Summer School 2026 : Purpose at the Heart of Europe",
+    url: "/newsletters/newsletter-2-summer-school-2026.pdf",
+  },
+  {
+    type: "publication",
     date: "2 juillet 2026",
     title: "Elena Codoni, chercheuse associée au projet — La composition du comité de mission, élément clé pour rétablir la crédibilité de la société à mission",
     url: "https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm",
