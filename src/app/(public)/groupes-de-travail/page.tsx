@@ -25,8 +25,8 @@ function ConseilScientifique({ groupe, color = "bg-blue-50 border-blue-100" }: {
       </h3>
       <ul className="space-y-2 text-sm text-navy-700">
         {members.map((m) => (
-          <li key={m.nom_prenom} className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0" />
+          <li key={m.nom_prenom} className="flex items-start gap-2">
+            <span className="w-1.5 h-1.5 bg-navy-800 rounded-full shrink-0 mt-1.5" />
             {m.nom_prenom}{m.poste_structure ? ` — ${m.poste_structure}` : ""}
           </li>
         ))}

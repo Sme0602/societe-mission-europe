@@ -367,6 +367,18 @@ export default function HomeContent() {
               />
             </div>
           </div>
+          <div className="rounded-card overflow-hidden shadow-lg mt-8">
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                src="https://www.youtube.com/embed/bBbCPa_DPeA"
+                title="Société à mission europe"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
