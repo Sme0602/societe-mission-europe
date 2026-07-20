@@ -411,8 +411,32 @@ export default function SummerSchoolPage() {
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* Vidéo de présentation */}
       <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
+              Vidéo de présentation
+            </h2>
+            <div className="tricolor-separator w-24 mx-auto mb-4" />
+          </div>
+          <div className="rounded-card overflow-hidden shadow-lg">
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/bBbCPa_DPeA"
+                title="Société à mission europe"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="py-16 md:py-24 bg-beige-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">

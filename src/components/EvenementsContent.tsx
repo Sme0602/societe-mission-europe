@@ -123,20 +123,6 @@ export default function EvenementsContent() {
             </div>
           </div>
 
-          {/* Vidéo de présentation */}
-          <div className="mb-8 rounded-card overflow-hidden border border-beige-200 shadow-sm">
-            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/bBbCPa_DPeA"
-                title="Société à mission europe"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
-          </div>
-
           {/* Visuels Summer School — 2 pages */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
