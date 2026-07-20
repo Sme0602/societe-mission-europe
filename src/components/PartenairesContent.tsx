@@ -32,7 +32,7 @@ export default function PartenairesContent() {
 
     // Sciences Po et IEP
     { name: "Sciences Po Lille", fullName: "Sciences Po Lille", category: t("Académique", "Academic"), logo: "/logos/sciences-po-lille.png", description: t("Institut d'études politiques en politiques publiques européennes.", "Institute of political studies in European public policy.") },
-    { name: "ESPOL", fullName: "European School of Political and Social Sciences", category: t("Académique", "Academic"), logo: "/logos/espol.svg", description: t("École européenne de sciences politiques de l'Université Catholique de Lille.", "European school of political sciences at the Catholic University of Lille.") },
+    { name: "ESPOL", fullName: "European School of Political and Social Sciences", category: t("Académique", "Academic"), logo: "/logos/espol.svg", description: t("École européenne de sciences politiques de l'Université Catholique de Lille — co-financement d'un doctorat.", "European school of political sciences at the Catholic University of Lille — co-funding of a doctoral position.") },
 
     // Universités
     { name: "Université Catholique de Lille", fullName: "Université Catholique de Lille", category: t("Académique", "Academic"), logo: "/logos/ucl.png", description: t("Université privée catholique du Nord de la France.", "Private Catholic university in Northern France.") },
@@ -47,10 +47,10 @@ export default function PartenairesContent() {
     { name: "Chaire ICP-ESSEC", fullName: "Chaire Entreprise et Bien Commun – ICP / ESSEC", category: t("Académique", "Academic"), logo: "/logos/icp.png", description: t("Chaire de recherche sur l'entreprise et le bien commun, portée par l'ICP et l'ESSEC.", "Research chair on business and the common good, led by ICP and ESSEC.") },
 
     // === INSTITUTIONNEL ===
-    { name: "Région Hauts-de-France", fullName: "Région Hauts-de-France", category: t("Institutionnel", "Institutional"), logo: "/logos/region-hdf.svg", description: t("Co-financeur du projet via le programme FEDER.", "Project co-funder through the ERDF programme.") },
+    { name: "Région Hauts-de-France & Union européenne", fullName: "Région Hauts-de-France & Union européenne", category: t("Institutionnel", "Institutional"), logo: "/logos/feder-double-v2.png", description: t("Co-financeur du projet via le programme FEDER (Fonds Européen de Développement Régional).", "Project co-funder through the ERDF (European Regional Development Fund) programme.") },
 
     // === RÉSEAUX ===
-    { name: "Observatoire Éthique Publique", fullName: "Observatoire de l'Éthique Publique", category: t("Réseaux", "Networks"), logo: "/logos/observatoire.png", description: t("Think tank dédié à l'éthique publique, co-porteur du projet.", "Think tank dedicated to public ethics, co-lead of the project.") },
+    { name: "Observatoire Éthique Publique", fullName: "Observatoire de l'Éthique Publique", category: t("Réseaux", "Networks"), logo: "/logos/observatoire.png", description: t("Think tank dédié à l'éthique publique — partenaire financier, appui administratif et publication d'études.", "Think tank dedicated to public ethics — financial partner, administrative support and study publication.") },
     { name: "Observatoire des Sociétés à Mission", fullName: "Observatoire des Sociétés à Mission", category: t("Réseaux", "Networks"), logo: "/logos/observatoire-sam.png", description: t("Observatoire dédié au suivi et à l'analyse des sociétés à mission.", "Observatory dedicated to monitoring and analysing mission-driven companies.") },
     { name: "Communauté des entreprises à mission", fullName: "Communauté des entreprises à mission", category: t("Réseaux", "Networks"), logo: "/logos/communaute-mission.png", description: t("Réseau de référence des sociétés à mission en France.", "Leading network of mission-driven companies in France.") },
     { name: "Réseau Alliances", fullName: "Réseau Alliances", category: t("Réseaux", "Networks"), logo: "/logos/reseau-alliances.png", description: t("Acteur de la transition responsable en Hauts-de-France depuis 30 ans.", "Actor of the responsible transition in Hauts-de-France for 30 years.") },
@@ -63,10 +63,11 @@ export default function PartenairesContent() {
     { name: "Vivoices", fullName: "Vivoices", category: t("Réseaux", "Networks"), logo: "/logos/vivoices.png", description: t("Plateforme dédiée à l'amplification des voix engagées.", "Platform dedicated to amplifying committed voices.") },
 
     // === ENTREPRISE ===
-    { name: "Carac", fullName: "Carac – Mutuelle d'épargne", category: t("Entreprise", "Corporate"), logo: "/logos/carac.png", description: t("Mutuelle engagée dans une démarche de société à mission.", "Mutual fund committed to a mission-driven company approach.") },
+    { name: "Carac", fullName: "Carac – Mutuelle d'épargne", category: t("Entreprise", "Corporate"), logo: "/logos/carac.png", description: t("Mutuelle d'épargne, partenaire financier du projet.", "Savings mutual fund, financial partner of the project.") },
     { name: "Intersektion", fullName: "Intersektion", category: t("Entreprise", "Corporate"), logo: "/logos/intersektion.svg", description: t("Organisation dédiée à l'intersection des enjeux sociétaux.", "Organisation dedicated to the intersection of societal issues.") },
     { name: "Management & RSE", fullName: "Management & RSE", category: t("Entreprise", "Corporate"), logo: "/logos/management-rse.png", description: t("Revue et plateforme dédiée au management responsable.", "Journal and platform dedicated to responsible management.") },
     { name: "NATIVA", fullName: "NATIVA", category: t("Entreprise", "Corporate"), logo: "/logos/nativa.png", description: t("Cabinet de conseil italien pionnier des Benefit Corporations en Europe.", "Italian consulting firm pioneering Benefit Corporations in Europe.") },
+    { name: "Syneido", fullName: "Syneido", category: t("Entreprise", "Corporate"), logo: "/logos/syneido.jpg", description: t("Agence de communication et de stratégie digitale, partenaire du projet.", "Communication and digital strategy agency, project partner.") },
   ];
 
   const categories = [
@@ -146,6 +147,86 @@ export default function PartenairesContent() {
         </div>
       </section>
 
+      {/* Soutiens financiers */}
+      <section className="py-16 md:py-24 bg-beige-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 rounded-full text-amber-700 text-sm font-bold mb-4">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
+              {t("Soutiens financiers", "Financial supporters")}
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
+              {t("Ils financent le projet", "They fund the project")}
+            </h2>
+            <div className="tricolor-separator" />
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                name: t("Région Hauts-de-France & Union européenne", "Hauts-de-France Region & European Union"),
+                logo: "/logos/feder-double-v2.png",
+                role: t("Financement FEDER", "ERDF Funding"),
+                desc: t("Co-financeur principal du projet via le Fonds Européen de Développement Régional.", "Main project co-funder through the European Regional Development Fund."),
+                href: "/partenaires/feder",
+              },
+              {
+                name: t("Observatoire de l'Éthique Publique", "Observatory of Public Ethics"),
+                logo: "/logos/observatoire.png",
+                role: t("Partenariat financier & administratif", "Financial & administrative partnership"),
+                desc: t("Partenaire financier, appui administratif et publication d'études.", "Financial partner, administrative support and study publication."),
+                href: "/partenaires/observatoire-ethique-publique",
+              },
+              {
+                name: "Carac",
+                logo: "/logos/carac.png",
+                role: t("Partenaire financier", "Financial partner"),
+                desc: t("Mutuelle d'épargne engagée, soutien financier du projet.", "Committed savings mutual fund, financial supporter of the project."),
+                href: "/partenaires/carac",
+              },
+              {
+                name: "ESPOL",
+                logo: "/logos/espol.svg",
+                role: t("Co-financement doctoral", "Doctoral co-funding"),
+                desc: t("Co-financement d'un doctorat dans le cadre du projet.", "Co-funding of a doctoral position within the project."),
+                href: "/partenaires/espol",
+              },
+            ].map((f) => {
+              const card = (
+                <div className={`bg-white rounded-card border-2 border-amber-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden ${f.href ? "cursor-pointer" : ""}`}>
+                  <div className="h-24 bg-white flex items-center justify-center px-6 pt-6">
+                    <Image
+                      src={f.logo}
+                      alt={`Logo ${f.name}`}
+                      width={180}
+                      height={60}
+                      className="max-w-full max-h-14 object-contain"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <span className="inline-block px-2.5 py-0.5 bg-amber-50 text-amber-700 text-xs font-bold rounded-full mb-2">
+                      {f.role}
+                    </span>
+                    <h3 className="text-base font-bold text-navy-800 mb-2">{f.name}</h3>
+                    <p className="text-sm text-navy-600 leading-relaxed">{f.desc}</p>
+                    {f.href && (
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-rose-600 mt-3">
+                        {t("En savoir plus", "Learn more")}
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                      </span>
+                    )}
+                  </div>
+                </div>
+              );
+              return f.href ? (
+                <Link key={f.name} href={f.href}>{card}</Link>
+              ) : (
+                <div key={f.name}>{card}</div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Catégories */}
       <section className="py-8 bg-white border-b border-beige-200 sticky top-16 md:top-20 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,13 +265,13 @@ export default function PartenairesContent() {
                 className="bg-white rounded-card border border-beige-200 shadow-sm hover:shadow-lg transition-all duration-300 group overflow-hidden"
               >
                 {/* Logo area */}
-                <div className="aspect-[4/3] bg-white flex items-center justify-center p-6">
+                <div className="h-28 bg-white flex items-center justify-center px-6 pt-4">
                   <Image
                     src={partner.logo}
                     alt={`Logo ${partner.name}`}
-                    width={200}
-                    height={150}
-                    className="max-w-[80%] max-h-[80%] object-contain"
+                    width={180}
+                    height={70}
+                    className="max-w-full max-h-16 object-contain"
                   />
                 </div>
 

@@ -7,11 +7,34 @@ import type { Newsletter } from "@/lib/types/database";
 const pressArticles = [
   {
     title:
+      "Société à mission : la France a montré la voie, et si l'Europe suivait ?",
+    source: "Euradio",
+    date: "2026-06-25",
+    url: "https://euradio.fr/emission/4zej-euradio-a-lille/5dAL-societe-a-mission-la-france-a-montre-la-voie-et-si-leurope-suivait",
+    image: null,
+    sourceLogo: "/logos/presse/euradio.png",
+    excerpt:
+      "À la veille de la Summer School à Sciences Po Lille, Emery Jacquillat et Sarah Vandenbroucke sont au micro d'Euradio pour présenter l'avancée du projet Société à Mission Europe. La France compte désormais 2 500 sociétés à mission employant plus d'1,5 million de salariés — un modèle fondé sur une raison d'être statutaire, une gouvernance élargie et une exigence de transparence. Alors que l'Italie a développé un dispositif comparable et que les discussions progressent à la Commission et au Parlement européens, le projet explore les conditions d'un déploiement à l'échelle du continent.",
+  },
+  {
+    title:
+      "« On ne changera pas le monde contre les entreprises et sans les entreprises »",
+    source: "La Voix du Nord",
+    date: "2026-06-22",
+    url: "https://www.lavoixdunord.fr/1714514/article/2026-06-22/projet-societe-mission-europe-ne-changera-pas-le-monde-contre-les-entreprises-et",
+    image: "/images/presse-vdn-juin2026.jpg",
+    sourceLogo: "/logos/presse/lavoixdunord.png",
+    excerpt:
+      "Le projet Société à Mission Europe est couvert par les médias locaux. La journaliste Valérie Sauvage reprend dans son article les propos de Matthieu Caron, qui détaille les trois axes du programme : territorial, national et européen. L'ambition : faire des Hauts-de-France un territoire à mission et proposer un texte à la Commission et au Parlement européen pour faire de l'Europe le premier continent à mission.",
+  },
+  {
+    title:
       "Société à Mission : Et si les Hauts-de-France devenaient le Laboratoire d'une Révolution Entrepreneuriale Européenne",
     source: "UPHF / LARSH",
     date: "2026-03-04",
     url: "https://www.uphf.fr/larsh/actualites/societe-mission-si-hauts-france-devenaient-laboratoire-dune-revolution-entrepreneuriale-europeenne",
     image: null,
+    sourceLogo: "/logos/larsh.png",
     excerpt:
       "Dans un article publié sur le site du laboratoire LARSH, Nicole Pertuis recueille les explications de Matthieu Caron sur l'ambition du projet Société à Mission Europe : faire des Hauts-de-France un laboratoire d'innovation pour penser l'avenir des entreprises à mission à l'échelle européenne.",
   },
@@ -22,6 +45,7 @@ const pressArticles = [
     date: "2026-03-04",
     url: "https://www.novethic.fr/economie-et-social/transformation-de-leconomie/europe-peut-elle-inventer-entreprise-xxi-siecle",
     image: "https://www.novethic.fr/wp-content/uploads/2026/03/Societe-entreprise-a-mission-@Pexels-Tara-Winstead.jpg",
+    sourceLogo: "/logos/presse/novethic.jpg",
     excerpt:
       "Des dirigeants et experts plaident pour que l'Europe reconnaisse officiellement le statut d'entreprise à mission à l'échelle continentale, un modèle qui réconcilie performance économique et résilience à long terme.",
   },
@@ -32,6 +56,7 @@ const pressArticles = [
     date: "2026-03-04",
     url: "https://www.lecho.be/opinions/general/opinion-l-europe-peut-elle-inventer-l-entreprise-du-xxi-siecle/10651704.html",
     image: null,
+    sourceLogo: "/logos/presse/lecho.png",
     excerpt:
       "Tribune signée par des acteurs de la Communauté des entreprises à mission, KAYA et Assobenefit, appelant à un statut européen pour les entreprises à mission.",
   },
@@ -42,6 +67,7 @@ const pressArticles = [
     date: "2026-03-02",
     url: "https://entreprisesamission.org/un-projet-de-societe-a-mission-europeenne-lance-pour-imaginer-un-modele-dentreprise-alternatif-avec-matthieu-caron-co-porteur-du-projet/",
     image: null,
+    sourceLogo: "/logos/communaute-mission.png",
     excerpt:
       "La Communauté des Entreprises à Mission relaie le lancement du projet européen porté par Matthieu Caron, co-porteur du projet, visant à imaginer un modèle d'entreprise alternatif à l'échelle du continent.",
   },
@@ -52,6 +78,7 @@ const pressArticles = [
     date: "2026-02-27",
     url: "https://euradio.fr/emission/4zej-euradio-a-lille/dYl6-societe-a-mission-un-modele-europeen-en-experimentation",
     image: null,
+    sourceLogo: "/logos/presse/euradio.png",
     excerpt:
       "Matthieu Caron revient avec clarté sur l'initiative Société à Mission Europe dans une interview sur Euradio : un projet de recherche-action qui explore comment le modèle de société à mission peut être pensé et adapté à l'échelle européenne.",
   },
@@ -62,6 +89,7 @@ const pressArticles = [
     date: "2026-02-17",
     url: "https://www.thegood.fr/vers-une-societe-a-mission-europeenne-lancement-dun-projet-pour-faire-de-leurope-le-premier-continent-a-mission/",
     image: "https://www.thegood.fr/app/uploads/2026/02/CEM-EmeryJ.jpg",
+    sourceLogo: "/logos/presse/thegood.png",
     excerpt:
       "Le projet « Société à mission Europe » a été lancé dans les Hauts-de-France le 6 février, réunissant près de 300 chercheurs, dirigeants, étudiants et responsables publics européens.",
   },
@@ -72,6 +100,7 @@ const pressArticles = [
     date: "2026-02-12",
     url: "https://www.carenews.com/carenews-info/news/un-projet-de-societe-a-mission-europeenne-lance-pour-imaginer-un-modele-d",
     image: "https://www.carenews.com/sites/default/files/styles/etire_grand/public/2026-02/performance%20%C3%A9conomique%20%281%29.png?itok=Bm9QUs3V",
+    sourceLogo: "/logos/presse/carenews.png",
     excerpt:
       "Matthieu Caron, maître de conférences en droit public et directeur général de L'Observatoire de l'éthique publique, co-porte le projet aux côtés de Stéphane Vernac.",
   },
@@ -82,6 +111,7 @@ const pressArticles = [
     date: "2026-02-08",
     url: "https://www.lagazettefrance.fr/article/wallers-arenberg-berceau-du-projet-societe-a-mission-europeenne",
     image: "https://www.lagazettefrance.fr/media/2026/02/1-c-elias-berrahal-698c9812214a3.jpg",
+    sourceLogo: "/logos/presse/lagazettefrance.png",
     excerpt:
       "C'est dans le cadre du site minier de Wallers-Arenberg que l'Université Polytechnique Hauts-de-France a lancé le projet « Société à mission en Europe ».",
   },
@@ -91,6 +121,7 @@ const pressArticles = [
     date: "2026-02-06",
     url: "https://www.reseau-alliances.org/agenda-rse/3481-lancement-du-projet-feder-societe-a-mission-en-europe",
     image: null,
+    sourceLogo: "/logos/reseau-alliances.png",
     excerpt:
       "L'événement de lancement a eu lieu le jeudi 6 février 2026, de 9h00 à 17h00, sur le site minier de Wallers-Arenberg.",
   },
@@ -100,6 +131,7 @@ const pressArticles = [
     date: "2026-02-06",
     url: "https://www.observatoireethiquepublique.com/agenda/20251/lancement-de-la-chaire-societe-a-mission-europeenne.html",
     image: null,
+    sourceLogo: "/logos/observatoire.png",
     excerpt:
       "L'Observatoire de l'Éthique Publique, co-porteur du projet Société à Mission Europe, annonce le lancement officiel de la chaire de recherche dédiée au modèle européen de la société à mission.",
   },
@@ -110,6 +142,7 @@ const pressArticles = [
     date: "2026-02-05",
     url: "https://mediatico.fr/les-hauts-de-france-tete-de-pont-dune-societe-a-mission-europeenne/",
     image: "https://mediatico.fr/wp-content/uploads/2026/02/Actu-Societe-a-mission-UE.jpeg",
+    sourceLogo: "/logos/presse/mediatico.png",
     excerpt:
       "L'Université Polytechnique Hauts-de-France lance une initiative de recherche ambitieuse pour développer un modèle européen d'entreprise à mission.",
   },
@@ -119,6 +152,7 @@ const pressArticles = [
     date: "2025-12-01",
     url: "https://www.essca.eu/app/uploads/2025/12/societe-a_mission_europeenne_projet_feder_20262029.pdf",
     image: null,
+    sourceLogo: "/logos/essca.png",
     excerpt:
       "Document de présentation du projet FEDER « Société à Mission Européenne » couvrant la période 2026-2029, détaillant la structure, les objectifs et le financement du projet.",
   },
@@ -220,7 +254,7 @@ export default function PresseNewsContent({
                   <div className="relative aspect-[3/4] bg-beige-100 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={nl.pdf_url.replace(".pdf", "-cover.png")}
+                      src={(lang === "fr" && nl.pdf_url_fr ? nl.pdf_url_fr : nl.pdf_url).replace(".pdf", "-cover.png")}
                       alt={nl.title}
                       className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
@@ -246,13 +280,13 @@ export default function PresseNewsContent({
 
                   {/* Content */}
                   <div className="p-6">
-                    {nl.description && (
+                    {(nl.description || nl.description_fr) && (
                       <p className="text-navy-700 text-sm leading-relaxed mb-4">
-                        {nl.description}
+                        {lang === "fr" && nl.description_fr ? nl.description_fr : nl.description}
                       </p>
                     )}
                     <a
-                      href={nl.pdf_url}
+                      href={lang === "fr" && nl.pdf_url_fr ? nl.pdf_url_fr : nl.pdf_url}
                       download
                       className="btn-primary text-sm w-full inline-flex items-center justify-center gap-2"
                     >
@@ -307,6 +341,14 @@ export default function PresseNewsContent({
                 )}
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
+                    {article.sourceLogo && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={article.sourceLogo}
+                        alt={article.source}
+                        className="h-8 w-auto object-contain"
+                      />
+                    )}
                     <span className="inline-block px-2.5 py-0.5 bg-orange-50 text-orange-600 text-xs font-semibold rounded-full">
                       {article.source}
                     </span>
@@ -329,7 +371,7 @@ export default function PresseNewsContent({
                       href={article.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-navy-700 hover:text-rose-600 text-xs font-medium transition-colors"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-rose-600 text-white text-sm font-semibold rounded-lg hover:bg-rose-700 transition-colors"
                     >
                       <svg
                         className="w-3 h-3"

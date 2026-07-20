@@ -309,6 +309,55 @@ export default function EvenementsContent() {
           <div className="tricolor-separator mb-8" />
 
           <div className="space-y-8">
+            {/* Summer School — 25-26 juin 2026 */}
+            <Link
+              href="/evenements/summer-school-juin-2026/"
+              className="block bg-white rounded-card border border-beige-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group"
+            >
+              <div className="grid lg:grid-cols-2">
+                <div className="relative h-64 lg:h-auto">
+                  <Image
+                    src="/images/summer-school/photos/photo-groupe.jpg"
+                    alt={t(
+                      "Photo de groupe — Summer School 2026, Sciences Po Lille",
+                      "Group photo — Summer School 2026, Sciences Po Lille"
+                    )}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8 md:p-10 flex flex-col justify-center">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 bg-rose-50 text-rose-600 rounded-full text-sm font-medium">
+                      <span className="w-2 h-2 bg-rose-500 rounded-full" />
+                      Summer School
+                    </span>
+                    <span className="text-xs text-navy-700">
+                      {t("25–26 juin 2026", "25–26 June 2026")}
+                    </span>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-1 group-hover:text-rose-600 transition-colors">
+                    Summer School 2026
+                  </h3>
+                  <p className="text-base font-semibold text-rose-600 mb-4 italic">
+                    Purpose at the Heart of Europe
+                  </p>
+                  <p className="text-navy-700 leading-relaxed mb-6">
+                    {t(
+                      "Recherche, dialogue et action pour un nouveau modèle économique. Deux jours à Sciences Po Lille avec un keynote de Michael Ristaniemi (Commission européenne, DG GROW), le premier European Scientific Council on Purpose réunissant huit chercheurs européens de premier plan, et des ateliers thématiques par groupe de travail.",
+                      "Research, dialogue and action for a new economic model. Two days at Sciences Po Lille featuring a keynote by Michael Ristaniemi (European Commission, DG GROW), the first European Scientific Council on Purpose bringing together eight leading European researchers, and thematic workshops by working group."
+                    )}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-rose-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                    {t("Voir le programme et les photos", "See the programme and photos")}
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </Link>
+
             {/* Colloque Carac — 3 avril 2026 */}
             <div className="bg-white rounded-card border border-beige-200 shadow-sm overflow-hidden">
               <div className="grid lg:grid-cols-2">

@@ -139,9 +139,41 @@ export default function TravauxContent() {
         </div>
       </section>
 
-      {/* Travaux */}
+      {/* Section OEP */}
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Encart partenariat OEP */}
+          <div className="mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-2">
+              {t(
+                "Études publiées avec l'Observatoire de l'Éthique Publique",
+                "Studies published with the Observatoire de l'Éthique Publique"
+              )}
+            </h2>
+            <div className="tricolor-separator w-24 mb-6" />
+            <div className="bg-beige-50 rounded-card p-6 md:p-8 border border-beige-200">
+              <div className="flex items-start gap-4">
+                <div className="hidden sm:flex w-12 h-12 rounded-full bg-rose-100 text-rose-600 items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-bold text-navy-800 mb-2">
+                    {t("Chaire Société à Mission en Europe", "European Purpose-Driven Company Chair")}
+                  </h3>
+                  <p className="text-navy-700 text-sm leading-relaxed">
+                    {t(
+                      "L'Observatoire de l'Éthique Publique (OEP) est un partenaire proche du projet Société à Mission Europe. Peu avant le lancement du programme, l'OEP a ouvert une chaire dédiée au sujet de la société à mission en Europe. Dans ce cadre, l'Observatoire publie des études adjointes au projet afin de relayer les travaux de recherche et de leur donner un retentissement public.",
+                      "The Observatoire de l'Éthique Publique (OEP) is a close partner of the Société à Mission Europe project. Shortly before the programme launched, the OEP established a dedicated chair on the topic of the purpose-driven company in Europe. In this framework, the Observatoire publishes studies alongside the project to disseminate the research and amplify its public impact."
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="space-y-10">
             {travaux.map((item) => {
               const colors = colorClasses[item.color];
@@ -236,6 +268,59 @@ export default function TravauxContent() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Publications des membres */}
+      <section className="py-16 md:py-20 bg-beige-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-2">
+            {t("Publications des membres du projet", "Project members' publications")}
+          </h2>
+          <div className="tricolor-separator w-24 mb-6" />
+          <p className="text-navy-700 mb-10 max-w-3xl">
+            {t(
+              "Les chercheurs et contributeurs associés au projet publient également dans des revues académiques et professionnelles, contribuant au rayonnement de la recherche sur la société à mission en Europe.",
+              "The researchers and contributors associated with the project also publish in academic and professional journals, contributing to the outreach of research on the purpose-driven company in Europe."
+            )}
+          </p>
+
+          <div className="space-y-6">
+            <div className="bg-white rounded-card border border-beige-200 shadow-sm p-6 md:p-8 hover:shadow-lg transition-shadow duration-300">
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm font-bold">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  {t("Article", "Article")}
+                </span>
+                <span className="text-xs text-navy-500">{t("Juin 2026", "June 2026")}</span>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold text-navy-800 mb-3 leading-tight">
+                {t(
+                  "La composition du comité de mission, élément clé pour rétablir la crédibilité de la société à mission",
+                  "The composition of the mission committee, a key element for restoring the credibility of the purpose-driven company"
+                )}
+              </h3>
+              <div className="flex flex-wrap items-center gap-4 text-sm text-navy-600">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-navy-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  Elena Codoni
+                </div>
+                <span className="text-navy-400">—</span>
+                <span className="text-navy-500 italic">
+                  {t("Chercheuse associée au projet Société à Mission Europe", "Associate researcher, Société à Mission Europe project")}
+                </span>
+              </div>
+              <div className="mt-3 flex items-center justify-between">
+                <div className="text-sm text-navy-600">
+                  <a href="https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm" target="_blank" rel="noopener noreferrer" className="font-medium text-navy-700 hover:text-rose-600 transition-colors underline underline-offset-2">Revue des Sociétés</a> — {t("Juin 2026", "June 2026")}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

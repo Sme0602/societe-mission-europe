@@ -12,7 +12,14 @@ function ConseilScientifique({ groupe, color = "bg-blue-50 border-blue-100" }: {
   useEffect(() => {
     fetch(`/api/contributeurs?groupe=${groupe}`)
       .then((res) => res.json())
-      .then((data) => setMembers(data))
+      .then((data) => {
+        const sorted = [...data].sort((a, b) => {
+          const lastA = a.nom_prenom.trim().split(/\s+/).pop()?.toLowerCase() ?? "";
+          const lastB = b.nom_prenom.trim().split(/\s+/).pop()?.toLowerCase() ?? "";
+          return lastA.localeCompare(lastB, "fr");
+        });
+        setMembers(sorted);
+      })
       .catch(() => {});
   }, [groupe]);
 
@@ -322,6 +329,15 @@ function TerritoireTab() {
         </div>
       </section>
 
+      <ParticipantsList
+        groupe="gt_territoire"
+        csGroupe="cs_territoire"
+        title="Participants du groupe Territoire"
+        titleEn="Territory Group Participants"
+        color="bg-jaune-400"
+        excludeNames={["Matthieu Caron", "Alix Vanmeervenne", "Sarah Vandenbroucke", "Stéphane Vernac"]}
+      />
+
       {/* Timeline Territoire */}
       <section className="py-16 md:py-24 bg-rose-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -387,15 +403,6 @@ function TerritoireTab() {
           </div>
         </div>
       </section>
-
-      <ParticipantsList
-        groupe="gt_territoire"
-        csGroupe="cs_territoire"
-        title="Participants du groupe Territoire"
-        titleEn="Territory Group Participants"
-        color="bg-jaune-400"
-        excludeNames={["Matthieu Caron", "Alix Vanmeervenne", "Sarah Vandenbroucke", "Stéphane Vernac"]}
-      />
     </>
   );
 }
@@ -448,13 +455,6 @@ function FranceTab() {
                     <div>
                       <p className="text-navy-800 font-medium text-sm">Stéphane Vernac</p>
                       <p className="text-navy-600 text-xs">UPJV</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-jaune-400 text-white flex items-center justify-center text-xs font-bold">SV</div>
-                    <div>
-                      <p className="text-navy-800 font-medium text-sm">Sarah Vandenbroucke</p>
-                      <p className="text-navy-600 text-xs">{t("Ingénieure de recherche, UPHF", "Research Engineer, UPHF")}</p>
                     </div>
                   </div>
                 </div>
@@ -593,13 +593,6 @@ function EuropeTab() {
                       <p className="text-navy-600 text-xs">UPHF</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-jaune-400 text-white flex items-center justify-center text-xs font-bold">SV</div>
-                    <div>
-                      <p className="text-navy-800 font-medium text-sm">Sarah Vandenbroucke</p>
-                      <p className="text-navy-600 text-xs">UPHF</p>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -627,8 +620,8 @@ function EuropeTab() {
                     <div>
                       <p className="text-navy-700 text-sm leading-relaxed">
                         {t(
-                          "Convergences et divergences des modèles nationaux de sociétés à mission en Europe",
-                          "Convergences and Divergences of National Models of Purpose-Driven Companies in Europe"
+                          "Purpose-Driven Companies in Europe: Foundations, Models and Impact",
+                          "Purpose-Driven Companies in Europe: Foundations, Models and Impact"
                         )}
                       </p>
                     </div>
@@ -673,6 +666,15 @@ function EuropeTab() {
           </div>
         </div>
       </section>
+
+      <ParticipantsList
+        groupe="gt_europe"
+        csGroupe="cs_europe"
+        title="Participants du groupe Europe"
+        titleEn="Europe Group Participants"
+        color="bg-navy-800"
+        excludeNames={["Matthieu Caron", "Alix Vanmeervenne", "Sarah Vandenbroucke", "Stéphane Vernac"]}
+      />
 
       {/* Europe Timeline - visually prominent */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-beige-50 to-white">
@@ -779,8 +781,8 @@ function EuropeTab() {
                         </svg>
                         <span className="text-navy-700">
                           {t(
-                            <>Publication ouvrage 1 (<em>Convergences and Divergences</em>)</>,
-                            <>Publication 1 (<em>Convergences and Divergences</em>)</>
+                            <>Publication ouvrage 1 (<em>Purpose-Driven Companies in Europe</em>)</>,
+                            <>Publication 1 (<em>Purpose-Driven Companies in Europe</em>)</>
                           )}
                         </span>
                       </div>
@@ -878,15 +880,6 @@ function EuropeTab() {
           </div>
         </div>
       </section>
-
-      <ParticipantsList
-        groupe="gt_europe"
-        csGroupe="cs_europe"
-        title="Participants du groupe Europe"
-        titleEn="Europe Group Participants"
-        color="bg-navy-800"
-        excludeNames={["Matthieu Caron", "Alix Vanmeervenne", "Sarah Vandenbroucke", "Stéphane Vernac"]}
-      />
     </>
   );
 }

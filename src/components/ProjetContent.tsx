@@ -119,6 +119,14 @@ export default function ProjetContent() {
       ),
     },
     {
+      date: t("Juin 2026", "June 2026"),
+      title: t("Summer School — Purpose at the Heart of Europe", "Summer School — Purpose at the Heart of Europe"),
+      desc: t(
+        "Sciences Po Lille — Chercheurs, praticiens et institutionnels européens réunis autour du concept de purpose-driven company",
+        "Sciences Po Lille — European researchers, practitioners and institutional representatives brought together around the concept of the purpose-driven company"
+      ),
+    },
+    {
       date: "2027",
       title: t("Restitutions intermédiaires et événements européens", "Interim presentations and European events"),
       desc: t(
@@ -127,11 +135,27 @@ export default function ProjetContent() {
       ),
     },
     {
+      date: t("Été 2027", "Summer 2027"),
+      title: t("Summer School 2027", "Summer School 2027"),
+      desc: t(
+        "Deuxième édition de la Summer School du projet",
+        "Second edition of the project's Summer School"
+      ),
+    },
+    {
       date: "2028",
       title: t("Publications finales et recommandations", "Final publications and recommendations"),
       desc: t(
         "Livres blancs, ouvrages collectifs et recommandations pour une directive européenne sur la purpose-driven company",
         "White papers, collective works and recommendations for a European directive on the purpose-driven company"
+      ),
+    },
+    {
+      date: t("Été 2028", "Summer 2028"),
+      title: t("Summer School 2028", "Summer School 2028"),
+      desc: t(
+        "Troisième et dernière édition de la Summer School, restitution des travaux du projet",
+        "Third and final edition of the Summer School, presentation of the project's findings"
       ),
     },
   ];

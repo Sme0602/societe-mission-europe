@@ -1,14 +1,78 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
 
+type NewsItem = {
+  type: "presse" | "podcast" | "linkedin" | "evenement" | "publication" | "newsletter";
+  date: string;
+  title: string;
+  url: string;
+};
+
+const newsItems: NewsItem[] = [
+  {
+    type: "newsletter",
+    date: "Juillet 2026",
+    title: "Newsletter N°2 — Summer School 2026 : Purpose at the Heart of Europe",
+    url: "/presse-news",
+  },
+  {
+    type: "publication",
+    date: "2 juillet 2026",
+    title: "Elena Codoni, chercheuse associée au projet — La composition du comité de mission, élément clé pour rétablir la crédibilité de la société à mission",
+    url: "https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm",
+  },
+  {
+    type: "linkedin",
+    date: "2 juillet 2026",
+    title: "Summer School à Sciences Po Lille — académiques et entrepreneurs réunis autour des modèles d'entreprises à mission en Europe",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7478450065611661326",
+  },
+  {
+    type: "evenement",
+    date: "26 juin 2026",
+    title: "Summer School — Purpose at the Heart of Europe, Sciences Po Lille",
+    url: "/evenements/summer-school-juin-2026",
+  },
+  {
+    type: "podcast",
+    date: "25 juin 2026",
+    title: "Euradio — La France a montré la voie, et si l'Europe suivait ? Par Emery Jacquillat et Sarah Vandenbroucke",
+    url: "https://euradio.fr/emission/4zej-euradio-a-lille/5dAL-societe-a-mission-la-france-a-montre-la-voie-et-si-leurope-suivait",
+  },
+  {
+    type: "presse",
+    date: "22 juin 2026",
+    title: "La Voix du Nord — On ne changera pas le monde sans les entreprises",
+    url: "https://www.lavoixdunord.fr/1714514/article/2026-06-22/projet-societe-mission-europe-ne-changera-pas-le-monde-contre-les-entreprises-et",
+  },
+  {
+    type: "linkedin",
+    date: "2 juin 2026",
+    title: "Matinée chez Cofidis Group — société à mission, loi PACTE et gouvernance d'entreprise",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7466114535276408832",
+  },
+];
+
+const badgeConfig = {
+  presse: { label: "Presse", bg: "bg-red-50", text: "text-red-700", icon: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2" },
+  podcast: { label: "Podcast", bg: "bg-purple-50", text: "text-purple-700", icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m-4 0h8M12 3a3 3 0 00-3 3v4a3 3 0 006 0V6a3 3 0 00-3-3z" },
+  linkedin: { label: "LinkedIn", bg: "bg-blue-50", text: "text-blue-700", icon: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" },
+  evenement: { label: "Événement", bg: "bg-amber-50", text: "text-amber-700", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
+  publication: { label: "Publication", bg: "bg-emerald-50", text: "text-emerald-700", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
+  newsletter: { label: "Newsletter", bg: "bg-rose-50", text: "text-rose-700", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
+};
+
 const heroPhotos = [
-  1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,
-  21,22,23,24,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,
-  42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,
-  61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,
+  1,77,2,78,3,79,4,80,5,81,6,82,7,83,8,84,9,85,10,86,
+  11,87,12,88,13,89,14,90,15,91,16,92,17,93,18,94,19,95,20,96,
+  21,97,22,98,23,99,24,100,26,101,27,102,28,103,29,104,30,105,31,106,
+  32,107,33,108,34,109,35,110,36,111,37,112,38,113,39,114,40,115,42,116,
+  43,117,44,118,45,119,46,120,47,121,48,122,49,123,50,124,51,125,52,126,
+  53,127,54,128,55,129,56,130,57,131,58,132,59,133,60,134,61,135,62,136,
+  63,137,64,138,65,66,67,68,69,70,71,72,73,74,75,76,
 ].map((n) => `/images/carousel/photo-${n}.jpg`);
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -18,6 +82,85 @@ function shuffleArray<T>(arr: T[]): T[] {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   return shuffled;
+}
+
+function NewsCarousel() {
+  const { t } = useI18n();
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [paused, setPaused] = useState(false);
+
+  const scroll = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const cardWidth = 240 + 16;
+    if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 10) {
+      track.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      track.scrollBy({ left: cardWidth, behavior: "smooth" });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (paused) return;
+    const interval = setInterval(scroll, 3500);
+    return () => clearInterval(interval);
+  }, [paused, scroll]);
+
+  return (
+    <section className="py-16 md:py-20 bg-beige-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-2">
+            {t("Actualités du projet", "Project news")}
+          </h2>
+          <div className="tricolor-separator w-24 mx-auto" />
+        </div>
+        <div
+          ref={trackRef}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          className="flex gap-4 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory"
+          style={{ scrollbarWidth: "thin" }}
+        >
+          {newsItems.map((item, i) => {
+            const badge = badgeConfig[item.type];
+            return (
+              <a
+                key={i}
+                href={item.url}
+                target={item.url.startsWith("http") ? "_blank" : undefined}
+                rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="flex-none w-[240px] snap-start bg-white rounded-xl border border-beige-200 p-5 flex flex-col gap-2 hover:shadow-md transition-shadow group"
+              >
+                <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full w-fit ${badge.bg} ${badge.text}`}>
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={badge.icon} />
+                  </svg>
+                  {badge.label}
+                </span>
+                <span className="text-xs text-navy-500">{item.date}</span>
+                <p className="text-sm font-medium text-navy-800 leading-snug flex-1">{item.title}</p>
+                <span className="text-xs font-semibold text-rose-600 group-hover:text-rose-700 flex items-center gap-1 mt-1">
+                  {t("Voir", "View")}
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </a>
+            );
+          })}
+        </div>
+        <div className="flex justify-end mt-6">
+          <Link href="/presse-news" className="inline-flex items-center gap-2 text-rose-600 hover:text-rose-700 font-semibold transition-colors">
+            {t("Notre projet dans les médias", "Our project in the media")}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function PhotoBubbles() {
@@ -172,9 +315,51 @@ export default function HomeContent() {
                 <img src="/images/lancement/keynote.jpg" alt={t("Présentation lors de la journée de lancement — Wallers-Arenberg", "Presentation at the launch event — Wallers-Arenberg")} className="w-full h-auto" />
               </div>
               <div className="absolute -bottom-4 -left-4 bg-rose-600 text-white rounded-card px-5 py-3 shadow-lg">
-                <p className="text-sm font-bold">Wallers-Arenberg</p>
-                <p className="text-xs text-rose-100">{t("6 février 2026", "6 February 2026")}</p>
+                <p className="text-sm font-bold">{t("Lancement du projet", "Project launch")}</p>
+                <p className="text-xs text-rose-100">Matthieu Caron & Stéphane Vernac</p>
+                <p className="text-xs text-rose-100">Wallers-Arenberg — {t("6 février 2026", "6 February 2026")}</p>
               </div>
+            </div>
+
+            {/* Photos Sarah & Alix — Summer School */}
+            <div className="relative mt-10 lg:order-1">
+              <div className="rounded-card overflow-hidden shadow-lg border border-beige-200">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/summer-school/alix-sarah-summer-school.jpg" alt={t("Alix Vanmeervenne et Sarah Vandenbroucke à la Summer School — Sciences Po Lille, 26 juin 2026", "Alix Vanmeervenne and Sarah Vandenbroucke at the Summer School — Sciences Po Lille, 26 June 2026")} className="w-full h-auto" />
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-rose-600 text-white rounded-card px-5 py-3 shadow-lg">
+                <p className="text-sm font-bold">Summer School</p>
+                <p className="text-xs text-rose-100">Alix Vanmeervenne & Sarah Vandenbroucke</p>
+                <p className="text-xs text-rose-100">Sciences Po Lille — {t("26 juin 2026", "26 June 2026")}</p>
+              </div>
+            </div>
+
+            {/* Texte Summer School */}
+            <div className="mt-10 lg:order-2 flex flex-col justify-center">
+              <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-3">
+                {t("Summer School 2026", "Summer School 2026")}
+              </h3>
+              <div className="tricolor-separator w-20 mb-4" />
+              <div className="space-y-3 text-navy-700 leading-relaxed">
+                <p>
+                  {t(
+                    "Le 26 juin 2026, Sciences Po Lille a accueilli la première Summer School « Purpose at the Heart of Europe », réunissant chercheurs, praticiens et institutionnels de toute l'Europe.",
+                    "On 26 June 2026, Sciences Po Lille hosted the first Summer School 'Purpose at the Heart of Europe', bringing together researchers, practitioners and institutional representatives from across Europe."
+                  )}
+                </p>
+                <p>
+                  {t(
+                    "Une journée d'échanges et de réflexion pour penser ensemble l'avenir de l'entreprise à mission à l'échelle européenne.",
+                    "A day of exchange and reflection to collectively envision the future of the purpose-driven company at the European scale."
+                  )}
+                </p>
+              </div>
+              <Link href="/evenements/summer-school-juin-2026" className="inline-flex items-center gap-2 mt-4 text-rose-600 hover:text-rose-700 font-semibold transition-colors">
+                {t("Découvrir la Summer School", "Discover the Summer School")}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
@@ -336,7 +521,30 @@ export default function HomeContent() {
             )}
           </p>
         </div>
+        <div className="max-w-7xl mx-auto">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/summer-school/photos/photo-groupe.jpg" alt={t("Photo de groupe — Summer School 2026, Sciences Po Lille", "Group photo — Summer School 2026, Sciences Po Lille")} className="w-full h-auto" />
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+          <p className="text-navy-600 text-sm italic">
+            {t(
+              "Summer School « Purpose at the Heart of Europe » — chercheurs, praticiens et institutionnels européens réunis à Sciences Po Lille, 26 juin 2026",
+              "Summer School 'Purpose at the Heart of Europe' — European researchers, practitioners and institutional representatives gathered at Sciences Po Lille, 26 June 2026"
+            )}
+          </p>
+          <div className="mt-6">
+            <Link href="/evenements" className="inline-flex items-center gap-2 text-rose-600 hover:text-rose-700 font-semibold transition-colors">
+              {t("Voir nos événements", "See our events")}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
       </section>
+
+      {/* Actualités du projet */}
+      <NewsCarousel />
 
       {/* Vidéo de la journée de lancement */}
       <section className="py-16 md:py-20 bg-beige-50">
@@ -377,85 +585,6 @@ export default function HomeContent() {
                 allowFullScreen
                 className="absolute inset-0 w-full h-full"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Prochain événement — Summer School */}
-      <section className="py-16 md:py-24 bg-beige-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-navy-800 rounded-3xl overflow-hidden">
-            <div className="tricolor-separator" />
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div className="p-8 md:p-12 lg:p-16">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-600/20 rounded-full text-rose-400 text-sm font-bold mb-6">
-                  <span className="w-2 h-2 bg-rose-400 rounded-full animate-pulse" />
-                  {t("Prochain événement", "Upcoming event")}
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Summer School 2026
-                </h2>
-                <p className="text-lg font-semibold text-rose-400 italic mb-4">
-                  Purpose at the Heart of Europe
-                </p>
-                <p className="text-gray-300 text-base leading-relaxed mb-6">
-                  {t(
-                    "Recherche, dialogue et action pour un nouveau modèle économique. Keynote de Michael Ristaniemi (Commission européenne, DG GROW) et panel de chercheurs européens.",
-                    "Research, dialogue and action for a new economic model. Keynote by Michael Ristaniemi (European Commission, DG GROW) and panel of European researchers."
-                  )}
-                </p>
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span className="font-medium">{t("Vendredi 26 juin 2026", "Friday, June 26, 2026")}</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span>9 rue Auguste Angellier, Lille</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-200">
-                    <svg className="w-5 h-5 text-jaune-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-sm">{t("Après-midi ouverte au public (en anglais)", "Afternoon open to the public (in English)")}</span>
-                  </div>
-                </div>
-                <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg p-3 mb-6">
-                  <p className="text-amber-300 text-xs">
-                    {t(
-                      "ℹ️ La matinée est réservée aux membres des groupes de travail.",
-                      "ℹ️ The morning session is reserved for working group members."
-                    )}
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DslKKfWFMkelNenFHomhZkXYfZbtHVFJma-lCb2gVypURTg4N1k1UUxBV1o2WFpPQkhHOVZDQjFZVy4u"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary text-center"
-                  >
-                    {t("S'inscrire", "Register")}
-                  </a>
-                  <Link href="/evenements" className="btn-outline border-white/30 text-white hover:bg-white/10 text-center">
-                    {t("Voir le programme", "View the programme")}
-                  </Link>
-                </div>
-              </div>
-              <div className="hidden lg:flex items-center justify-center p-8">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/summer-school/visuel-afternoon.png"
-                  alt="Summer School 2026 — Purpose at the Heart of Europe"
-                  className="w-full max-w-sm rounded-lg shadow-2xl border border-white/10"
-                />
-              </div>
             </div>
           </div>
         </div>
