@@ -293,7 +293,7 @@ export default function TravauxContent() {
                       </div>
                       <div className="mt-3 flex items-center gap-2">
                         <span className="text-xs text-navy-500 font-medium">
-                          UPHF &bull; OEP &bull; LARSH
+                          UPHF &bull; OEP
                         </span>
                       </div>
                     </div>
