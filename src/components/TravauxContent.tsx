@@ -79,6 +79,32 @@ const travaux = [
     linkLabelFr: null,
     linkLabelEn: null,
   },
+  {
+    numero: 4,
+    titleFr:
+      "L'Europe : nouvelle frontière de la raison d'être et de la société à mission",
+    titleEn:
+      "Europe: The New Frontier of Corporate Purpose and the Purpose-Driven Company",
+    type: "Libre propos",
+    typeEn: "Opinion piece",
+    descFr:
+      "Dans ce libre propos, Martin Richer revient sur le lancement de la chaire « Société à mission européenne » le 6 février 2026 à Wallers-Arenberg et identifie neuf facteurs clés de succès pour faire de la raison d'être et de la société à mission la clé de voûte d'un modèle européen unifié de gouvernance responsable des entreprises.",
+    descEn:
+      "In this opinion piece, Martin Richer reflects on the launch of the 'European Purpose-Driven Company' chair on 6 February 2026 in Wallers-Arenberg and identifies nine key success factors for making corporate purpose and the purpose-driven company the cornerstone of a unified European model of responsible corporate governance.",
+    author: "Martin Richer",
+    date: "16 juin 2026",
+    pages: null,
+    color: "teal",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+      </svg>
+    ),
+    oepUrl: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/leurope-nouvelle-frontiere-de-la-raison-detre-et-de-la-societe-a-mission.html",
+    linkUrl: "https://management-rse.com/leurope-nouvelle-frontiere-de-la-raison-detre-et-de-la-societe-a-mission-1-2/",
+    linkLabelFr: "Lire sur le blog de l'auteur",
+    linkLabelEn: "Read on the author's blog",
+  },
 ];
 
 const colorClasses: Record<string, { bg: string; text: string; border: string; light: string; badge: string }> = {
@@ -102,6 +128,13 @@ const colorClasses: Record<string, { bg: string; text: string; border: string; l
     border: "border-navy-200",
     light: "bg-navy-50",
     badge: "bg-navy-100 text-navy-700",
+  },
+  teal: {
+    bg: "bg-teal-600",
+    text: "text-teal-600",
+    border: "border-teal-200",
+    light: "bg-teal-50",
+    badge: "bg-teal-100 text-teal-700",
   },
 };
 
@@ -147,8 +180,8 @@ export default function TravauxContent() {
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-2">
               {t(
-                "Études publiées avec l'Observatoire de l'Éthique Publique",
-                "Studies published with the Observatoire de l'Éthique Publique"
+                "Publications avec l'Observatoire de l'Éthique Publique",
+                "Publications with the Observatoire de l'Éthique Publique"
               )}
             </h2>
             <div className="tricolor-separator w-24 mb-6" />
@@ -318,6 +351,47 @@ export default function TravauxContent() {
               <div className="mt-3 flex items-center justify-between">
                 <div className="text-sm text-navy-600">
                   <a href="https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm" target="_blank" rel="noopener noreferrer" className="font-medium text-navy-700 hover:text-rose-600 transition-colors underline underline-offset-2">Revue des Sociétés</a> — {t("Juin 2026", "June 2026")}
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-card border border-beige-200 shadow-sm p-6 md:p-8 hover:shadow-lg transition-shadow duration-300">
+              <div className="flex flex-wrap items-center gap-3 mb-3">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm font-bold">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  {t("Article", "Article")}
+                </span>
+                <span className="text-xs text-navy-500">{t("Juillet 2026", "July 2026")}</span>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold text-navy-800 mb-3 leading-tight">
+                {t(
+                  "À quoi sert une société à mission ?",
+                  "What is the purpose of a purpose-driven company?"
+                )}
+              </h3>
+              <p className="text-navy-700 text-sm leading-relaxed mb-4">
+                {t(
+                  "Cet article examine la place paradoxale de la société à mission dans le débat contemporain sur l'entreprise. Il explicite ses composantes, restitue les débats qu'elle soulève depuis la loi Pacte de 2019, et montre comment l'inscription d'une mission exigeante dans les statuts crée un mécanisme d'épreuve qui oblige l'entreprise à apprendre et à tester de nouveaux compromis.",
+                  "This article examines the paradoxical place of the purpose-driven company in the contemporary debate on business. It details its components, presents the debates it has sparked since the Pacte Law of 2019, and shows how embedding an ambitious mission into the articles of incorporation creates a mechanism of proof that compels companies to learn and test new compromises."
+                )}
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-sm text-navy-600">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-navy-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  Pablo Maria
+                </div>
+                <span className="text-navy-400">—</span>
+                <span className="text-navy-500 italic">
+                  {t("Doctorant au LARSH (UPHF), associé au programme Société à Mission Europe", "PhD student at LARSH (UPHF), associated with the Société à Mission Europe programme")}
+                </span>
+              </div>
+              <div className="mt-3 flex items-center justify-between">
+                <div className="text-sm text-navy-600">
+                  <a href="https://shs.cairn.info/revue-l-economie-politique?lang=fr" target="_blank" rel="noopener noreferrer" className="font-medium text-navy-700 hover:text-rose-600 transition-colors underline underline-offset-2">{t("L'Économie Politique", "L'Économie Politique")}</a> — N°111, 2026/3 — <span className="italic">{t("Repenser l'entreprise à l'heure de la transition", "Rethinking the company in the age of transition")}</span>
                 </div>
               </div>
             </div>

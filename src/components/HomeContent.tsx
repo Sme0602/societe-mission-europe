@@ -20,6 +20,12 @@ const newsItems: NewsItem[] = [
   },
   {
     type: "publication",
+    date: "Juillet 2026",
+    title: "Pablo Maria, doctorant LARSH — À quoi sert une société à mission ? (L'Économie Politique N°111)",
+    url: "https://shs.cairn.info/revue-l-economie-politique?lang=fr",
+  },
+  {
+    type: "publication",
     date: "2 juillet 2026",
     title: "Elena Codoni, chercheuse associée au projet — La composition du comité de mission, élément clé pour rétablir la crédibilité de la société à mission",
     url: "https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm",
@@ -49,10 +55,10 @@ const newsItems: NewsItem[] = [
     url: "https://www.lavoixdunord.fr/1714514/article/2026-06-22/projet-societe-mission-europe-ne-changera-pas-le-monde-contre-les-entreprises-et",
   },
   {
-    type: "linkedin",
-    date: "2 juin 2026",
-    title: "Matinée chez Cofidis Group — société à mission, loi PACTE et gouvernance d'entreprise",
-    url: "https://www.linkedin.com/feed/update/urn:li:activity:7466114535276408832",
+    type: "publication",
+    date: "16 juin 2026",
+    title: "Martin Richer — L'Europe : nouvelle frontière de la raison d'être et de la société à mission",
+    url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/leurope-nouvelle-frontiere-de-la-raison-detre-et-de-la-societe-a-mission.html",
   },
 ];
 
