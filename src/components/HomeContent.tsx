@@ -22,7 +22,7 @@ const newsItems: NewsItem[] = [
     type: "publication",
     date: "Juillet 2026",
     title: "Pablo Maria, doctorant LARSH — À quoi sert une société à mission ? (L'Économie Politique N°111)",
-    url: "https://shs.cairn.info/revue-l-economie-politique?lang=fr",
+    url: "https://boutique.alternatives-economiques.fr/economie-politique",
   },
   {
     type: "publication",
