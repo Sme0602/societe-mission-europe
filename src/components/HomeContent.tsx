@@ -3,73 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
-
-type NewsItem = {
-  type: "presse" | "podcast" | "linkedin" | "evenement" | "publication" | "newsletter";
-  date: string;
-  title: string;
-  url: string;
-};
-
-const newsItems: NewsItem[] = [
-  {
-    type: "newsletter",
-    date: "Juillet 2026",
-    title: "Newsletter N°2 — Summer School 2026 : Purpose at the Heart of Europe",
-    url: "/presse-news",
-  },
-  {
-    type: "publication",
-    date: "Juillet 2026",
-    title: "Pablo Maria, doctorant LARSH — À quoi sert une société à mission ? (L'Économie Politique N°111)",
-    url: "https://boutique.alternatives-economiques.fr/economie-politique",
-  },
-  {
-    type: "publication",
-    date: "2 juillet 2026",
-    title: "Elena Codoni, chercheuse associée au projet — La composition du comité de mission, élément clé pour rétablir la crédibilité de la société à mission",
-    url: "https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm",
-  },
-  {
-    type: "linkedin",
-    date: "2 juillet 2026",
-    title: "Summer School à Sciences Po Lille — académiques et entrepreneurs réunis autour des modèles d'entreprises à mission en Europe",
-    url: "https://www.linkedin.com/feed/update/urn:li:activity:7478450065611661326",
-  },
-  {
-    type: "evenement",
-    date: "26 juin 2026",
-    title: "Summer School — Purpose at the Heart of Europe, Sciences Po Lille",
-    url: "/evenements/summer-school-juin-2026",
-  },
-  {
-    type: "podcast",
-    date: "25 juin 2026",
-    title: "Euradio — La France a montré la voie, et si l'Europe suivait ? Par Emery Jacquillat et Sarah Vandenbroucke",
-    url: "https://euradio.fr/emission/4zej-euradio-a-lille/5dAL-societe-a-mission-la-france-a-montre-la-voie-et-si-leurope-suivait",
-  },
-  {
-    type: "presse",
-    date: "22 juin 2026",
-    title: "La Voix du Nord — On ne changera pas le monde sans les entreprises",
-    url: "https://www.lavoixdunord.fr/1714514/article/2026-06-22/projet-societe-mission-europe-ne-changera-pas-le-monde-contre-les-entreprises-et",
-  },
-  {
-    type: "publication",
-    date: "16 juin 2026",
-    title: "Martin Richer — L'Europe : nouvelle frontière de la raison d'être et de la société à mission",
-    url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/leurope-nouvelle-frontiere-de-la-raison-detre-et-de-la-societe-a-mission.html",
-  },
-];
-
-const badgeConfig = {
-  presse: { label: "Presse", bg: "bg-red-50", text: "text-red-700", icon: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2" },
-  podcast: { label: "Podcast", bg: "bg-purple-50", text: "text-purple-700", icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m-4 0h8M12 3a3 3 0 00-3 3v4a3 3 0 006 0V6a3 3 0 00-3-3z" },
-  linkedin: { label: "LinkedIn", bg: "bg-blue-50", text: "text-blue-700", icon: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" },
-  evenement: { label: "Événement", bg: "bg-amber-50", text: "text-amber-700", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
-  publication: { label: "Publication", bg: "bg-emerald-50", text: "text-emerald-700", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
-  newsletter: { label: "Newsletter", bg: "bg-rose-50", text: "text-rose-700", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
-};
+import { newsItems, badgeConfig } from "@/data/news-items";
 
 const heroPhotos = [
   1,77,2,78,3,79,4,80,5,81,6,82,7,83,8,84,9,85,10,86,
@@ -98,7 +32,7 @@ function NewsCarousel() {
   const scroll = useCallback(() => {
     const track = trackRef.current;
     if (!track) return;
-    const cardWidth = 240 + 16;
+    const cardWidth = 340 + 20;
     if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 10) {
       track.scrollTo({ left: 0, behavior: "smooth" });
     } else {
@@ -113,57 +47,83 @@ function NewsCarousel() {
   }, [paused, scroll]);
 
   return (
-    <section className="py-16 md:py-20 bg-beige-50">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-beige-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
+        <div className="mb-10">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-rose-600 mb-2">
+            {t("Dernières nouvelles", "Latest news")}
+          </span>
           <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-2">
             {t("Actualités du projet", "Project news")}
           </h2>
-          <div className="tricolor-separator w-24 mx-auto" />
+          <div className="tricolor-separator w-24" />
         </div>
-        <div
-          ref={trackRef}
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          className="flex gap-4 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory"
-          style={{ scrollbarWidth: "thin" }}
-        >
-          {newsItems.map((item, i) => {
-            const badge = badgeConfig[item.type];
-            return (
-              <a
-                key={i}
-                href={item.url}
-                target={item.url.startsWith("http") ? "_blank" : undefined}
-                rel={item.url.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="flex-none w-[240px] snap-start bg-white rounded-xl border border-beige-200 p-5 flex flex-col gap-2 hover:shadow-md transition-shadow group"
-              >
-                <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full w-fit ${badge.bg} ${badge.text}`}>
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={badge.icon} />
-                  </svg>
-                  {badge.label}
-                </span>
-                <span className="text-xs text-navy-500">{item.date}</span>
-                <p className="text-sm font-medium text-navy-800 leading-snug flex-1">{item.title}</p>
-                <span className="text-xs font-semibold text-rose-600 group-hover:text-rose-700 flex items-center gap-1 mt-1">
-                  {t("Voir", "View")}
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </a>
-            );
-          })}
-        </div>
-        <div className="flex justify-end mt-6">
-          <Link href="/presse-news" className="inline-flex items-center gap-2 text-rose-600 hover:text-rose-700 font-semibold transition-colors">
-            {t("Notre projet dans les médias", "Our project in the media")}
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
+      </div>
+      <div
+        ref={trackRef}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        className="flex gap-5 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory pl-4 sm:pl-6 lg:pl-[max(1.5rem,calc((100%-80rem)/2+1.5rem))]"
+        style={{ scrollbarWidth: "none" }}
+      >
+        {newsItems.map((item, i) => {
+          const badge = badgeConfig[item.type];
+          const isFirst = i === 0;
+          const linkConfig: Record<string, { label: string; labelEn: string; href?: string }> = {
+            publication: { label: "Voir nos travaux", labelEn: "See our work", href: "/travaux" },
+            presse: { label: "Voir les articles de presse", labelEn: "See press articles", href: "/presse-news" },
+            linkedin: { label: "Voir le post LinkedIn", labelEn: "See LinkedIn post" },
+            podcast: { label: "Écouter le podcast", labelEn: "Listen to the podcast" },
+            evenement: { label: "Voir l'événement", labelEn: "See the event" },
+            newsletter: { label: "Lire la newsletter", labelEn: "Read the newsletter" },
+            video: { label: "Voir la vidéo", labelEn: "Watch the video" },
+          };
+          const lc = linkConfig[item.type] || { label: "Voir", labelEn: "View" };
+          const href = lc.href || item.url;
+          const isExternal = href.startsWith("http");
+          return (
+            <a
+              key={i}
+              href={href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              className={`flex-none snap-start rounded-2xl p-6 flex flex-col gap-3 transition-all group ${
+                isFirst
+                  ? "w-[380px] bg-navy-800 text-white hover:shadow-2xl min-h-[220px] justify-end relative overflow-hidden"
+                  : "w-[320px] bg-white border border-beige-200 hover:shadow-lg hover:border-rose-200 hover:-translate-y-1"
+              }`}
+            >
+              {isFirst && (
+                <div className="absolute top-4 left-6 text-[10px] font-bold uppercase tracking-widest text-rose-300">
+                  {t("À la une", "Featured")}
+                </div>
+              )}
+              <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full w-fit ${
+                isFirst ? "bg-white/15 text-white" : `${badge.bg} ${badge.text}`
+              }`}>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={badge.icon} />
+                </svg>
+                {badge.label}
+              </span>
+              <span className={`text-xs ${isFirst ? "text-beige-200" : "text-navy-500"}`}>{item.date}</span>
+              <p className={`font-medium leading-snug flex-1 ${
+                isFirst ? "text-base md:text-lg text-white" : "text-sm text-navy-800"
+              }`}>{item.title}</p>
+              <span className={`text-xs font-semibold flex items-center gap-1 mt-1 ${
+                isFirst
+                  ? "text-rose-300 group-hover:text-rose-200"
+                  : "text-rose-600 group-hover:text-rose-700"
+              }`}>
+                {t(lc.label, lc.labelEn)}
+                <svg className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </a>
+          );
+        })}
+        <div className="flex-none w-4 sm:w-6 lg:w-8" aria-hidden="true" />
       </div>
     </section>
   );
@@ -371,6 +331,9 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* Actualités du projet */}
+      <NewsCarousel />
+
       {/* Le projet en chiffres */}
       <section className="py-16 md:py-20 bg-navy-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -548,9 +511,6 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
-
-      {/* Actualités du projet */}
-      <NewsCarousel />
 
       {/* Vidéo de la journée de lancement */}
       <section className="py-16 md:py-20 bg-beige-50">
