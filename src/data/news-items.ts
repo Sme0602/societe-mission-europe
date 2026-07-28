@@ -73,6 +73,41 @@ export const newsItems: NewsItem[] = [
     summary: "Libre propos publié avec l'Observatoire de l'Éthique Publique. Martin Richer analyse comment l'Europe peut devenir le nouveau terrain de développement de la raison d'être et de la société à mission, au-delà du cadre français.",
   },
   {
+    type: "publication",
+    date: "18 mai 2026",
+    title: "Étude N°3 — La Società Benefit : vers un nouveau paradigme d'entreprise ? (Noémie Louvet)",
+    url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/la-societa-benefit-vers-un-nouveau-paradigme-dentreprise.html",
+    summary: "Étude publiée avec l'OEP. L'Italie a introduit en 2016 les Società Benefit, permettant aux entreprises d'intégrer des objectifs sociaux et environnementaux dans leurs statuts. Cette étude examine le fonctionnement concret de ce modèle et les défis rencontrés dans sa mise en œuvre.",
+  },
+  {
+    type: "publication",
+    date: "6 mai 2026",
+    title: "Étude N°2 — Révolutionner l'éthique des affaires en créant la Société à Responsabilité Sociale (Philippe Tonolo)",
+    url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/revolutionner-lethique-des-affaires-en-creant-la-societe-a-responsabilite-sociale.html",
+    summary: "Étude publiée avec l'OEP. Proposition d'un nouveau modèle institutionnel — la SARS — reposant sur une répartition égalitaire du droit de propriété, un mécanisme de capitalisation dynamique adossé à une garantie publique, et une qualification spécifique des dirigeants.",
+  },
+  {
+    type: "publication",
+    date: "30 avril 2026",
+    title: "Étude N°1 — Une première typologie des modèles alternatifs d'entreprises en Europe (Alix Vanmeervenne)",
+    url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/une-premiere-typologie-des-modeles-alternatifs-dentreprises-en-europe.html",
+    summary: "Étude comparative inédite des cadres juridiques et des modèles de gouvernance d'entreprise à travers les 27 États membres de l'UE. Identification des dispositifs existants en matière de raison d'être, d'objet social élargi et de gouvernance responsable.",
+  },
+  {
+    type: "newsletter",
+    date: "Avril 2026",
+    title: "Newsletter N°1 — Lancement du projet Société à Mission Europe",
+    url: "/presse-news",
+    summary: "Première newsletter du projet Société à Mission Europe, revenant sur la journée de lancement du 6 février 2026 à Wallers-Arenberg et les premières avancées du programme de recherche-action.",
+  },
+  {
+    type: "video",
+    date: "Février 2026",
+    title: "Vidéo de la journée de lancement — Wallers-Arenberg, 6 février 2026",
+    url: "https://youtu.be/JjAIkQHwtxA",
+    summary: "Vidéo récapitulative de la journée de lancement du projet Société à Mission Europe à Wallers-Arenberg, réunissant près de 300 participants : chercheurs, dirigeants, partenaires sociaux, hauts fonctionnaires et responsables politiques européens.",
+  },
+  {
     type: "presse",
     date: "4 mars 2026",
     title: "UPHF/LARSH — Société à Mission : Et si les Hauts-de-France devenaient le Laboratoire d'une Révolution Entrepreneuriale Européenne",
@@ -155,13 +190,6 @@ export const newsItems: NewsItem[] = [
     title: "Mediatico — Les Hauts-de-France, tête de pont d'une société à mission européenne",
     url: "https://mediatico.fr/les-hauts-de-france-tete-de-pont-dune-societe-a-mission-europeenne/",
     summary: "L'Université Polytechnique Hauts-de-France lance une initiative de recherche ambitieuse pour développer un modèle européen d'entreprise à mission.",
-  },
-  {
-    type: "presse",
-    date: "Décembre 2025",
-    title: "ESSCA — Société à Mission Européenne — Projet FEDER 2026/2029",
-    url: "https://www.essca.eu/app/uploads/2025/12/societe-a_mission_europeenne_projet_feder_20262029.pdf",
-    summary: "Document de présentation du projet FEDER « Société à Mission Européenne » couvrant la période 2026-2029, détaillant la structure, les objectifs et le financement du projet.",
   },
 ];
 
