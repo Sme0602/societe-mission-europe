@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useI18n } from "@/lib/i18n/context";
 
 const travaux = [
@@ -140,6 +141,7 @@ const colorClasses: Record<string, { bg: string; text: string; border: string; l
 
 export default function TravauxContent() {
   const { t } = useI18n();
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string; href: string; label: string } | null>(null);
 
   return (
     <>
@@ -338,6 +340,12 @@ export default function TravauxContent() {
                       "The composition of the mission committee, a key element for restoring the credibility of the purpose-driven company"
                     )}
                   </h3>
+                  <p className="text-navy-700 text-sm leading-relaxed mb-4">
+                    {t(
+                      "Cet article analyse le cadre juridique du comité de mission, organe clé de la société à mission française. Il met en lumière les incertitudes d'interprétation apparues depuis la loi Pacte de 2019 — notamment sur la désignation de ses membres et la portée du contrôle exercé par les greffiers — et propose des pistes pour renforcer la cohérence et la crédibilité du dispositif.",
+                      "This article analyses the legal framework of the mission committee, a key body in the French purpose-driven company. It highlights the interpretive uncertainties that have emerged since the Pacte Law of 2019 — particularly regarding the appointment of its members and the scope of registrar oversight — and proposes avenues for strengthening the coherence and credibility of the framework."
+                    )}
+                  </p>
                   <div className="flex flex-wrap items-center gap-4 text-sm text-navy-600">
                     <div className="flex items-center gap-2">
                       <svg className="w-4 h-4 text-navy-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -357,16 +365,24 @@ export default function TravauxContent() {
                   </div>
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <a href="https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm" target="_blank" rel="noopener noreferrer" className="hidden md:block relative group">
+                <button
+                  onClick={() => setLightbox({
+                    src: "/images/travaux/elena-codoni-revue-des-societes.png",
+                    alt: t("Première page de l'article — La composition du comité de mission", "First page of the article — The composition of the mission committee"),
+                    href: "https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm",
+                    label: t("Lire l'article sur Revue des Sociétés", "Read the article on Revue des Sociétés"),
+                  })}
+                  className="hidden md:block relative group cursor-zoom-in"
+                >
                   <img
                     src="/images/travaux/elena-codoni-revue-des-societes.png"
                     alt={t("Première page de l'article — La composition du comité de mission", "First page of the article — The composition of the mission committee")}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
-                    <span className="text-white text-xs font-semibold">{t("Voir la revue", "View the journal")}</span>
+                    <span className="text-white text-xs font-semibold">{t("Agrandir", "Enlarge")}</span>
                   </div>
-                </a>
+                </button>
               </div>
             </div>
 
@@ -413,16 +429,24 @@ export default function TravauxContent() {
                   </div>
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <a href="https://boutique.alternatives-economiques.fr/economie-politique" target="_blank" rel="noopener noreferrer" className="hidden md:block relative group">
+                <button
+                  onClick={() => setLightbox({
+                    src: "/images/travaux/pablo-maria-economie-politique.png",
+                    alt: t("Première page de l'article — À quoi sert une société à mission ?", "First page of the article — What is the purpose of a purpose-driven company?"),
+                    href: "https://boutique.alternatives-economiques.fr/economie-politique",
+                    label: t("Lire l'article sur L'Économie Politique", "Read the article on L'Économie Politique"),
+                  })}
+                  className="hidden md:block relative group cursor-zoom-in"
+                >
                   <img
                     src="/images/travaux/pablo-maria-economie-politique.png"
                     alt={t("Première page de l'article — À quoi sert une société à mission ?", "First page of the article — What is the purpose of a purpose-driven company?")}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
-                    <span className="text-white text-xs font-semibold">{t("Voir la revue", "View the journal")}</span>
+                    <span className="text-white text-xs font-semibold">{t("Agrandir", "Enlarge")}</span>
                   </div>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -454,6 +478,47 @@ export default function TravauxContent() {
           </div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <div
+            className="relative max-w-lg w-full bg-white rounded-card shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 text-navy-800 flex items-center justify-center hover:bg-white transition-colors shadow"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              className="w-full h-auto"
+            />
+            <div className="p-4 text-center border-t border-beige-200">
+              <a
+                href={lightbox.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-rose-600 hover:text-rose-700 font-semibold transition-colors"
+              >
+                {lightbox.label}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
