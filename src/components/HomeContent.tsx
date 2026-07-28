@@ -66,7 +66,7 @@ function NewsCarousel() {
         className="flex gap-5 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory pl-4 sm:pl-6 lg:pl-[max(1.5rem,calc((100%-80rem)/2+1.5rem))]"
         style={{ scrollbarWidth: "none" }}
       >
-        {newsItems.map((item, i) => {
+        {newsItems.slice(0, 9).map((item, i) => {
           const badge = badgeConfig[item.type];
           const isFirst = i === 0;
           const linkConfig: Record<string, { label: string; labelEn: string; href?: string }> = {
