@@ -9,6 +9,7 @@ export type NewsItem = {
 };
 
 export const newsItems: NewsItem[] = [
+  // --- Juillet 2026 ---
   {
     type: "video",
     date: "Juillet 2026",
@@ -44,27 +45,7 @@ export const newsItems: NewsItem[] = [
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7478450065611661326",
     summary: "Post LinkedIn partageant les moments forts de la Summer School « Purpose at the Heart of Europe » à Sciences Po Lille, avec photos et témoignages des participants venus de toute l'Europe.",
   },
-  {
-    type: "evenement",
-    date: "10 juin 2026",
-    title: "Workshop WYG / DG GROW à Bruxelles — Impact-driven businesses in the EU",
-    url: "/projet",
-    summary: "Participation de Sarah Vandenbroucke au workshop organisé par WYG et la DG GROW (Commission européenne) à Bruxelles, consacré à l'étude des impact-driven businesses dans l'Union européenne.",
-  },
-  {
-    type: "evenement",
-    date: "1er juin 2026",
-    title: "Beate Sjåfjell (Université d'Oslo) rejoint le Conseil scientifique européen",
-    url: "/equipe",
-    summary: "Beate Sjåfjell, professeure à l'Université d'Oslo (Norvège), rejoint le Conseil scientifique européen du projet, apportant son expertise en droit des sociétés et développement durable.",
-  },
-  {
-    type: "evenement",
-    date: "5 juin 2026",
-    title: "Conseil scientifique européen — Préparation de la Summer School",
-    url: "/equipe",
-    summary: "Réunion du Conseil scientifique européen dédiée à la préparation de la Summer School, avec Alessio Bartolacelli, Carolina Cunha, Florian Möslein, Stéphane Vernac, Blanche Segrestin, Kevin Levillain, Jeroen Veldman, Anne Sanders, Anne-Marie Weber-Elżanowska et Emery Jacquillat.",
-  },
+  // --- Juin 2026 ---
   {
     type: "evenement",
     date: "26 juin 2026",
@@ -95,6 +76,35 @@ export const newsItems: NewsItem[] = [
   },
   {
     type: "evenement",
+    date: "10 juin 2026",
+    title: "Workshop WYG / DG GROW à Bruxelles — Impact-driven businesses in the EU",
+    url: "/projet",
+    summary: "Participation de Sarah Vandenbroucke au workshop organisé par WYG et la DG GROW (Commission européenne) à Bruxelles, consacré à l'étude des impact-driven businesses dans l'Union européenne.",
+  },
+  {
+    type: "evenement",
+    date: "5 juin 2026",
+    title: "Conseil scientifique européen — Préparation de la Summer School",
+    url: "/equipe",
+    summary: "Réunion du Conseil scientifique européen dédiée à la préparation de la Summer School, avec Alessio Bartolacelli, Carolina Cunha, Florian Möslein, Stéphane Vernac, Blanche Segrestin, Kevin Levillain, Jeroen Veldman, Anne Sanders, Anne-Marie Weber-Elżanowska et Emery Jacquillat.",
+  },
+  {
+    type: "evenement",
+    date: "1er juin 2026",
+    title: "Beate Sjåfjell (Université d'Oslo) rejoint le Conseil scientifique européen",
+    url: "/equipe",
+    summary: "Beate Sjåfjell, professeure à l'Université d'Oslo (Norvège), rejoint le Conseil scientifique européen du projet, apportant son expertise en droit des sociétés et développement durable.",
+  },
+  // --- Mai 2026 ---
+  {
+    type: "evenement",
+    date: "22 mai 2026",
+    title: "Matinée chez Cofidis Group — Société à mission, loi PACTE et gouvernance d'entreprise",
+    url: "/projet",
+    summary: "Présentation du projet Société à Mission Europe lors d'une matinée organisée chez Cofidis Group. Témoignages d'Amélie Thoreau et Sandra Holcapfelova (Cofidis Group) sur le déploiement de la société à mission, d'Anne Heintz (PKF Arsilon) sur le rôle de l'OTI et du comité de mission, et de Marc-Antoine Noiret sur le modèle alliant fondation actionnaire et société à mission.",
+  },
+  {
+    type: "evenement",
     date: "18 mai 2026",
     title: "Jeroen Veldman rejoint le Conseil scientifique européen",
     url: "/equipe",
@@ -114,33 +124,13 @@ export const newsItems: NewsItem[] = [
     url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/revolutionner-lethique-des-affaires-en-creant-la-societe-a-responsabilite-sociale.html",
     summary: "Étude publiée avec l'OEP. Proposition d'un nouveau modèle institutionnel — la SARS — reposant sur une répartition égalitaire du droit de propriété, un mécanisme de capitalisation dynamique adossé à une garantie publique, et une qualification spécifique des dirigeants.",
   },
+  // --- Avril 2026 ---
   {
     type: "publication",
     date: "30 avril 2026",
     title: "Étude N°1 — Une première typologie des modèles alternatifs d'entreprises en Europe (Alix Vanmeervenne)",
     url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/une-premiere-typologie-des-modeles-alternatifs-dentreprises-en-europe.html",
     summary: "Étude comparative inédite des cadres juridiques et des modèles de gouvernance d'entreprise à travers les 27 États membres de l'UE. Identification des dispositifs existants en matière de raison d'être, d'objet social élargi et de gouvernance responsable.",
-  },
-  {
-    type: "newsletter",
-    date: "Avril 2026",
-    title: "Newsletter N°1 — Lancement du projet Société à Mission Europe",
-    url: "/presse-news",
-    summary: "Première newsletter du projet Société à Mission Europe, revenant sur la journée de lancement du 6 février 2026 à Wallers-Arenberg et les premières avancées du programme de recherche-action.",
-  },
-  {
-    type: "video",
-    date: "Février 2026",
-    title: "Vidéo de la journée de lancement — Wallers-Arenberg, 6 février 2026",
-    url: "https://youtu.be/JjAIkQHwtxA",
-    summary: "Vidéo récapitulative de la journée de lancement du projet Société à Mission Europe à Wallers-Arenberg, réunissant près de 300 participants : chercheurs, dirigeants, partenaires sociaux, hauts fonctionnaires et responsables politiques européens.",
-  },
-  {
-    type: "evenement",
-    date: "9-13 mars 2026",
-    title: "Kick-off meetings des groupes de travail — Territoire (HDF), National (FR) et Europe",
-    url: "/groupes-de-travail",
-    summary: "Lancement officiel des trois groupes de travail du projet Société à Mission Europe les 9, 10 et 13 mars 2026 : GT Territoire (Hauts-de-France), GT National (France) et GT Europe. Ces réunions inaugurales ont permis de définir les axes de travail et les feuilles de route de chaque groupe.",
   },
   {
     type: "evenement",
@@ -151,10 +141,17 @@ export const newsItems: NewsItem[] = [
   },
   {
     type: "evenement",
-    date: "9 avril 2026",
-    title: "Table ronde ESPOL « Justice en action » — Avant les conflits : où agir, avec quels leviers ?",
-    url: "/partenaires/espol",
-    summary: "Participation au workshop ESPOL « Justice en action » (9-10 avril). Intervention en ligne de Sarah Vandenbroucke lors de la table ronde « Avant les conflits : où agir, avec quels leviers ? » sur le volet entreprises et droits humains.",
+    date: "4 avril 2026",
+    title: "Colloque « L'entreprise à mission face à l'enjeu du partage de la valeur » — Carac, OEP, AFD&M",
+    url: "/partenaires/carac",
+    summary: "Participation au colloque organisé par la Carac, l'OEP et l'AFD&M. Matthieu Caron a introduit le colloque et présenté le projet. Stéphane Vernac a animé la table ronde d'ouverture. Pablo Maria, Sarah Vandenbroucke et Alix Vanmeervenne ont assuré la synthèse des travaux. Réflexion centrale : passer du partage de la valeur financière au partage des valeurs.",
+  },
+  {
+    type: "evenement",
+    date: "3 avril 2026",
+    title: "Conférence Margaux Mulliez — Gérard Mulliez, l'épopée du fondateur d'Auchan",
+    url: "/projet",
+    summary: "Conférence dans le cadre de l'axe « Entreprises, Territoires et mission ». Margaux Mulliez a présenté son ouvrage sur Gérard Mulliez (Grasset, 2026), interrogée par Cécile Chalmin, Matthieu Caron et Alix Vanmeervenne. Échanges autour de la mission chez Auchan, du triptyque « partage du savoir, du pouvoir et de l'avoir », et inauguration des projets d'ouvrages de l'axe Territoires.",
   },
   {
     type: "evenement",
@@ -163,6 +160,21 @@ export const newsItems: NewsItem[] = [
     url: "/equipe",
     summary: "Anne Sanders, professeure à l'Université de Bielefeld (Allemagne), rejoint le Conseil scientifique européen du projet, renforçant l'expertise en droit des sociétés et gouvernance d'entreprise au sein du comité.",
   },
+  {
+    type: "evenement",
+    date: "9 avril 2026",
+    title: "Table ronde ESPOL « Justice en action » — Avant les conflits : où agir, avec quels leviers ?",
+    url: "/partenaires/espol",
+    summary: "Participation au workshop ESPOL « Justice en action » (9-10 avril). Intervention en ligne de Sarah Vandenbroucke lors de la table ronde « Avant les conflits : où agir, avec quels leviers ? » sur le volet entreprises et droits humains.",
+  },
+  {
+    type: "newsletter",
+    date: "Avril 2026",
+    title: "Newsletter N°1 — Lancement du projet Société à Mission Europe",
+    url: "/presse-news",
+    summary: "Première newsletter du projet Société à Mission Europe, revenant sur la journée de lancement du 6 février 2026 à Wallers-Arenberg et les premières avancées du programme de recherche-action.",
+  },
+  // --- Mars 2026 ---
   {
     type: "evenement",
     date: "31 mars 2026",
@@ -176,6 +188,13 @@ export const newsItems: NewsItem[] = [
     title: "Réunion avec Michael Ristaniemi — DG GROW, Commission européenne",
     url: "/groupes-de-travail",
     summary: "Rencontre avec Michael Ristaniemi de la DG GROW (Direction générale du marché intérieur, de l'industrie, de l'entrepreneuriat et des PME) de la Commission européenne. La DG GROW se dit intéressée pour suivre de près la recherche et y contribuer, ouvrant la perspective d'une collaboration sur trois ans.",
+  },
+  {
+    type: "evenement",
+    date: "9-13 mars 2026",
+    title: "Kick-off meetings des groupes de travail — Territoire (HDF), National (FR) et Europe",
+    url: "/groupes-de-travail",
+    summary: "Lancement officiel des trois groupes de travail du projet les 9, 10 et 13 mars 2026 : GT Territoire (Hauts-de-France), GT National (France) et GT Europe. 32 chercheurs et acteurs de différentes nationalités et expertises réunis pour la plénière du GT Europe le 13 mars. Définition des axes de travail et des feuilles de route de chaque groupe.",
   },
   {
     type: "presse",
@@ -205,6 +224,7 @@ export const newsItems: NewsItem[] = [
     url: "https://entreprisesamission.org/un-projet-de-societe-a-mission-europeenne-lance-pour-imaginer-un-modele-dentreprise-alternatif-avec-matthieu-caron-co-porteur-du-projet/",
     summary: "La Communauté des Entreprises à Mission relaie le lancement du projet européen porté par Matthieu Caron, co-porteur du projet, visant à imaginer un modèle d'entreprise alternatif à l'échelle du continent.",
   },
+  // --- Février 2026 ---
   {
     type: "podcast",
     date: "27 février 2026",
@@ -239,6 +259,13 @@ export const newsItems: NewsItem[] = [
     title: "Journée de lancement — Société à Mission Europe, Wallers-Arenberg",
     url: "/evenements/lancement-6-fevrier-2026",
     summary: "Près de 300 participants réunis sur le site minier de Wallers-Arenberg pour le lancement officiel du projet Société à Mission Europe : chercheurs, dirigeants, partenaires sociaux, hauts fonctionnaires et responsables politiques européens.",
+  },
+  {
+    type: "video",
+    date: "6 février 2026",
+    title: "Vidéo de la journée de lancement — Wallers-Arenberg, 6 février 2026",
+    url: "https://youtu.be/JjAIkQHwtxA",
+    summary: "Vidéo récapitulative de la journée de lancement du projet Société à Mission Europe à Wallers-Arenberg, réunissant près de 300 participants : chercheurs, dirigeants, partenaires sociaux, hauts fonctionnaires et responsables politiques européens.",
   },
   {
     type: "presse",
