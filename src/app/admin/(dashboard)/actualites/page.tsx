@@ -146,6 +146,40 @@ export default function ActualitesAdmin() {
         })}
       </div>
 
+      {/* Point de départ — Lancement */}
+      {filter === "all" && (() => {
+        const launch = newsItems.find((item) => item.title.includes("Journée de lancement"));
+        if (!launch) return null;
+        const badge = badgeConfig[launch.type];
+        const fullUrl = launch.url.startsWith("/")
+          ? `https://societe-mission-europe-pi.vercel.app${launch.url}`
+          : launch.url;
+        return (
+          <div className="mb-8 bg-gradient-to-r from-navy-800 to-navy-700 rounded-xl p-6 text-white">
+            <div className="flex items-center gap-2 mb-3">
+              <svg className="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+              </svg>
+              <span className="text-xs font-semibold uppercase tracking-wider text-gold-400">Point de départ du projet</span>
+              <span className="text-xs text-white/60 ml-2">{launch.date}</span>
+            </div>
+            <h3 className="text-lg font-bold mb-2">{launch.title}</h3>
+            <p className="text-sm text-white/80 leading-relaxed mb-3">{launch.summary}</p>
+            <a
+              href={fullUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-gold-400 hover:text-gold-300 transition-colors"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+              Voir l'événement
+            </a>
+          </div>
+        );
+      })()}
+
       {/* Liste des actualités */}
       <div className="space-y-4">
         {filtered.map((item, i) => {

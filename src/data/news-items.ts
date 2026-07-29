@@ -141,20 +141,6 @@ export const newsItems: NewsItem[] = [
   },
   {
     type: "evenement",
-    date: "4 avril 2026",
-    title: "Colloque « L'entreprise à mission face à l'enjeu du partage de la valeur » — Carac, OEP, AFD&M",
-    url: "/partenaires/carac",
-    summary: "Participation au colloque organisé par la Carac, l'OEP et l'AFD&M. Matthieu Caron a introduit le colloque et présenté le projet. Stéphane Vernac a animé la table ronde d'ouverture. Pablo Maria, Sarah Vandenbroucke et Alix Vanmeervenne ont assuré la synthèse des travaux. Réflexion centrale : passer du partage de la valeur financière au partage des valeurs.",
-  },
-  {
-    type: "evenement",
-    date: "3 avril 2026",
-    title: "Conférence Margaux Mulliez — Gérard Mulliez, l'épopée du fondateur d'Auchan",
-    url: "/projet",
-    summary: "Conférence dans le cadre de l'axe « Entreprises, Territoires et mission ». Margaux Mulliez a présenté son ouvrage sur Gérard Mulliez (Grasset, 2026), interrogée par Cécile Chalmin, Matthieu Caron et Alix Vanmeervenne. Échanges autour de la mission chez Auchan, du triptyque « partage du savoir, du pouvoir et de l'avoir », et inauguration des projets d'ouvrages de l'axe Territoires.",
-  },
-  {
-    type: "evenement",
     date: "10 avril 2026",
     title: "Anne Sanders (Université de Bielefeld) rejoint le Conseil scientifique européen",
     url: "/equipe",
@@ -166,6 +152,20 @@ export const newsItems: NewsItem[] = [
     title: "Table ronde ESPOL « Justice en action » — Avant les conflits : où agir, avec quels leviers ?",
     url: "/partenaires/espol",
     summary: "Participation au workshop ESPOL « Justice en action » (9-10 avril). Intervention en ligne de Sarah Vandenbroucke lors de la table ronde « Avant les conflits : où agir, avec quels leviers ? » sur le volet entreprises et droits humains.",
+  },
+  {
+    type: "evenement",
+    date: "4 avril 2026",
+    title: "Colloque « L'entreprise à mission face à l'enjeu du partage de la valeur » — Carac, OEP, AFD&M",
+    url: "/partenaires/carac",
+    summary: "Participation au colloque organisé par la Carac, l'OEP et l'AFD&M. Matthieu Caron a introduit le colloque et présenté le projet. Stéphane Vernac a animé la table ronde d'ouverture. Pablo Maria, Sarah Vandenbroucke et Alix Vanmeervenne ont assuré la synthèse des travaux. Réflexion centrale : passer du partage de la valeur financière au partage des valeurs.",
+  },
+  {
+    type: "evenement",
+    date: "3 avril 2026",
+    title: "Conférence Margaux Mulliez — Gérard Mulliez, l'épopée du fondateur d'Auchan",
+    url: "/projet",
+    summary: "Conférence dans le cadre de l'axe « Entreprises, Territoires et mission ». Margaux Mulliez a présenté son ouvrage sur Gérard Mulliez (Grasset, 2026), interrogée par Cécile Chalmin, Matthieu Caron et Alix Vanmeervenne. Échanges autour de la mission chez Auchan, du triptyque « partage du savoir, du pouvoir et de l'avoir », et inauguration des projets d'ouvrages de l'axe Territoires.",
   },
   {
     type: "newsletter",
