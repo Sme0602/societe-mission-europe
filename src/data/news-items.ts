@@ -1,4 +1,6 @@
-export type NewsType = "presse" | "podcast" | "linkedin" | "evenement" | "publication" | "newsletter" | "video";
+export type NewsType = "presse" | "podcast" | "linkedin" | "evenement" | "publication" | "newsletter" | "video" | "interne";
+
+export type NewsAxis = "territoire" | "national" | "europe";
 
 export type NewsItem = {
   type: NewsType;
@@ -6,6 +8,8 @@ export type NewsItem = {
   title: string;
   url: string;
   summary: string;
+  axis?: NewsAxis;
+  milestone?: string;
 };
 
 export const newsItems: NewsItem[] = [
@@ -16,6 +20,7 @@ export const newsItems: NewsItem[] = [
     title: "Vidéo Summer School 2026 — Regardez la journée en images",
     url: "https://youtu.be/bBbCPa_DPeA",
     summary: "Vidéo récapitulative de la Summer School « Purpose at the Heart of Europe » à Sciences Po Lille (26 juin 2026). Réalisée par Maxime Carlier et Inès Meunier, elle retrace les moments forts de cette journée réunissant chercheurs, praticiens et institutionnels européens.",
+    axis: "europe",
   },
   {
     type: "newsletter",
@@ -30,6 +35,7 @@ export const newsItems: NewsItem[] = [
     title: "Pablo Maria, doctorant LARSH — À quoi sert une société à mission ? (L'Économie Politique N°111)",
     url: "https://boutique.alternatives-economiques.fr/economie-politique",
     summary: "Article scientifique publié dans la revue L'Économie Politique (N°111, Alternatives Économiques). Pablo Maria, doctorant au LARSH, y analyse les fondements et la portée du modèle de la société à mission, entre ambition transformatrice et risques d'instrumentalisation.",
+    axis: "national",
   },
   {
     type: "publication",
@@ -37,6 +43,7 @@ export const newsItems: NewsItem[] = [
     title: "Elena Codoni, chercheuse associée au projet — La composition du comité de mission, élément clé pour rétablir la crédibilité de la société à mission",
     url: "https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm",
     summary: "Article publié dans la Revue des Sociétés (Dalloz). Elena Codoni examine comment la composition du comité de mission — indépendance des membres, diversité des profils, compétences — constitue un levier essentiel pour restaurer la crédibilité du dispositif de société à mission.",
+    axis: "national",
   },
   {
     type: "linkedin",
@@ -44,6 +51,7 @@ export const newsItems: NewsItem[] = [
     title: "Summer School à Sciences Po Lille — académiques et entrepreneurs réunis autour des modèles d'entreprises à mission en Europe",
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7478450065611661326",
     summary: "Post LinkedIn partageant les moments forts de la Summer School « Purpose at the Heart of Europe » à Sciences Po Lille, avec photos et témoignages des participants venus de toute l'Europe.",
+    axis: "europe",
   },
   // --- Juin 2026 ---
   {
@@ -52,6 +60,8 @@ export const newsItems: NewsItem[] = [
     title: "Summer School — Purpose at the Heart of Europe, Sciences Po Lille",
     url: "/evenements/summer-school-juin-2026",
     summary: "Première Summer School du projet, réunissant chercheurs, praticiens et institutionnels européens à Sciences Po Lille pour une journée d'échanges sur l'avenir de l'entreprise à mission à l'échelle européenne.",
+    axis: "europe",
+    milestone: "1ʳᵉ Summer School du projet à Sciences Po Lille",
   },
   {
     type: "podcast",
@@ -59,6 +69,7 @@ export const newsItems: NewsItem[] = [
     title: "Euradio — La France a montré la voie, et si l'Europe suivait ? Par Emery Jacquillat et Sarah Vandenbroucke",
     url: "https://euradio.fr/emission/4zej-euradio-a-lille/5dAL-societe-a-mission-la-france-a-montre-la-voie-et-si-leurope-suivait",
     summary: "Émission de radio sur Euradio. Emery Jacquillat (Président de la Communauté des Entreprises à Mission) et Sarah Vandenbroucke présentent le projet Société à Mission Europe et discutent de la diffusion du modèle français en Europe.",
+    axis: "europe",
   },
   {
     type: "presse",
@@ -66,6 +77,7 @@ export const newsItems: NewsItem[] = [
     title: "La Voix du Nord — On ne changera pas le monde sans les entreprises",
     url: "https://www.lavoixdunord.fr/1714514/article/2026-06-22/projet-societe-mission-europe-ne-changera-pas-le-monde-contre-les-entreprises-et",
     summary: "Article de presse dans La Voix du Nord couvrant le projet Société à Mission Europe et la conviction portée par ses fondateurs que la transformation sociétale passe aussi par les entreprises.",
+    axis: "territoire",
   },
   {
     type: "publication",
@@ -73,27 +85,31 @@ export const newsItems: NewsItem[] = [
     title: "Martin Richer — L'Europe : nouvelle frontière de la raison d'être et de la société à mission",
     url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/leurope-nouvelle-frontiere-de-la-raison-detre-et-de-la-societe-a-mission.html",
     summary: "Libre propos publié avec l'Observatoire de l'Éthique Publique. Martin Richer analyse comment l'Europe peut devenir le nouveau terrain de développement de la raison d'être et de la société à mission, au-delà du cadre français.",
+    axis: "europe",
   },
   {
-    type: "evenement",
+    type: "interne",
     date: "10 juin 2026",
     title: "Workshop WYG / DG GROW à Bruxelles — Impact-driven businesses in the EU",
     url: "/projet",
     summary: "Participation de Sarah Vandenbroucke au workshop organisé par WYG et la DG GROW (Commission européenne) à Bruxelles, consacré à l'étude des impact-driven businesses dans l'Union européenne.",
+    axis: "europe",
   },
   {
-    type: "evenement",
+    type: "interne",
     date: "5 juin 2026",
     title: "Conseil scientifique européen — Préparation de la Summer School",
     url: "/equipe",
     summary: "Réunion du Conseil scientifique européen dédiée à la préparation de la Summer School, avec Alessio Bartolacelli, Carolina Cunha, Florian Möslein, Stéphane Vernac, Blanche Segrestin, Kevin Levillain, Jeroen Veldman, Anne Sanders, Anne-Marie Weber-Elżanowska et Emery Jacquillat.",
+    axis: "europe",
   },
   {
-    type: "evenement",
+    type: "interne",
     date: "1er juin 2026",
     title: "Beate Sjåfjell (Université d'Oslo) rejoint le Conseil scientifique européen",
     url: "/equipe",
     summary: "Beate Sjåfjell, professeure à l'Université d'Oslo (Norvège), rejoint le Conseil scientifique européen du projet, apportant son expertise en droit des sociétés et développement durable.",
+    axis: "europe",
   },
   // --- Mai 2026 ---
   {
@@ -102,13 +118,15 @@ export const newsItems: NewsItem[] = [
     title: "Matinée chez Cofidis Group — Société à mission, loi PACTE et gouvernance d'entreprise",
     url: "/projet",
     summary: "Présentation du projet Société à Mission Europe lors d'une matinée organisée chez Cofidis Group. Témoignages d'Amélie Thoreau et Sandra Holcapfelova (Cofidis Group) sur le déploiement de la société à mission, d'Anne Heintz (PKF Arsilon) sur le rôle de l'OTI et du comité de mission, et de Marc-Antoine Noiret sur le modèle alliant fondation actionnaire et société à mission.",
+    axis: "territoire",
   },
   {
-    type: "evenement",
+    type: "interne",
     date: "18 mai 2026",
     title: "Jeroen Veldman rejoint le Conseil scientifique européen",
     url: "/equipe",
     summary: "Jeroen Veldman rejoint le Conseil scientifique européen du projet, apportant son expertise en gouvernance d'entreprise et théorie de la firme au niveau européen.",
+    axis: "europe",
   },
   {
     type: "publication",
@@ -116,6 +134,7 @@ export const newsItems: NewsItem[] = [
     title: "Étude N°3 — La Società Benefit : vers un nouveau paradigme d'entreprise ? (Noémie Louvet)",
     url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/la-societa-benefit-vers-un-nouveau-paradigme-dentreprise.html",
     summary: "Étude publiée avec l'OEP. L'Italie a introduit en 2016 les Società Benefit, permettant aux entreprises d'intégrer des objectifs sociaux et environnementaux dans leurs statuts. Cette étude examine le fonctionnement concret de ce modèle et les défis rencontrés dans sa mise en œuvre.",
+    axis: "europe",
   },
   {
     type: "publication",
@@ -123,6 +142,7 @@ export const newsItems: NewsItem[] = [
     title: "Étude N°2 — Révolutionner l'éthique des affaires en créant la Société à Responsabilité Sociale (Philippe Tonolo)",
     url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/revolutionner-lethique-des-affaires-en-creant-la-societe-a-responsabilite-sociale.html",
     summary: "Étude publiée avec l'OEP. Proposition d'un nouveau modèle institutionnel — la SARS — reposant sur une répartition égalitaire du droit de propriété, un mécanisme de capitalisation dynamique adossé à une garantie publique, et une qualification spécifique des dirigeants.",
+    axis: "europe",
   },
   // --- Avril 2026 ---
   {
@@ -131,6 +151,7 @@ export const newsItems: NewsItem[] = [
     title: "Étude N°1 — Une première typologie des modèles alternatifs d'entreprises en Europe (Alix Vanmeervenne)",
     url: "https://www.observatoireethiquepublique.com/nos-propositions/etudes/une-premiere-typologie-des-modeles-alternatifs-dentreprises-en-europe.html",
     summary: "Étude comparative inédite des cadres juridiques et des modèles de gouvernance d'entreprise à travers les 27 États membres de l'UE. Identification des dispositifs existants en matière de raison d'être, d'objet social élargi et de gouvernance responsable.",
+    axis: "europe",
   },
   {
     type: "evenement",
@@ -138,13 +159,16 @@ export const newsItems: NewsItem[] = [
     title: "Mission à Rome — Signature du partenariat de recherche avec Nativa (Società Benefit & Société à mission)",
     url: "/partenaires",
     summary: "Mission à Rome avec Emery Jacquillat : présentation de l'avancement de la recherche, cartographie de l'écosystème, mapping des prochaines étapes et signature officielle du partenariat de recherche avec Nativa. Objectif : Società Benefit & Société à mission — scaling at EU level.",
+    axis: "europe",
+    milestone: "Partenariat de recherche avec Nativa (IT) et Kaya (BE)",
   },
   {
-    type: "evenement",
+    type: "interne",
     date: "10 avril 2026",
     title: "Anne Sanders (Université de Bielefeld) rejoint le Conseil scientifique européen",
     url: "/equipe",
     summary: "Anne Sanders, professeure à l'Université de Bielefeld (Allemagne), rejoint le Conseil scientifique européen du projet, renforçant l'expertise en droit des sociétés et gouvernance d'entreprise au sein du comité.",
+    axis: "europe",
   },
   {
     type: "evenement",
@@ -152,6 +176,7 @@ export const newsItems: NewsItem[] = [
     title: "Table ronde ESPOL « Justice en action » — Avant les conflits : où agir, avec quels leviers ?",
     url: "/partenaires/espol",
     summary: "Participation au workshop ESPOL « Justice en action » (9-10 avril). Intervention en ligne de Sarah Vandenbroucke lors de la table ronde « Avant les conflits : où agir, avec quels leviers ? » sur le volet entreprises et droits humains.",
+    axis: "europe",
   },
   {
     type: "evenement",
@@ -159,6 +184,7 @@ export const newsItems: NewsItem[] = [
     title: "Colloque « L'entreprise à mission face à l'enjeu du partage de la valeur » — Carac, OEP, AFD&M",
     url: "/partenaires/carac",
     summary: "Participation au colloque organisé par la Carac, l'OEP et l'AFD&M. Matthieu Caron a introduit le colloque et présenté le projet. Stéphane Vernac a animé la table ronde d'ouverture. Pablo Maria, Sarah Vandenbroucke et Alix Vanmeervenne ont assuré la synthèse des travaux. Réflexion centrale : passer du partage de la valeur financière au partage des valeurs.",
+    axis: "national",
   },
   {
     type: "evenement",
@@ -166,6 +192,7 @@ export const newsItems: NewsItem[] = [
     title: "Conférence Margaux Mulliez — Gérard Mulliez, l'épopée du fondateur d'Auchan",
     url: "/projet",
     summary: "Conférence dans le cadre de l'axe « Entreprises, Territoires et mission ». Margaux Mulliez a présenté son ouvrage sur Gérard Mulliez (Grasset, 2026), interrogée par Cécile Chalmin, Matthieu Caron et Alix Vanmeervenne. Échanges autour de la mission chez Auchan, du triptyque « partage du savoir, du pouvoir et de l'avoir », et inauguration des projets d'ouvrages de l'axe Territoires.",
+    axis: "territoire",
   },
   {
     type: "newsletter",
@@ -176,18 +203,22 @@ export const newsItems: NewsItem[] = [
   },
   // --- Mars 2026 ---
   {
-    type: "evenement",
+    type: "interne",
     date: "31 mars 2026",
     title: "Première réunion du Conseil scientifique du projet",
     url: "/equipe",
     summary: "Animation de la première réunion du Conseil scientifique réunissant Blanche Segrestin, Kevin Levillain, Carolina Cunha, Florian Möslein, Alessio Bartolacelli et Anne-Marie Weber. Mise en place des orientations scientifiques du programme de recherche-action.",
+    axis: "europe",
+    milestone: "Mise en place du Conseil scientifique européen",
   },
   {
-    type: "evenement",
+    type: "interne",
     date: "18 mars 2026",
     title: "Réunion avec Michael Ristaniemi — DG GROW, Commission européenne",
     url: "/groupes-de-travail",
     summary: "Rencontre avec Michael Ristaniemi de la DG GROW (Direction générale du marché intérieur, de l'industrie, de l'entrepreneuriat et des PME) de la Commission européenne. La DG GROW se dit intéressée pour suivre de près la recherche et y contribuer, ouvrant la perspective d'une collaboration sur trois ans.",
+    axis: "europe",
+    milestone: "Ouverture d'une collaboration avec la Commission européenne (DG GROW)",
   },
   {
     type: "evenement",
@@ -195,6 +226,7 @@ export const newsItems: NewsItem[] = [
     title: "Kick-off meetings des groupes de travail — Territoire (HDF), National (FR) et Europe",
     url: "/groupes-de-travail",
     summary: "Lancement officiel des trois groupes de travail du projet les 9, 10 et 13 mars 2026 : GT Territoire (Hauts-de-France), GT National (France) et GT Europe. 32 chercheurs et acteurs de différentes nationalités et expertises réunis pour la plénière du GT Europe le 13 mars. Définition des axes de travail et des feuilles de route de chaque groupe.",
+    milestone: "Constitution et lancement des groupes de travail — dont le GT européen avec 40 chercheurs et praticiens",
   },
   {
     type: "presse",
@@ -202,6 +234,7 @@ export const newsItems: NewsItem[] = [
     title: "UPHF/LARSH — Société à Mission : Et si les Hauts-de-France devenaient le Laboratoire d'une Révolution Entrepreneuriale Européenne",
     url: "https://www.uphf.fr/larsh/actualites/societe-mission-si-hauts-france-devenaient-laboratoire-dune-revolution-entrepreneuriale-europeenne",
     summary: "Article publié sur le site du laboratoire LARSH. Nicole Pertuis recueille les explications de Matthieu Caron sur l'ambition du projet : faire des Hauts-de-France un laboratoire d'innovation pour penser l'avenir des entreprises à mission à l'échelle européenne.",
+    axis: "territoire",
   },
   {
     type: "presse",
@@ -209,6 +242,7 @@ export const newsItems: NewsItem[] = [
     title: "Novethic — L'Europe peut-elle inventer l'entreprise du XXIe siècle ?",
     url: "https://www.novethic.fr/economie-et-social/transformation-de-leconomie/europe-peut-elle-inventer-entreprise-xxi-siecle",
     summary: "Des dirigeants et experts plaident pour que l'Europe reconnaisse officiellement le statut d'entreprise à mission à l'échelle continentale, un modèle qui réconcilie performance économique et résilience à long terme.",
+    axis: "europe",
   },
   {
     type: "presse",
@@ -216,6 +250,7 @@ export const newsItems: NewsItem[] = [
     title: "L'Écho — L'Europe peut-elle inventer l'entreprise du XXIe siècle ?",
     url: "https://www.lecho.be/opinions/general/opinion-l-europe-peut-elle-inventer-l-entreprise-du-xxi-siecle/10651704.html",
     summary: "Tribune signée par des acteurs de la Communauté des entreprises à mission, KAYA et Assobenefit, appelant à un statut européen pour les entreprises à mission.",
+    axis: "europe",
   },
   {
     type: "presse",
@@ -223,6 +258,7 @@ export const newsItems: NewsItem[] = [
     title: "Communauté des Entreprises à Mission — Un projet de « société à mission » européenne lancé pour imaginer un modèle d'entreprise alternatif",
     url: "https://entreprisesamission.org/un-projet-de-societe-a-mission-europeenne-lance-pour-imaginer-un-modele-dentreprise-alternatif-avec-matthieu-caron-co-porteur-du-projet/",
     summary: "La Communauté des Entreprises à Mission relaie le lancement du projet européen porté par Matthieu Caron, co-porteur du projet, visant à imaginer un modèle d'entreprise alternatif à l'échelle du continent.",
+    axis: "national",
   },
   // --- Février 2026 ---
   {
@@ -252,6 +288,7 @@ export const newsItems: NewsItem[] = [
     title: "La Gazette France — Wallers-Arenberg, berceau du projet Société à mission européenne",
     url: "https://www.lagazettefrance.fr/article/wallers-arenberg-berceau-du-projet-societe-a-mission-europeenne",
     summary: "C'est dans le cadre du site minier de Wallers-Arenberg que l'Université Polytechnique Hauts-de-France a lancé le projet « Société à mission en Europe ».",
+    axis: "territoire",
   },
   {
     type: "evenement",
@@ -259,6 +296,7 @@ export const newsItems: NewsItem[] = [
     title: "Journée de lancement — Société à Mission Europe, Wallers-Arenberg",
     url: "/evenements/lancement-6-fevrier-2026",
     summary: "Près de 300 participants réunis sur le site minier de Wallers-Arenberg pour le lancement officiel du projet Société à Mission Europe : chercheurs, dirigeants, partenaires sociaux, hauts fonctionnaires et responsables politiques européens.",
+    milestone: "Lancement officiel du projet Société à Mission Europe",
   },
   {
     type: "video",
@@ -287,6 +325,7 @@ export const newsItems: NewsItem[] = [
     title: "Mediatico — Les Hauts-de-France, tête de pont d'une société à mission européenne",
     url: "https://mediatico.fr/les-hauts-de-france-tete-de-pont-dune-societe-a-mission-europeenne/",
     summary: "L'Université Polytechnique Hauts-de-France lance une initiative de recherche ambitieuse pour développer un modèle européen d'entreprise à mission.",
+    axis: "territoire",
   },
 ];
 
@@ -298,4 +337,5 @@ export const badgeConfig: Record<NewsType, { label: string; bg: string; text: st
   publication: { label: "Publication", bg: "bg-emerald-50", text: "text-emerald-700", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
   newsletter: { label: "Newsletter", bg: "bg-rose-50", text: "text-rose-700", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
   video: { label: "Vidéo", bg: "bg-pink-50", text: "text-pink-700", icon: "M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+  interne: { label: "Interne", bg: "bg-gray-50", text: "text-gray-700", icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" },
 };
