@@ -20,11 +20,15 @@ const axisConfig: Record<NewsAxis, { label: string; border: string; bg: string; 
   europe: { label: "Europe", border: "border-l-blue-400", bg: "bg-blue-50", text: "text-blue-700" },
 };
 
-const chronologicalItems = [...newsItems].reverse();
+const launchItem = newsItems.find((item) => item.title.includes("Journée de lancement"));
+const displayItems = [
+  ...newsItems.filter((item) => item !== launchItem),
+  ...(launchItem ? [launchItem] : []),
+];
 
 function exportCSV() {
   const headers = ["Date", "Type", "Axe", "Titre", "Résumé", "Lien"];
-  const rows = chronologicalItems.map((item) => [
+  const rows = displayItems.map((item) => [
     item.date,
     typeLabels[item.type],
     item.axis ? axisConfig[item.axis].label : "",
@@ -46,7 +50,7 @@ function exportCSV() {
 }
 
 function exportWord() {
-  const rows = chronologicalItems
+  const rows = displayItems
     .map(
       (item) => `
     <tr>
@@ -94,7 +98,7 @@ export default function ActualitesAdmin() {
   const [filter, setFilter] = useState<NewsType | "all">("all");
   const [axisFilter, setAxisFilter] = useState<NewsAxis | "all">("all");
 
-  let filtered = chronologicalItems;
+  let filtered = displayItems;
   if (filter !== "all") filtered = filtered.filter((item) => item.type === filter);
   if (axisFilter !== "all") filtered = filtered.filter((item) => item.axis === axisFilter);
 
@@ -106,7 +110,7 @@ export default function ActualitesAdmin() {
         <div>
           <h1 className="text-2xl font-bold text-navy-800">Suivi des activités du projet</h1>
           <p className="text-navy-500 text-sm mt-1">
-            {newsItems.length} activités — ordre chronologique depuis le lancement
+            {newsItems.length} activités — les plus récentes en premier
           </p>
         </div>
         <div className="flex gap-2">
