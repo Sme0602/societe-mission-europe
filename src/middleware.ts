@@ -14,6 +14,10 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
+  if (!request.nextUrl.pathname.startsWith("/admin")) {
+    return NextResponse.next();
+  }
+
   let response = NextResponse.next({
     request: { headers: request.headers },
   });
@@ -45,12 +49,10 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Redirect unauthenticated users to login (except on login page)
   if (!user && !request.nextUrl.pathname.startsWith("/admin/login")) {
     return NextResponse.redirect(new URL("/admin/login", request.url));
   }
 
-  // Redirect authenticated users away from login page
   if (user && request.nextUrl.pathname.startsWith("/admin/login")) {
     return NextResponse.redirect(new URL("/admin", request.url));
   }
