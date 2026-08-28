@@ -2,7 +2,18 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+const CANONICAL_DOMAIN = "societe-mission-europe.com";
+
 export async function middleware(request: NextRequest) {
+  const host = request.headers.get("host") || "";
+  if (host.includes("vercel.app")) {
+    const url = new URL(request.url);
+    url.host = CANONICAL_DOMAIN;
+    url.port = "";
+    url.protocol = "https:";
+    return NextResponse.redirect(url, 301);
+  }
+
   let response = NextResponse.next({
     request: { headers: request.headers },
   });
@@ -48,5 +59,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|images|fonts|videos|documents|logos|partners|flags|icons).*)"],
 };
