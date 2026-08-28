@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Retrouvez les articles de presse, newsletters et communications du projet Société à Mission Europe.",
   alternates: {
-    canonical: "https://societe-mission-europe-pi.vercel.app/presse-news",
+    canonical: "https://societe-mission-europe.com/presse-news",
   },
 };
 

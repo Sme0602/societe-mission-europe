@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Découvrez les événements du programme Société à Mission Europe : journée de lancement, Summer School et plus encore.",
   alternates: {
-    canonical: "https://societe-mission-europe-pi.vercel.app/evenements",
+    canonical: "https://societe-mission-europe.com/evenements",
   },
 };
 

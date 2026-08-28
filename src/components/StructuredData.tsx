@@ -5,8 +5,8 @@ export default function StructuredData() {
     "name": "Société à Mission Europe",
     "alternateName": "SME Research Program",
     "description": "Programme de recherche-action sur la société à mission en Europe, porté par l'UPHF et l'Observatoire de l'Éthique Publique",
-    "url": "https://societe-mission-europe-pi.vercel.app",
-    "logo": "https://societe-mission-europe-pi.vercel.app/logo.png",
+    "url": "https://societe-mission-europe.com",
+    "logo": "https://societe-mission-europe.com/logo.png",
     "foundingDate": "2025",
     "foundingLocation": {
       "@type": "Place",
@@ -74,11 +74,11 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://societe-mission-europe-pi.vercel.app"},
-      {"@type": "ListItem", "position": 2, "name": "Le Projet", "item": "https://societe-mission-europe-pi.vercel.app/projet"},
-      {"@type": "ListItem", "position": 3, "name": "Partenaires", "item": "https://societe-mission-europe-pi.vercel.app/partenaires"},
-      {"@type": "ListItem", "position": 4, "name": "Événements", "item": "https://societe-mission-europe-pi.vercel.app/evenements"},
-      {"@type": "ListItem", "position": 5, "name": "Contact", "item": "https://societe-mission-europe-pi.vercel.app/contact"}
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://societe-mission-europe.com"},
+      {"@type": "ListItem", "position": 2, "name": "Le Projet", "item": "https://societe-mission-europe.com/projet"},
+      {"@type": "ListItem", "position": 3, "name": "Partenaires", "item": "https://societe-mission-europe.com/partenaires"},
+      {"@type": "ListItem", "position": 4, "name": "Événements", "item": "https://societe-mission-europe.com/evenements"},
+      {"@type": "ListItem", "position": 5, "name": "Contact", "item": "https://societe-mission-europe.com/contact"}
     ]
   };
 

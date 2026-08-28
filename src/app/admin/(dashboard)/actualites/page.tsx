@@ -34,7 +34,7 @@ function exportCSV() {
     item.axis ? axisConfig[item.axis].label : "",
     item.title,
     item.summary,
-    item.url.startsWith("/") ? `https://societe-mission-europe-pi.vercel.app${item.url}` : item.url,
+    item.url.startsWith("/") ? `https://societe-mission-europe.com${item.url}` : item.url,
   ]);
   const csv = [headers, ...rows]
     .map((row) => row.map((cell) => `"${cell.replace(/"/g, '""')}"`).join(";"))
@@ -59,7 +59,7 @@ function exportWord() {
       <td style="padding:8px;border:1px solid #ccc;">${item.axis ? axisConfig[item.axis].label : "—"}</td>
       <td style="padding:8px;border:1px solid #ccc;"><b>${item.title}</b></td>
       <td style="padding:8px;border:1px solid #ccc;">${item.summary}</td>
-      <td style="padding:8px;border:1px solid #ccc;"><a href="${item.url.startsWith("/") ? `https://societe-mission-europe-pi.vercel.app${item.url}` : item.url}">${item.url.startsWith("/") ? `societe-mission-europe-pi.vercel.app${item.url}` : item.url}</a></td>
+      <td style="padding:8px;border:1px solid #ccc;"><a href="${item.url.startsWith("/") ? `https://societe-mission-europe.com${item.url}` : item.url}">${item.url.startsWith("/") ? `societe-mission-europe.com${item.url}` : item.url}</a></td>
     </tr>`
     )
     .join("");
@@ -193,7 +193,7 @@ export default function ActualitesAdmin() {
         {filtered.map((item, i) => {
           const badge = badgeConfig[item.type];
           const fullUrl = item.url.startsWith("/")
-            ? `https://societe-mission-europe-pi.vercel.app${item.url}`
+            ? `https://societe-mission-europe.com${item.url}`
             : item.url;
 
           if (item.milestone) {

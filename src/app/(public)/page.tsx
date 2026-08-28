@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Découvrez le programme de recherche Société à Mission Europe : 50 chercheurs, 20+ partenaires académiques (UPHF, HEC, ESSEC) construisent le modèle européen de l'entreprise à mission.",
   alternates: {
-    canonical: "https://societe-mission-europe-pi.vercel.app",
+    canonical: "https://societe-mission-europe.com",
   },
 };
 

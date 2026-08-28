@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Retour sur la Summer School du projet Société à Mission Europe, les 25-26 juin 2026 à Sciences Po Lille. Programme, keynote de la Commission européenne, European Scientific Council on Purpose, et photos.",
   alternates: {
     canonical:
-      "https://societe-mission-europe-pi.vercel.app/evenements/summer-school-juin-2026",
+      "https://societe-mission-europe.com/evenements/summer-school-juin-2026",
   },
 };
 

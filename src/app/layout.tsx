@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://societe-mission-europe-pi.vercel.app'),
+  metadataBase: new URL('https://societe-mission-europe.com'),
   title: {
     default: 'Société à Mission Europe | Programme de recherche européen',
     template: '%s | Société à Mission Europe'
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://societe-mission-europe-pi.vercel.app',
+    url: 'https://societe-mission-europe.com',
     siteName: 'Société à Mission Europe',
     title: 'Société à Mission Europe | Bâtir le modèle européen',
     description: 'Programme de recherche fédérant 50 chercheurs et 20+ partenaires pour construire le cadre européen de la société à mission.',
@@ -66,9 +66,9 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://societe-mission-europe-pi.vercel.app',
+    canonical: 'https://societe-mission-europe.com',
     languages: {
-      'fr-FR': 'https://societe-mission-europe-pi.vercel.app',
+      'fr-FR': 'https://societe-mission-europe.com',
     },
   },
   verification: {

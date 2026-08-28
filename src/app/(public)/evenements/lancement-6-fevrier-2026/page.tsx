@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Retour sur la journée de lancement du projet Société à Mission Europe, le 6 février 2026 sur le site minier de Wallers-Arenberg. Programme, photos et retombées.",
   alternates: {
     canonical:
-      "https://societe-mission-europe-pi.vercel.app/evenements/lancement-6-fevrier-2026",
+      "https://societe-mission-europe.com/evenements/lancement-6-fevrier-2026",
   },
 };
 
