@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import Mailjet from "node-mailjet";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 const INTEREST_LABELS: Record<string, string> = {
   partenaire: "Devenir partenaire du projet",
@@ -81,8 +82,29 @@ Ce message a été envoyé via le formulaire de contact du site societe-mission-
     });
 
     const response = result.body as { Messages: Array<{ Status: string }> };
-    if (response.Messages[0].Status !== "success") {
+    const emailSent = response.Messages[0].Status === "success";
+    if (!emailSent) {
       console.error("Mailjet error:", JSON.stringify(response));
+    }
+
+    const supabase = createAdminClient();
+    const { error: dbError } = await supabase.from("demandes_contact").insert({
+      nom,
+      prenom,
+      email,
+      organisation: organisation || null,
+      expertise: expertise || null,
+      interests: interests as string[],
+      groupe_travail: groupeTravail || null,
+      message: message || null,
+      email_sent: emailSent,
+    });
+
+    if (dbError) {
+      console.error("Supabase save error:", dbError);
+    }
+
+    if (!emailSent) {
       return NextResponse.json(
         { error: "Erreur lors de l'envoi." },
         { status: 500 }

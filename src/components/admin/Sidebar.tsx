@@ -96,7 +96,8 @@ function IconNews() {
 const links = [
   { href: "/admin", label: "Dashboard", icon: <IconDashboard /> },
   { href: "/admin/actualites", label: "Actualités", icon: <IconNews /> },
-  { href: "/admin/demandes-web", label: "Demandes via site web", icon: <IconInbox /> },
+  { href: "/admin/demandes-web", label: "Inscriptions newsletter", icon: <IconInbox /> },
+  { href: "/admin/demandes-contact", label: "Demandes de contact", icon: <IconMail /> },
 ];
 
 const mailingLinks = [
