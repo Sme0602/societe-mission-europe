@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
-Sitemap: https://societe-mission-europe.surge.sh/sitemap.xml
+Sitemap: https://societe-mission-europe.com/sitemap.xml

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Découvrez les chercheurs et ingénieurs qui portent le projet Société à Mission Europe : Matthieu Caron, Stéphane Vernac, Sarah Vandenbroucke et toute l'équipe.",
   alternates: {
-    canonical: "https://societe-mission-europe.surge.sh/equipe",
+    canonical: "https://societe-mission-europe.com/equipe",
   },
 };
 

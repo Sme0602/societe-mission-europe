@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Découvrez les trois axes de recherche du programme Société à Mission Europe : Territoire (Hauts-de-France), France (National) et Europe. Ouvrages, études, calendrier et gouvernance.",
   alternates: {
-    canonical: "https://societe-mission-europe.surge.sh/groupes-de-travail",
+    canonical: "https://societe-mission-europe.com/groupes-de-travail",
   },
 };
 

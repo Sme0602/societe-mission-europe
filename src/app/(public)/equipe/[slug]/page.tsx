@@ -18,7 +18,7 @@ export function generateMetadata({
     title: `${member.name} | L'Équipe`,
     description: `${member.name}, ${member.role} — ${member.title}. Découvrez son parcours et ses travaux au sein du projet Société à Mission Europe.`,
     alternates: {
-      canonical: `https://societe-mission-europe.surge.sh/equipe/${member.slug}`,
+      canonical: `https://societe-mission-europe.com/equipe/${member.slug}`,
     },
   };
 }

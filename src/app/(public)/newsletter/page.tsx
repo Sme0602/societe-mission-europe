@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Consultez et téléchargez les newsletters du projet Société à Mission Europe. Restez informé des avancées de la recherche.",
   alternates: {
-    canonical: "https://societe-mission-europe.surge.sh/newsletter",
+    canonical: "https://societe-mission-europe.com/newsletter",
   },
 };
 

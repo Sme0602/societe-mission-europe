@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Politique de confidentialité et protection des données personnelles du site Société à Mission Europe - Conformité RGPD.",
   alternates: {
-    canonical: "https://societe-mission-europe.surge.sh/politique-de-confidentialite",
+    canonical: "https://societe-mission-europe.com/politique-de-confidentialite",
   },
 };
 

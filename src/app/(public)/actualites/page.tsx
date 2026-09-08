@@ -9,7 +9,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: 'Actualités et publications | Société à Mission Europe',
   description: 'Suivez l\'actualité du programme de recherche Société à Mission Europe : événements, publications, partenariats et avancées du projet.',
-  alternates: { canonical: 'https://societe-mission-europe.surge.sh/actualites' }
+  alternates: { canonical: 'https://societe-mission-europe.com/actualites' }
 };
 
 function formatDate(dateStr: string) {
