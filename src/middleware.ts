@@ -11,7 +11,9 @@ export async function middleware(request: NextRequest) {
     url.host = CANONICAL_DOMAIN;
     url.port = "";
     url.protocol = "https:";
-    return NextResponse.redirect(url, 301);
+    const response = NextResponse.redirect(url, 301);
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return response;
   }
 
   if (!request.nextUrl.pathname.startsWith("/admin")) {
