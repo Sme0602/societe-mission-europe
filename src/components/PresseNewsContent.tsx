@@ -7,6 +7,17 @@ import type { Newsletter } from "@/lib/types/database";
 const pressArticles = [
   {
     title:
+      "IA et intérêt général : « Et si Mistral AI devenait la première grande entreprise numérique à mission ? »",
+    source: "Les Echos",
+    date: "2026-09-28",
+    url: "https://www.lesechos.fr/idees-debats/cercle/ia-et-interet-general-et-si-mistral-ai-devenait-la-premiere-grande-entreprise-numerique-a-mission-2253861",
+    image: null,
+    sourceLogo: null,
+    excerpt:
+      "Tribune collective publiée dans Les Echos. Alors que Bruxelles peine à encadrer l'IA par la loi, six spécialistes du droit et de la gouvernance avancent une solution venue du droit français des entreprises : la société à mission. Ils interpellent Mistral AI pour devenir la première grande entreprise numérique à l'adopter.",
+  },
+  {
+    title:
       "Société à mission : la France a montré la voie, et si l'Europe suivait ?",
     source: "Euradio",
     date: "2026-06-25",

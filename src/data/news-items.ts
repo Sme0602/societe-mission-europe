@@ -13,6 +13,15 @@ export type NewsItem = {
 };
 
 export const newsItems: NewsItem[] = [
+  // --- Septembre 2026 ---
+  {
+    type: "presse",
+    date: "28 septembre 2026",
+    title: "Les Echos — IA et intérêt général : « Et si Mistral AI devenait la première grande entreprise numérique à mission ? »",
+    url: "https://www.lesechos.fr/idees-debats/cercle/ia-et-interet-general-et-si-mistral-ai-devenait-la-premiere-grande-entreprise-numerique-a-mission-2253861",
+    summary: "Tribune collective publiée dans Les Echos par six spécialistes du droit et de la gouvernance. Alors que Bruxelles peine à encadrer l'IA par la loi, les auteurs avancent une solution venue du droit français des entreprises : la société à mission, et interpellent Mistral AI pour devenir la première grande entreprise numérique à l'adopter.",
+    axis: "national",
+  },
   // --- Juillet 2026 ---
   {
     type: "video",
