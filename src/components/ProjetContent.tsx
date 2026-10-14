@@ -112,50 +112,50 @@ export default function ProjetContent() {
     },
     {
       date: "2026",
-      title: t("Phase de recherche territoriale et nationale", "Territorial and national research phase"),
+      title: t("Mise en place des groupes de travail des 3 axes", "Setting up the working groups for the 3 axes"),
       desc: t(
-        "Travaux parallèles des trois groupes, collecte de données terrain en Hauts-de-France et analyse nationale de la loi PACTE",
-        "Parallel work across the three groups, field data collection in Hauts-de-France and national analysis of the PACTE Act"
+        "Lancement des trois axes de recherche (territorial, national, européen), constitution des groupes de travail et début des premières études",
+        "Launch of the three research axes (territorial, national, European), formation of working groups and start of initial studies"
       ),
     },
     {
       date: t("Juin 2026", "June 2026"),
       title: t("Summer School — Purpose at the Heart of Europe", "Summer School — Purpose at the Heart of Europe"),
       desc: t(
-        "Sciences Po Lille — Chercheurs, praticiens et institutionnels européens réunis autour du concept de purpose-driven company",
-        "Sciences Po Lille — European researchers, practitioners and institutional representatives brought together around the concept of the purpose-driven company"
+        "Sciences Po Lille – Chercheurs, praticiens et institutionnels européens réunis autour du concept de purpose-driven company",
+        "Sciences Po Lille – European researchers, practitioners and institutional representatives brought together around the concept of the purpose-driven company"
       ),
     },
     {
-      date: "2027",
-      title: t("Restitutions intermédiaires et événements européens", "Interim presentations and European events"),
+      date: "2026–2027",
+      title: t("Premiers ouvrages & coordination des axes", "First publications & axis coordination"),
       desc: t(
-        "Présentation des premiers résultats, auditions d\u2019experts internationaux et colloques européens",
-        "Presentation of initial results, hearings with international experts and European conferences"
+        "Lancement, rédaction et coordination des premiers ouvrages de chaque axe : « Les entreprises du nord, une histoire sociale singulière » (axe territorial), « La société à mission française : bilan et perspectives » (axe national), « Purpose-Driven Companies in Europe: Foundations, Models and Impact » (axe européen). Coordination des groupes de travail",
+        "Launch, writing and coordination of the first publications for each axis: ‘Les entreprises du nord, une histoire sociale singulière’ (territorial), ‘La société à mission française : bilan et perspectives’ (national), ‘Purpose-Driven Companies in Europe: Foundations, Models and Impact’ (European). Working group coordination"
       ),
     },
     {
       date: t("Été 2027", "Summer 2027"),
-      title: t("Summer School 2027", "Summer School 2027"),
+      title: t("Summer School 2027 – Le territoire à mission", "Summer School 2027 – The Purpose-Driven Territory"),
       desc: t(
-        "Deuxième édition de la Summer School du projet",
-        "Second edition of the project's Summer School"
+        "Deuxième édition de la Summer School consacrée au territoire à mission",
+        "Second edition of the Summer School dedicated to the purpose-driven territory"
       ),
     },
     {
-      date: "2028",
-      title: t("Publications finales et recommandations", "Final publications and recommendations"),
+      date: "2027–2028",
+      title: t("Ouvrages complémentaires", "Additional publications"),
       desc: t(
-        "Livres blancs, ouvrages collectifs et recommandations pour une directive européenne sur la purpose-driven company",
-        "White papers, collective works and recommendations for a European directive on the purpose-driven company"
+        "Rédaction et publication des ouvrages suivants : « Ces entrepreneurs du nord qui changent le monde », « La société à mission, mode d’emploi », « Penser la société à mission européenne », et l’ouvrage de récit et de synthèse de tous les apports du programme de recherche",
+        "Writing and publication of the following works: ‘Ces entrepreneurs du nord qui changent le monde’, ‘La société à mission, mode d’emploi’, ‘Penser la société à mission européenne’, and the comprehensive narrative and synthesis of the research programme"
       ),
     },
     {
       date: t("Été 2028", "Summer 2028"),
       title: t("Summer School 2028", "Summer School 2028"),
       desc: t(
-        "Troisième et dernière édition de la Summer School, restitution des travaux du projet",
-        "Third and final edition of the Summer School, presentation of the project's findings"
+        "Troisième et dernière édition de la Summer School, restitution de l’ensemble des travaux du projet",
+        "Third and final edition of the Summer School, presentation of all the project’s findings"
       ),
     },
   ];
