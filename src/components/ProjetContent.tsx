@@ -210,18 +210,6 @@ export default function ProjetContent() {
       color: "bg-rose-600",
     },
     {
-      name: "Pablo Maria",
-      initials: "PM",
-      role: t("Doctorant (1ère année)", "PhD Candidate (1st year)"),
-      title: t("Recherche européenne", "European Research"),
-      affiliation: "UPHF/ESPOL/LARSH",
-      description: t(
-        "Doctorant en sciences de gestion à l\u2019UPHF et ESPOL, rattaché au LARSH. Diplômé du master MRE de Sciences Po Lille. Recherche sur les modèles européens de purpose-driven company, analysant le rôle du territoire dans la diffusion des pratiques de gouvernance responsable. Étude comparative de la mise en œuvre de la société à mission dans les métropoles de Lille, Rome et Barcelone. Co-fondateur de la startup Intersektion, accompagnant les transitions écologiques et sociales des entreprises.",
-        "PhD candidate in management sciences at UPHF and ESPOL, affiliated with LARSH. Graduate of the MRE master\u2019s at Sciences Po Lille. Research on European models of the purpose-driven company, analysing the role of territory in the spread of responsible governance practices. Comparative study of purpose-driven company implementation in the metropolitan areas of Lille, Rome and Barcelona. Co-founder of the startup Intersektion, supporting companies\u2019 ecological and social transitions."
-      ),
-      color: "bg-navy-800",
-    },
-    {
       name: "Jean-Marie Massonnat",
       initials: "JM",
       role: t("Rapporteur du projet", "Project Rapporteur"),
