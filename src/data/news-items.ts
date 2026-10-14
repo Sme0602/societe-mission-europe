@@ -40,14 +40,6 @@ export const newsItems: NewsItem[] = [
   },
   {
     type: "publication",
-    date: "Juillet 2026",
-    title: "Pablo Maria, doctorant LARSH — À quoi sert une société à mission ? (L'Économie Politique N°111)",
-    url: "https://boutique.alternatives-economiques.fr/economie-politique",
-    summary: "Article scientifique publié dans la revue L'Économie Politique (N°111, Alternatives Économiques). Pablo Maria, doctorant au LARSH, y analyse les fondements et la portée du modèle de la société à mission, entre ambition transformatrice et risques d'instrumentalisation.",
-    axis: "national",
-  },
-  {
-    type: "publication",
     date: "2 juillet 2026",
     title: "Elena Codoni, chercheuse associée au projet — La composition du comité de mission, élément clé pour rétablir la crédibilité de la société à mission",
     url: "https://www.dalloz-revues.fr/revues/revue_des_societes-38.htm",
