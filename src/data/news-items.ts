@@ -24,6 +24,14 @@ export const newsItems: NewsItem[] = [
   },
   // --- Juillet 2026 ---
   {
+    type: "podcast",
+    date: "30 juillet 2026",
+    title: "Podcast T'as 5 min ? — « L'entreprise de demain sera utile ou ne sera pas »",
+    url: "https://open.spotify.com/episode/4bnxgPLHDoRSKFxIOZBA76",
+    summary: "Emery Jacquillat (ancien président de la CAMIF, cofondateur de la Communauté des entreprises à mission) et Matthieu Caron échangent avec Valérie Doussinault sur l'urgence de transformer les entreprises en actrices de la résolution des défis sociaux et environnementaux, et sur le projet Société à Mission Europe visant à propager ce modèle à l'échelle du continent.",
+    axis: "europe",
+  },
+  {
     type: "video",
     date: "Juillet 2026",
     title: "Vidéo Summer School 2026 — Regardez la journée en images",

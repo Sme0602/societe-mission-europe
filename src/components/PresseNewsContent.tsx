@@ -18,6 +18,17 @@ const pressArticles = [
   },
   {
     title:
+      "L'entreprise de demain sera utile ou ne sera pas",
+    source: "T'as 5 min ? (podcast)",
+    date: "2026-07-30",
+    url: "https://open.spotify.com/episode/4bnxgPLHDoRSKFxIOZBA76",
+    image: null,
+    sourceLogo: null,
+    excerpt:
+      "Emery Jacquillat (ancien président de la CAMIF, cofondateur de la Communauté des entreprises à mission) et Matthieu Caron échangent avec Valérie Doussinault sur l'urgence de transformer les entreprises en actrices majeures de la résolution des défis sociaux et environnementaux du 21e siècle, et sur le projet Société à Mission Europe visant à propager le modèle d'entreprise à mission à l'ensemble de l'Europe.",
+  },
+  {
+    title:
       "Société à mission : la France a montré la voie, et si l'Europe suivait ?",
     source: "Euradio",
     date: "2026-06-25",
