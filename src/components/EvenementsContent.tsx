@@ -38,6 +38,82 @@ export default function EvenementsContent() {
         </div>
       </section>
 
+      {/* Événement à venir */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-navy-800 mb-2">
+            {t("Événement à venir", "Upcoming Event")}
+          </h2>
+          <div className="tricolor-separator mb-8" />
+
+          <div className="space-y-8">
+            {/* Research Seminar — 20 novembre 2026 */}
+            <div className="bg-gradient-to-r from-navy-50 to-rose-50 rounded-card border-2 border-rose-200 shadow-md overflow-hidden">
+              <div className="p-8 md:p-10">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-rose-600 text-white rounded-full text-sm font-bold">
+                    <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                    {t("À venir", "Upcoming")}
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-navy-100 text-navy-800 rounded-full text-sm font-medium">
+                    {t("Séminaire", "Seminar")}
+                  </span>
+                  <span className="text-sm text-navy-700 font-medium">
+                    {t("20 novembre 2026 · 10h–12h", "20 November 2026 · 10:00 AM–12:00 PM")}
+                  </span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-1">
+                  Research Seminar — Société à Mission Europe
+                </h3>
+                <p className="text-base font-semibold text-rose-600 mb-4 italic">
+                  {t(
+                    "Sociétés à Mission en France : résultats de recherche et questions ouvertes",
+                    "Sociétés à Mission in France: Research insights and open questions"
+                  )}
+                </p>
+                <p className="text-navy-700 leading-relaxed mb-6">
+                  {t(
+                    "Séminaire de recherche organisé en collaboration entre la Chaire « Théorie de l'entreprise. Modèles de gouvernance et création collective » (Mines Paris – PSL) et Société à Mission Europe. Kevin Levillain et Blanche Segrestin présenteront l'état de leurs recherches sur le fonctionnement des sociétés à mission, leurs effets et les conditions de leur efficacité.",
+                    "Research seminar organised in collaboration between the Chair 'Theory of the Firm. Governance Models and Collective Creation' (Mines Paris – PSL) and Société à Mission Europe. Kevin Levillain and Blanche Segrestin will present the current state of their research on how sociétés à mission operate, their effects, and the conditions under which they are effective."
+                  )}
+                </p>
+                <div className="flex flex-wrap gap-4 text-navy-700 text-sm mb-6">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {t(
+                      "Mines Paris – PSL · Salle L312 · 60 bd Saint-Michel, 75006 Paris",
+                      "Mines Paris – PSL · Room L312 · 60 bd Saint-Michel, 75006 Paris"
+                    )}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    {t("Hybride : présentiel & en ligne (Teams)", "Hybrid: on site & online (Teams)")}
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="/documents/invitation-seminar-20-nov-2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-rose-600 text-white font-semibold text-sm rounded-lg hover:bg-rose-700 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    {t("Télécharger l'invitation (PDF)", "Download invitation (PDF)")}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Événements passés */}
       <section className="py-16 md:py-24 bg-beige-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

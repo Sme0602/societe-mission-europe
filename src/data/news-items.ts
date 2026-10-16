@@ -13,6 +13,16 @@ export type NewsItem = {
 };
 
 export const newsItems: NewsItem[] = [
+  // --- Novembre 2026 ---
+  {
+    type: "evenement",
+    date: "20 novembre 2026",
+    title: "Research Seminar — Sociétés à Mission en France : résultats de recherche et questions ouvertes",
+    url: "/evenements",
+    summary: "Séminaire de recherche à Mines Paris – PSL, organisé avec la Chaire « Théorie de l'entreprise » (Kevin Levillain & Blanche Segrestin). Format hybride : présentiel et en ligne.",
+    axis: "national",
+    milestone: "À venir",
+  },
   // --- Septembre 2026 ---
   {
     type: "presse",
