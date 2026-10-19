@@ -31,8 +31,8 @@ export default function EquipeContent() {
             <div className="tricolor-separator w-32 mb-6" />
             <p className="text-xl text-navy-700 leading-relaxed">
               {t(
-                "Une équipe pluridisciplinaire de chercheurs, ingénieurs et doctorants rattachés à l'UPHF, au LARSH et à l'Observatoire de l'Éthique Publique, engagés dans l'étude et la promotion de la société à mission en France et en Europe.",
-                "A multidisciplinary team of researchers, engineers and doctoral students affiliated with UPHF, LARSH and the Observatory of Public Ethics, committed to the study and promotion of the purpose-driven company in France and across Europe."
+                "Une équipe pluridisciplinaire de chercheurs, ingénieurs et doctorante rattachés à l'UPHF, au LARSH et à l'Observatoire de l'Éthique Publique, engagés dans l'étude et la promotion de la société à mission en France et en Europe.",
+                "A multidisciplinary team of researchers, engineers and a doctoral student affiliated with UPHF, LARSH and the Observatory of Public Ethics, committed to the study and promotion of the purpose-driven company in France and across Europe."
               )}
             </p>
           </div>
@@ -70,11 +70,22 @@ export default function EquipeContent() {
                 className="w-full h-auto"
               />
             </div>
+            <div className="rounded-card overflow-hidden shadow-lg">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/equipe/equipe-pauline.jpg"
+                alt={t(
+                  "Alix Vanmeervenne, Pauline Bordé, Matthieu Caron et Sarah Vandenbroucke",
+                  "Alix Vanmeervenne, Pauline Bordé, Matthieu Caron and Sarah Vandenbroucke"
+                )}
+                className="w-full h-auto"
+              />
+            </div>
           </div>
           <p className="text-center text-navy-600 text-sm italic mt-4">
             {t(
-              "L'équipe du projet lors de la journée de lancement — Wallers-Arenberg, 6 février 2026",
-              "The project team at the launch event — Wallers-Arenberg, 6 February 2026"
+              "L'équipe du projet Société à Mission Europe",
+              "The Société à Mission Europe project team"
             )}
           </p>
         </div>
