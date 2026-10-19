@@ -222,18 +222,6 @@ export default function ProjetContent() {
       color: "bg-jaune-400",
     },
     {
-      name: "Anaïs Rebuccini",
-      initials: "AR",
-      role: t("Responsable administrative et financière", "Administrative and Financial Manager"),
-      title: t("Gestion de projet", "Project Management"),
-      affiliation: "UPHF",
-      description: t(
-        "Diplômée de la faculté de droit, d'économie et de gestion de Valenciennes, Anaïs Rebuccini a travaillé en qualité de gestionnaire administrative et financière auprès de l'IDP (Institut du Développement et de la Prospective) puis du CRISS (Centre de Recherche Interdisciplinaire en Sciences de la Société) à l'UPHF durant huit ans.",
-        "A graduate of the Faculty of Law, Economics and Management in Valenciennes, Anaïs Rebuccini worked as an administrative and financial manager at the IDP (Institute of Development and Foresight) then at CRISS (Interdisciplinary Research Centre in Social Sciences) at UPHF for eight years."
-      ),
-      color: "bg-orange-600",
-    },
-    {
       name: "Pauline Bordé",
       initials: "PB",
       role: t("Doctorante en sciences de gestion", "PhD Student in Management Sciences"),
@@ -244,6 +232,18 @@ export default function ProjetContent() {
         "A graduate of the Responsible Business Management master’s at Sciences Po Lille, Pauline Bordé is preparing a thesis on purpose-driven companies and the role of leadership in their emergence and transformation. Her work analyses the decision-making processes, motivations and resistances involved in adopting the status, as well as the role of leadership in defining a social and environmental mission. A former ESG analyst at BPCE (Vision 2030 plan), she also worked at the Council of Europe."
       ),
       color: "bg-navy-800",
+    },
+    {
+      name: "Anaïs Rebuccini",
+      initials: "AR",
+      role: t("Responsable administrative et financière", "Administrative and Financial Manager"),
+      title: t("Gestion de projet", "Project Management"),
+      affiliation: "UPHF",
+      description: t(
+        "Diplômée de la faculté de droit, d'économie et de gestion de Valenciennes, Anaïs Rebuccini a travaillé en qualité de gestionnaire administrative et financière auprès de l'IDP (Institut du Développement et de la Prospective) puis du CRISS (Centre de Recherche Interdisciplinaire en Sciences de la Société) à l'UPHF durant huit ans.",
+        "A graduate of the Faculty of Law, Economics and Management in Valenciennes, Anaïs Rebuccini worked as an administrative and financial manager at the IDP (Institute of Development and Foresight) then at CRISS (Interdisciplinary Research Centre in Social Sciences) at UPHF for eight years."
+      ),
+      color: "bg-orange-600",
     },
     {
       name: "Aïcha Barry",

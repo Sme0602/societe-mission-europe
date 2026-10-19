@@ -70,7 +70,7 @@ export default function EquipeContent() {
                 className="w-full h-auto"
               />
             </div>
-            <div className="rounded-card overflow-hidden shadow-lg">
+            <div className="rounded-card overflow-hidden shadow-lg max-w-2xl mx-auto">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/equipe/equipe-pauline.jpg"
