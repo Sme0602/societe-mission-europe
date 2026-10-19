@@ -234,6 +234,42 @@ export default function HomeContent() {
         </div>
       </section>
 
+      {/* Événement à venir — bandeau */}
+      <section className="bg-navy-800 text-white">
+        <Link href="/evenements" className="block group">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 md:py-6">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <div className="flex items-center gap-3 shrink-0">
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-rose-600 rounded-full text-xs font-bold uppercase tracking-wider">
+                  <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                  {t("Prochain événement", "Next event")}
+                </span>
+                <span className="text-beige-200 text-sm font-medium">
+                  20 nov. 2026
+                </span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-white font-semibold text-sm md:text-base truncate">
+                  Research Seminar — {t(
+                    "Sociétés à Mission en France : résultats de recherche et questions ouvertes",
+                    "Sociétés à Mission in France: Research insights and open questions"
+                  )}
+                </p>
+                <p className="text-beige-300 text-xs md:text-sm mt-0.5">
+                  Mines Paris – PSL · {t("Hybride (présentiel & en ligne)", "Hybrid (on site & online)")}
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-1 text-rose-300 text-sm font-semibold shrink-0 group-hover:text-rose-200 group-hover:gap-2 transition-all">
+                {t("En savoir plus", "Learn more")}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </Link>
+      </section>
+
       {/* Le projet en bref */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

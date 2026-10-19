@@ -234,6 +234,18 @@ export default function ProjetContent() {
       color: "bg-orange-600",
     },
     {
+      name: "Pauline Bordé",
+      initials: "PB",
+      role: t("Doctorante en sciences de gestion", "PhD Student in Management Sciences"),
+      title: t("Sociétés à mission & leadership", "Purpose-Driven Companies & Leadership"),
+      affiliation: "UPHF/LARSH",
+      description: t(
+        "Diplômée du master Management responsable des entreprises de Sciences Po Lille, Pauline Bordé prépare une thèse sur les sociétés à mission et le rôle du dirigeant dans leur émergence et leur transformation. Ses travaux analysent les processus décisionnels, les motivations et résistances liés à l’adoption du statut, ainsi que la place du leadership dans la définition d’une mission sociale et environnementale. Ancienne analyste ESG chez BPCE (plan Vision 2030), elle a également travaillé au Conseil de l’Europe.",
+        "A graduate of the Responsible Business Management master’s at Sciences Po Lille, Pauline Bordé is preparing a thesis on purpose-driven companies and the role of leadership in their emergence and transformation. Her work analyses the decision-making processes, motivations and resistances involved in adopting the status, as well as the role of leadership in defining a social and environmental mission. A former ESG analyst at BPCE (Vision 2030 plan), she also worked at the Council of Europe."
+      ),
+      color: "bg-navy-800",
+    },
+    {
       name: "Aïcha Barry",
       initials: "AB",
       role: t("Stagiaire", "Intern"),
